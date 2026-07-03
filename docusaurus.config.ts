@@ -78,9 +78,9 @@ const config: Config = {
         docsPluginId: 'api',
         config: {
           'mijn-taken': {
-            specPath: 'api-specs/openapi.yaml',
+            specPath: 'specs/interactieservices.openapi.yaml',
             outputDir: 'api-docs',
-            downloadUrl: 'https://raw.githubusercontent.com/VNG-Realisatie/mijn-taken-api/main/api-specs/openapi.yaml',
+            downloadUrl: 'https://raw.githubusercontent.com/VNG-Realisatie/mijn-taken-api/main/specs/interactieservices.openapi.yaml',
             showExtensions: true,
             showSchemas: true,
             sidebarOptions: {
