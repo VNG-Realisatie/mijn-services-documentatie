@@ -6,7 +6,7 @@
 
 # MijnServices Documentatie
 
-Deze repository bevat de documentatie, standaarden, specificaties en architectuur voor **MijnServices**: de interactielaag voor externe klantinteractie tussen overheidsbrede kanalen (zoals MijnOmgevingen, portalen, KCC/balie) en de uitvoerende systemen en registraties van gemeenten, Rijk en uitvoeringsorganisaties.
+Deze repository bevat de documentatie, standaarden, specificaties en architectuur voor **MijnServices**: de interactielaag tussen overheidsbrede kanalen voor burgers en ondernemers (zoals MijnOmgevingen, portalen, KCC/balie) en de uitvoerende systemen en registraties van gemeenten, Rijk en uitvoeringsorganisaties.
 
 Het doel van MijnServices is om publieke dienstverlening van buiten naar binnen begrijpelijk, proactief en betrouwbaar te maken door te standaardiseren op wat burgers en ondernemers willen weten, doen of volgen — over kanalen en organisaties heen.
 
