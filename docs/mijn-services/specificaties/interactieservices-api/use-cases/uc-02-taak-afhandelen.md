@@ -15,18 +15,18 @@ sidebar_position: 3
 
 ## A1 — Hoofdflow
 
-1. Klant opent het portaal en komt op een scherm waar de eigen taken worden getoond — bijvoorbeeld [`SCR-MIJN-TAKEN`](../schermen/mijn-taken.md) (een dedicated takenoverzicht) of [`SCR-RECENT`](../schermen/recent.md) (een "Recent"-blok waarin taken naast andere activiteiten verschijnen).
+1. Klant opent het portaal en komt op een scherm waar de eigen taken worden getoond — bijvoorbeeld [`SCR-MIJN-TAKEN`](../../../kanalen/mijn-omgeving/schermprofielen/mijn-taken.md) (een dedicated takenoverzicht) of [`SCR-RECENT`](../../../kanalen/mijn-omgeving/schermprofielen/recent.md) (een "Recent"-blok waarin taken naast andere activiteiten verschijnen).
 2. Klant ziet de eigen openstaande taken met titel, status en eventueel vervaldatum.
-3. Klant klikt een taak aan en komt op [`SCR-TAKEN-IN-CONTEXT`](../schermen/taken-in-context.md).
+3. Klant klikt een taak aan en komt op [`SCR-TAKEN-IN-CONTEXT`](../../../kanalen/mijn-omgeving/schermprofielen/taken-in-context.mdx).
 4. Klant leest de toelichting van de context en de daarbij behorende taken.
-5. Klant klikt op _Afronden_ — interactie [C.5](../schermen/taken-in-context.md#interacties--detailpaneel) — en bevestigt de actie.
+5. Klant klikt op _Afronden_ (interactie C.5 op [`SCR-TAKEN-IN-CONTEXT`](../../../kanalen/mijn-omgeving/schermprofielen/taken-in-context.mdx)) en bevestigt de actie.
 6. Systeem markeert de taak als `afgerond` en navigeert terug naar het overzicht.
 
 ## Alternatieve flows
 
-- **A2 — Taak is al afgerond:** de knop _Afronden_ ([C.5](../schermen/taken-in-context.md#interacties--detailpaneel)) is niet zichtbaar; klant kan alleen raadplegen.
+- **A2 — Taak is al afgerond:** de knop _Afronden_ (C.5 op [`SCR-TAKEN-IN-CONTEXT`](../../../kanalen/mijn-omgeving/schermprofielen/taken-in-context.mdx)) is niet zichtbaar; klant kan alleen raadplegen.
 - **A3 — Conflict bij afronden:** de API geeft `409` (bv. status inmiddels gewijzigd door backend). UI toont een melding en herlaadt de taak.
-- **A4 — Taken in context:** de klant benadert [`SCR-TAKEN-IN-CONTEXT`](../schermen/taken-in-context.md) direct vanuit een zaak, product of ander object (bijv. via een deeplink vanuit MijnZaken of een erfpachtportaal). De lijst is vooraf gefilterd op het gerelateerde object via [`POST /context/zoek`](../referentie/zoek-context) met `contextId`.
+- **A4 — Taken in context:** de klant benadert [`SCR-TAKEN-IN-CONTEXT`](../../../kanalen/mijn-omgeving/schermprofielen/taken-in-context.mdx) direct vanuit een zaak, product of ander object (bijv. via een deeplink vanuit MijnZaken of een erfpachtportaal). De lijst is vooraf gefilterd op het gerelateerde object via [`POST /context/zoek`](../referentie/zoek-context) met `contextId`.
 - **A5 — Taak vereist betaling:** in plaats van _Afronden_ wordt de klant via een redirect doorgestuurd naar het portaal van de lokale overheid, dat een betaalprovider aanroept. Na geslaagde betaling werkt de provider de taakstatus zelf bij en redirect de klant terug naar MijnOverheid/MijnOmgeving met een statusmelding. Het portaal herlaadt de taak via de API om de actuele status te tonen.
 
   ```mermaid

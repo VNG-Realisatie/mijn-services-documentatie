@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Een **use case** beschrijft één samenhangende systeemfunctie vanuit het
 perspectief van een actor (meestal de klant). Een use case kruist doorgaans
-meerdere [schermen](../schermen/index.md) en verwijst naar specifieke
+meerdere [schermprofielen](../../../kanalen/mijn-omgeving/schermprofielen/) en verwijst naar specifieke
 interactie-IDs op die schermen.
 
 ## Structuur per use case

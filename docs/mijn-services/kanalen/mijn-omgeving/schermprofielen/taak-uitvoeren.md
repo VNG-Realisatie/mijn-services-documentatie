@@ -12,16 +12,16 @@ Het scherm is taaktype-afhankelijk:
 - **Formulier** _(uit te werken)_ — klant vult een dynamisch formulier in.
 
 :::note[Betaling]
-Een betaaltaak leidt altijd direct tot een redirect naar de betaalprovider, zonder tussenkomst van dit scherm. Betalen is altijd uitvoerbaar vanuit elk portaal en vereist geen portaalwissel. De knop _Betalen_ staat op [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.md) (interactie C.9).
+Een betaaltaak leidt altijd direct tot een redirect naar de betaalprovider, zonder tussenkomst van dit scherm. Betalen is altijd uitvoerbaar vanuit elk portaal en vereist geen portaalwissel. De knop _Betalen_ staat op [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx) (interactie C.9).
 :::
 
 ## Instappaden
 
-| Vanaf                                                    | Portaal | Hoe                                                                                                                            |
-| :------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------- |
-| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.md)          | LO      | Knop _Uitvoeren_ (interactie C.8) — direct, geen portaalwissel                                                                 |
-| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.md)          | MO      | Knop _Uitvoeren_ (C.8) — uitsluitend voor taken uitvoerbaar in MO (upload; formulieren nog uit te werken); binnen MijnOverheid |
-| [`SCR-DIGID-EH`](./digid-eenvoudige-herauthenticatie.md) | LO      | Na succesvolle herauthenticatie (portaalwissel vanuit MO); deeplink opent direct de specifieke taak voor uitvoering            |
+| Vanaf                                                     | Portaal | Hoe                                                                                                                            |
+| :-------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------- |
+| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)          | LO      | Knop _Uitvoeren_ (interactie C.8) — direct, geen portaalwissel                                                                 |
+| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)          | MO      | Knop _Uitvoeren_ (C.8) — uitsluitend voor taken uitvoerbaar in MO (upload; formulieren nog uit te werken); binnen MijnOverheid |
+| [`SCR-DIGID-EH`](./digid-eenvoudige-herauthenticatie.md)  | LO      | Na succesvolle herauthenticatie (portaalwissel vanuit MO); deeplink opent direct de specifieke taak voor uitvoering            |
 
 ## Schermvoorbeeld
 
@@ -36,7 +36,7 @@ _Mockup nog toe te voegen._
 | **U.1** | Scherm laden        | Automatisch            | Taakinformatie en de bijpassende uitvoerinterface worden getoond op basis van taaktype | `GET /taken/{uuid}` (lokaal renderen vereist `uitvoering.definitie`)      |
 | **U.2** | Bestandsupload veld | Bestanden toevoegen    | Klant selecteert één of meer documenten ter aanlevering                                | —                                                                         |
 | **U.3** | Knop _Verzenden_    | Klik (met bevestiging) | Documenten worden ingediend bij de provider; deze markeert de taak als afgerond        | `POST` naar `uitvoering.definitie.endpoint` (externe URL bij de provider) |
-| **U.4** | Terug-navigatie     | Klik                   | Navigeert terug naar [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.md)                   | —                                                                         |
+| **U.4** | Terug-navigatie     | Klik                   | Navigeert terug naar [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)                  | —                                                                         |
 
 :::note[Taaktype-afhankelijk]
 Niet alle interacties zijn bij elke taak aanwezig. U.2 en U.3 gelden voor uploadtaken. Formulieren (nog uit te werken) volgen een vergelijkbaar patroon.
@@ -49,4 +49,4 @@ Niet alle interacties zijn bij elke taak aanwezig. U.2 en U.3 gelden voor upload
 ## Verschillen per portaal
 
 - **MijnOmgeving (LO):** alle taaktypen worden hier uitgevoerd.
-- **MijnOverheid (MO):** alleen taken die MijnOverheid zelf kan uitvoeren verschijnen hier (upload; formulieren nog uit te werken). Betalingstaken worden nooit via dit scherm afgehandeld — die starten een directe redirect vanuit [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.md). Taken die MO niet zelf kan uitvoeren worden via [`SCR-DIGID-EH`](./digid-eenvoudige-herauthenticatie.md) doorgestuurd naar dit scherm in het LO-portaal.
+- **MijnOverheid (MO):** alleen taken die MijnOverheid zelf kan uitvoeren verschijnen hier (upload; formulieren nog uit te werken). Betalingstaken worden nooit via dit scherm afgehandeld — die starten een directe redirect vanuit [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx). Taken die MO niet zelf kan uitvoeren worden via [`SCR-DIGID-EH`](./digid-eenvoudige-herauthenticatie.md) doorgestuurd naar dit scherm in het LO-portaal.
