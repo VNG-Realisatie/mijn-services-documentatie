@@ -97,16 +97,9 @@ const config: Config = {
       },
       items: [
         {
-          type: 'dropdown',
+          to: '/initiatieven',
           label: 'Initiatieven',
           position: 'left',
-          items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'docsSidebar',
-              label: 'MijnServices',
-            },
-          ],
         },
         {
           href: 'https://github.com/vng-realisatie/mijn-services-documentatie',
