@@ -29,12 +29,12 @@ jobs:
       - name: Build DON export bundle
         run: pnpm export:don
 
-      - name: Deploy to don-delivery branch
+      - name: Deploy to dist-don branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/don
-          publish_branch: don-delivery
+          publish_branch: dist-don
           force_orphan: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"

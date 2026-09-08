@@ -54,7 +54,7 @@ Een belangrijk publicatiekanaal voor MijnServices is de kennisbank van [develope
   pnpm export:don
   ```
   Dit script (`scripts/export-don.mjs`) exporteert de niet-draft documentatie (`docs/mijn-services/`) en bijbehorende afbeeldingen (`static/img/mijn-services/`) naar `dist/don/`.
-- **Geautomatiseerde levering**: Bij elke push naar `main` publiceert GitHub Actions (`.github/workflows/sync-don.yml`) de kant-en-klare export naar de distributiebranch `don-delivery`.
+- **Geautomatiseerde levering**: Bij elke push naar `main` publiceert GitHub Actions (`.github/workflows/sync-don.yml`) de kant-en-klare export naar de distributiebranch `dist-don`.
 
 ## Tooling
 
