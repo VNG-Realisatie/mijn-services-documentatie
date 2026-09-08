@@ -11,9 +11,12 @@ const config: Config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
-  title: 'MijnTaken API',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/mijn-taken.svg',
+  title: 'MijnServices Documentatie',
+  tagline: 'Standaarden en interactielaag voor overheidsdienstverlening',
+  favicon: 'img/logo-don.svg',
+  customFields: {
+    siteName: 'developer.overheid.nl',
+  },
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -24,12 +27,12 @@ const config: Config = {
   url: 'https://vng-realisatie.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/mijn-taken-api/',
+  baseUrl: '/mijn-services-documentatie/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'vng-realisatie', // Usually your GitHub org/user name.
-  projectName: 'mijn-taken-api', // Usually your repo name.
+  projectName: 'mijn-services-documentatie', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -38,7 +41,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'nl',
-    locales: ['nl', 'en'],
+    locales: ['nl'],
   },
 
   presets: [
@@ -99,27 +102,27 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'MijnTaken',
+      title: 'MijnServices',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/mijn-taken.svg',
+        alt: 'MijnServices Documentatie',
+        src: 'img/logo-don.svg',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'Kennisbank & Services',
         },
         {
           type: 'docSidebar',
           sidebarId: 'apiSidebar',
           docsPluginId: 'api',
           position: 'left',
-          label: 'API',
+          label: 'Interactieservices API',
         },
         {
-          href: 'https://github.com/vng-realisatie/mijn-taken-api',
+          href: 'https://github.com/vng-realisatie/mijn-services-documentatie',
           label: 'GitHub',
           position: 'right',
         },
@@ -129,11 +132,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentatie',
           items: [
             {
-              label: 'Uitgangspunten',
-              to: '/docs/',
+              label: 'MijnServices Overzicht',
+              to: '/docs/mijn-services',
+            },
+            {
+              label: 'Bouwstenen',
+              to: '/docs/mijn-services/bouwstenen',
+            },
+            {
+              label: 'Aansluitprofielen',
+              to: '/docs/mijn-services/aansluitprofielen',
             },
           ],
         },
@@ -141,30 +152,30 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'developer.overheid.nl',
+              href: 'https://developer.overheid.nl',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'NL Design System',
+              href: 'https://nldesignsystem.nl',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Gebruiker Centraal',
+              href: 'https://www.gebruikercentraal.nl',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Links',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/vng-realisatie/mijn-taken-api',
+              label: 'GitHub Repository',
+              href: 'https://github.com/vng-realisatie/mijn-services-documentatie',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Aanlever-repository voor developer.overheid.nl • VNG Realisatie`,
     },
     prism: {
       theme: prismThemes.github,

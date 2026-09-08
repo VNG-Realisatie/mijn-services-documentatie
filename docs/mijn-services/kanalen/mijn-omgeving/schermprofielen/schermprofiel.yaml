@@ -1,0 +1,191 @@
+profile: mijn-omgeving.mijn-taken
+version: 0.1.0
+status: ontwerp
+title: Schermprofiel MijnTaken in de mijnomgeving
+summary: >
+  Kanaalprofiel dat schermen in een mijnomgeving koppelt aan het functioneel
+  ontwerp en operaties van de InteractieServices API.
+
+sources:
+  functioneelModel:
+    name: mijnTakenFunctioneelModel
+    url: ../../../specificaties/functionele-modellen/mijn-taken/v0.1/openapi.yaml
+  interactieservicesApi:
+    name: interactieservicesApi
+    url: ../../../specificaties/interactieservices-api/v0.1/openapi.yaml
+  upstreamSchermdocumentatie:
+    name: VNG-Realisatie/mijn-taken-api docs/schermen
+    url: https://github.com/VNG-Realisatie/mijn-taken-api/tree/main/docs/schermen
+  nlDesignSystemDiscussion:
+    name: Detail- en Subpagina - Zaak - Mijn omgevingen
+    url: https://github.com/orgs/nl-design-system/discussions/396
+
+channel:
+  type: mijnomgeving
+  variant: mijn-omgeving
+  description: >
+    Ingelogde omgeving waarin inwoners en ondernemers hun taken in context
+    kunnen raadplegen en uitvoeren.
+
+screens:
+  - screenId: SCR-TAKEN-IN-CONTEXT
+    title: Taken in context
+    status: concept
+    flowId: mijnTaken.contextZoeken
+    secondaryFlowIds:
+      - mijnTaken.taakRaadplegen
+      - mijnTaken.taakUitvoeren
+    purpose: >
+      Toon taken binnen de context van een zaak, product of ander object en toon
+      het detail van de geselecteerde taak zonder apart navigatiescherm.
+    upstream:
+      documentUrl: https://github.com/VNG-Realisatie/mijn-taken-api/blob/main/docs/schermen/taken-in-context.md
+      screenIdPattern: SCR-<ONDERWERP>
+    visualReferences:
+      - type: storybook-iframe
+        role: render-source
+        title: Taak in context schermvoorbeeld
+        url: https://nl-design-system.github.io/mijn-services/iframe.html?id=mijn-omgeving-mijnzaken-detailpagina--default&viewMode=story
+        note: >
+          Storybook is de bron voor reproduceerbare screenshots. De mapping en
+          annotaties blijven in dit schermprofiel staan.
+      - type: screenshot
+        role: stable-documentation-snapshot
+        scenario: web-large-content
+        asset: /img/mijn-services/schermen/mijn-omgeving/scr-taken-in-context-web-large.png
+        source:
+          type: storybook
+          visualReference: Taak in context schermvoorbeeld
+          viewport:
+            width: 1440
+            height: 1024
+          capturedAt: null
+          sourceCommit: null
+        note: >
+          Vastgelegde web-large snapshot. Annotaties uit dit profiel kunnen op
+          deze screenshot worden gerenderd.
+    designContext:
+      - type: github-discussion
+        role: pattern-context
+        title: Detail- en Subpagina - Zaak - Mijn omgevingen
+        url: https://github.com/orgs/nl-design-system/discussions/396
+        note: >
+          Context voor varianten, minimale inhoud en onderzoeksvragen rond
+          detailpagina's in mijnomgevingen. Niet de renderbron voor screenshots.
+    states:
+      - loading
+      - content
+      - empty
+      - error
+      - taskSelected
+      - redirectedToProvider
+    context:
+      entryPoints:
+        - source: zaak-product-of-dossier
+          description: De gebruiker opent het scherm vanuit een bovenliggend object.
+        - source: portaalwissel-mijnoverheid
+          description: >
+            De gebruiker komt via herauthenticatie binnen met een specifieke taak
+            al geselecteerd.
+      requestContext:
+        klantId: authenticatiecontext
+        contextId: urn van zaak, product of dossier
+        include:
+          - taken
+    operations:
+      - operationId: interactieservicesApi.zoekContext
+        method: POST
+        path: /context/zoek
+        trigger: Pagina laden
+        purpose: Taken ophalen die relevant zijn binnen de huidige context.
+        request:
+          body:
+            klantId: $auth.subject
+            contextId: $screen.context.contextId
+            include:
+              - taken
+        responseUse:
+          - target: lijstpaneel.taken
+            expression: $response.body#/taken
+            description: Takenlijst links in het scherm.
+      - operationId: interactieservicesApi.retrieveTaak
+        method: GET
+        path: /taken/{uuid}
+        trigger: Taak selecteren of openen via deeplink
+        purpose: Detailgegevens ophalen voor de geselecteerde taak.
+        parameters:
+          uuid: $screen.selection.taak.uuid
+        responseUse:
+          - target: detailpaneel.taak
+            expression: $response.body#/
+            description: Detailpaneel rechts in het scherm.
+          - target: detailpaneel.uitvoering
+            expression: $response.body#/uitvoering
+            description: Bepaalt welke uitvoeractie of redirect mogelijk is.
+    annotations:
+      - annotationId: C.2
+        target: lijstpaneel.titel
+        label: Taak selecteren in lijst
+        interaction: Klik op rij
+        operationId: interactieservicesApi.retrieveTaak
+        result: >
+          Detailpaneel toont de geselecteerde taak. Bij instap via
+          portaalwissel kan de taak al voorgeselecteerd zijn.
+        position:
+          x: 25%
+          y: 45%
+      - annotationId: C.4
+        target: navigatie.terug
+        label: Terug naar context
+        interaction: Klik
+        result: Navigeert terug naar het bovenliggende object via de return-URL.
+      - annotationId: C.5
+        target: detailpaneel.actie.afronden
+        label: Afronden
+        interaction: Klik met bevestiging
+        result: >
+          Navigeert naar de uitvoerlocatie van de provider. De provider handelt
+          de taak af en wijzigt de status.
+        externalAction:
+          type: redirect
+          urlExpression: taak.uitvoering.canonicalUrl
+        position:
+          x: 72%
+          y: 38%
+      - annotationId: C.8
+        target: detailpaneel.actie.uitvoeren
+        label: Uitvoeren
+        interaction: Klik
+        result: >
+          Navigeert naar SCR-TAAK-UITVOEREN als lokale uitvoering mogelijk is;
+          anders volgt redirect naar de provider.
+        nextScreenIds:
+          - SCR-TAAK-UITVOEREN
+      - annotationId: C.9
+        target: detailpaneel.actie.betalen
+        label: Betalen
+        interaction: Klik
+        result: Redirect naar de betaalprovider.
+        externalAction:
+          type: redirect
+          urlExpression: taak.uitvoering.canonicalUrl
+    portalVariants:
+      - variant: mijn-overheid
+        description: >
+          Taken in zaakcontext kunnen deels in MijnOverheid worden uitgevoerd.
+          Niet ondersteunde uitvoeringen starten een portaalwissel naar de lokale
+          omgeving.
+        executionSupport:
+          supportedExamples:
+            - betaling
+            - bestandsupload
+          unsupportedBehaviour: portaalwissel via SCR-DIGID-EH
+      - variant: lokale-omgeving
+        description: >
+          Alle taaktypen worden door de lokale omgeving ondersteund of naar de
+          juiste provider doorgestuurd.
+        executionSupport:
+          unsupportedBehaviour: directe redirect naar provider indien lokale uitvoering ontbreekt
+    useCases:
+      - UC-01 Taken raadplegen
+      - UC-02 Taak afhandelen

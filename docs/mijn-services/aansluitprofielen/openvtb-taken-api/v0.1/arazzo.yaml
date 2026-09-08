@@ -1,0 +1,96 @@
+arazzo: 1.1.0
+info:
+  title: Aansluitprofiel OpenVTB Taken API
+  summary: Workflowmapping voor OpenVTB Taken API naar InteractieServices API.
+  version: 0.1.0
+sourceDescriptions:
+  - name: mijnTakenFunctioneelModel
+    url: ../../../specificaties/functionele-modellen/mijn-taken/v0.1/openapi.yaml
+    type: openapi
+  - name: interactieservicesApi
+    url: ../../../specificaties/interactieservices-api/v0.1/openapi.yaml
+    type: openapi
+  - name: openvtbTakenApi
+    url: ./openapi.yaml
+    type: openapi
+components:
+  x-mijnservices-valueMappings:
+    openvtbTaakStatusNaarMijnTakenStatus:
+      open: open
+      uitgevoerd: afgerond
+      verwerkt: afgerond
+      afgebroken: geannuleerd
+      niet_uitgevoerd: geannuleerd
+workflows:
+  - workflowId: openvtbTakenApi.zoekContextTaken
+    summary: Vul taken in zoekContext vanuit OpenVTB Taken API.
+    description: |
+      Deze workflow beschrijft hoe taken uit de OpenVTB Taken API kunnen worden
+      opgehaald om het taken-deel van de InteractieServices-operatie zoekContext
+      te vullen.
+    x-mijnservices-targetOperationId: interactieservicesApi.zoekContext
+    x-mijnservices-flowId: mijnTaken.contextZoeken
+    x-mijnservices-status: ontwerp
+    steps:
+      - stepId: listExterneTaken
+        description:
+          Haal generieke taken op die als taken in de contextresponse kunnen
+          worden aangeboden.
+        operationId: externetakenList
+
+  - workflowId: openvtbTakenApi.raadpleegTaak
+    summary: Raadpleeg een taak vanuit OpenVTB Taken API.
+    description: |
+      Deze workflow beschrijft hoe een taak via de generieke externe-takenresource
+      uit de OpenVTB Taken API wordt opgehaald. De response is polymorf: het veld
+      `taakSoort` bepaalt of het detail een betaaltaak, urltaak of formuliertaak is.
+    x-mijnservices-targetOperationId: interactieservicesApi.retrieveTaak
+    x-mijnservices-flowId: mijnTaken.taakRaadplegen
+    x-mijnservices-status: ontwerp
+    x-mijnservices-domainObject: mijnTakenFunctioneelModel.Taak
+    x-mijnservices-valueMappings:
+      taak.status: openvtbTaakStatusNaarMijnTakenStatus
+    inputs:
+      type: object
+      required:
+        - uuid
+      properties:
+        uuid:
+          type: string
+          format: uuid
+          description: Identificatie van de taak die wordt geraadpleegd.
+    steps:
+      - stepId: retrieveTaak
+        description:
+          Haal de generieke taak op die als taakdetail kan worden aangeboden.
+        operationId: externetakenRetrieve
+        parameters:
+          - name: uuid
+            in: path
+            value: $inputs.uuid
+        successCriteria:
+          - condition: $statusCode == 200
+        outputs:
+          uuid: $response.body#/uuid
+          titel: $response.body#/titel
+          toelichting: $response.body#/toelichting
+          taakStatus: $response.body#/status
+          einddatumHandelingsTermijn: $response.body#/einddatumHandelingsTermijn
+          contextUrn: $response.body#/isGerelateerdAan/0/urn
+          handelingsPerspectief: $response.body#/handelingsPerspectief
+          url: $response.body#/url
+          taakSoort: $response.body#/taakSoort
+    outputs:
+      taak.uuid: $steps.retrieveTaak.outputs.uuid
+      taak.titel.nl: $steps.retrieveTaak.outputs.titel
+      taak.toelichting.nl: $steps.retrieveTaak.outputs.toelichting
+      taak.status:
+        context: $components.x-mijnservices-valueMappings.openvtbTaakStatusNaarMijnTakenStatus
+        selector: "$.['{$steps.retrieveTaak.outputs.taakStatus}']"
+        type: jsonpath
+      taak.deadline: $steps.retrieveTaak.outputs.einddatumHandelingsTermijn
+      taak.context.urn: $steps.retrieveTaak.outputs.contextUrn
+      taak.uitvoering.type: $steps.retrieveTaak.outputs.handelingsPerspectief
+      taak.uitvoering.fallbackUrl: $steps.retrieveTaak.outputs.url
+      source.taakSoort: $steps.retrieveTaak.outputs.taakSoort
+      source.einddatumHandelingsTermijn: $steps.retrieveTaak.outputs.einddatumHandelingsTermijn

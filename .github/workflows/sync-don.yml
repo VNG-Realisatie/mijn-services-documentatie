@@ -1,0 +1,41 @@
+name: Sync to DON Delivery Branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  export-don:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build DON export bundle
+        run: pnpm export:don
+
+      - name: Deploy to don-delivery branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/don
+          publish_branch: don-delivery
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "sync: update DON delivery bundle [skip ci]"
