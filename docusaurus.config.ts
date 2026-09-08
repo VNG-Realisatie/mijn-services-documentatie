@@ -12,7 +12,7 @@ const config: Config = {
   },
   themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
   title: 'MijnServices Documentatie',
-  tagline: 'Standaarden en interactielaag voor overheidsdienstverlening',
+  tagline: 'Ontwikkelaarsportaal van de Nederlandse overheid',
   favicon: 'img/logo-don.svg',
   customFields: {
     siteName: 'developer.overheid.nl',
