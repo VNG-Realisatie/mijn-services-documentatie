@@ -6,8 +6,7 @@ sidebar_label: Interactie met de overheid
 # Interactie met de overheid
 
 MijnServices standaardiseert niet op één kanaal of één bronsysteem, maar op de
-interactie daartussen: wat inwoners, ondernemers en medewerkers willen weten,
-doen, volgen of beheren.
+interactie daartussen: wat inwoners en ondernemers willen weten, doen of volgen.
 
 ## Generieke klantroute
 
