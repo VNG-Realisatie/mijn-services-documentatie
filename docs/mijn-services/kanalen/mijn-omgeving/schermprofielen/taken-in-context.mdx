@@ -3,6 +3,8 @@ sidebar_position: 1
 sidebar_label: Taken in context
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <style>{`
 .screen-profile-summary {
   max-width: 52rem;
@@ -110,11 +112,11 @@ sidebar_label: Taken in context
 
 # Schermprofiel: Taken in context
 
-<p className="screen-profile-summary">
+<div className="screen-profile-summary">
   Deze pagina maakt het schermprofiel visueel: de snapshot komt uit Storybook,
   de callouts komen uit de annotaties in het profiel. Zo kunnen we sneller zien
   of de interacties op de juiste plek zitten voordat we de YAML verder verfijnen.
-</p>
+</div>
 
 <div className="screen-profile-meta" aria-label="Schermprofiel metadata">
   <div className="screen-profile-meta__item">
@@ -139,7 +141,7 @@ sidebar_label: Taken in context
   <div className="screen-profile-shot__viewport">
     <div className="screen-profile-shot__canvas">
       <img
-        src="/img/mijn-services/schermen/mijn-omgeving/scr-taken-in-context-web-large.png"
+        src={useBaseUrl("/img/mijn-services/schermen/mijn-omgeving/scr-taken-in-context-web-large.png")}
         alt="Web-large screenshot van het scherm Taken in context in een mijnomgeving."
       />
       <a className="screen-profile-pin screen-profile-pin--c2" href="#annotatie-c2" aria-label="Annotatie C.2: taak selecteren in lijst">

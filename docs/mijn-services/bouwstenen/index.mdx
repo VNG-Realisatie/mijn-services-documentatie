@@ -3,6 +3,7 @@ sidebar_position: 3
 ---
 
 import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import {
   useCurrentSidebarSiblings,
   filterDocCardListItems,
@@ -13,6 +14,7 @@ import styles from "@site/src/theme/DocCard/styles.module.css";
 export const BouwsteenCard = ({ item }) => {
   const doc = useDocById(item.docId ?? undefined);
   const description = item.description ?? doc?.description;
+  const iconUrl = useBaseUrl(item.customProps?.icon);
   return (
     <article
       className="col col--6"
@@ -25,7 +27,7 @@ export const BouwsteenCard = ({ item }) => {
         <h3 className={styles.cardTitle}>
           {item.customProps?.icon && (
             <img
-              src={item.customProps.icon}
+              src={iconUrl}
               className={styles.cardIcon}
               style={{ objectFit: "contain" }}
               alt=""
