@@ -19,7 +19,7 @@ Schermen worden geïdentificeerd met het patroon `SCR-<ONDERWERP>`. IDs zijn sta
 | ID                     | Scherm                                                                      |
 | :--------------------- | :-------------------------------------------------------------------------- |
 | `SCR-RECENT`           | [Recent](./recent.md)                                                       |
-| `SCR-MIJN-TAKEN`       | [Mijn taken](./mijn-taken.md)                                               |
+| `SCR-MIJN-TAKEN`       | [Mijn taken](./mijn-taken.mdx)                                              |
 | `SCR-TAKEN-IN-CONTEXT` | [Taken in context](./taken-in-context.mdx)                                  |
 | `SCR-TAAK-UITVOEREN`   | [Taak uitvoeren](./taak-uitvoeren.md)                                       |
 | `SCR-DIGID-EH`         | [DigiD eenvoudige herauthenticatie](./digid-eenvoudige-herauthenticatie.md) |

@@ -1,0 +1,208 @@
+---
+sidebar_position: 3
+---
+
+---
+sidebar_position: 3
+sidebar_label: Mijn taken
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+<style>{`
+.screen-profile-summary {
+  max-width: 52rem;
+}
+
+.screen-profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.screen-profile-meta__item {
+  border: 1px solid var(--don-grijs-300);
+  border-radius: 0.25rem;
+  background: var(--don-grijs-50);
+  padding: 0.5rem 0.75rem;
+}
+
+.screen-profile-meta__label {
+  display: block;
+  color: var(--don-grijs-600);
+  font-size: 0.875rem;
+}
+
+.screen-profile-shot {
+  margin-block: 2rem;
+}
+
+.screen-profile-shot__viewport {
+  position: relative;
+  overflow-x: auto;
+  border: 1px solid var(--don-grijs-300);
+  background: white;
+}
+
+.screen-profile-shot__canvas {
+  position: relative;
+  min-width: 58rem;
+}
+
+.screen-profile-shot__canvas img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.screen-profile-pin {
+  position: absolute;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border: 3px solid white;
+  border-radius: 999px;
+  background: var(--don-robijnrood-500);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.75rem rgb(15 23 42 / 28%);
+  transform: translate(-50%, -50%);
+}
+
+.screen-profile-pin__label {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+}
+
+.screen-profile-pin:hover,
+.screen-profile-pin:focus {
+  color: white;
+  outline: 3px solid var(--don-lichtblauw-500);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.screen-profile-pin--l1 {
+  inset-inline-start: 10%;
+  inset-block-start: 10%;
+}
+
+.screen-profile-pin--l2 {
+  inset-inline-start: 68%;
+  inset-block-start: 42%;
+}
+
+.screen-profile-shot figcaption {
+  color: var(--don-grijs-700);
+  font-size: 0.95rem;
+  margin-block-start: 0.75rem;
+}
+
+.screen-profile-interactions td:first-child {
+  white-space: nowrap;
+  font-weight: 700;
+}
+`}</style>
+
+# Schermprofiel: Mijn taken [SCR-MIJN-TAKEN]
+
+<div className="screen-profile-summary">
+  Overzicht van de aan de klant (burger of ondernemer) toegewezen taken binnen de MijnOmgeving. De snapshot komt uit Storybook, de callouts komen uit de annotaties in het schermprofiel.
+</div>
+
+<div className="screen-profile-meta" aria-label="Schermprofiel metadata">
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Scherm</span>
+    <strong>SCR-MIJN-TAKEN</strong>
+  </div>
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Scenario</span>
+    <strong>web-large-content</strong>
+  </div>
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Viewport</span>
+    <strong>1440 x 1024</strong>
+  </div>
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Flow</span>
+    <strong>mijnTaken.takenRaadplegen</strong>
+  </div>
+</div>
+
+<figure className="screen-profile-shot">
+  <div className="screen-profile-shot__viewport">
+    <div className="screen-profile-shot__canvas">
+      <img
+        src={useBaseUrl(
+          "/img/mijn-services/schermen/mijn-omgeving/scr-mijn-taken-web-large.png",
+        )}
+        alt="Web-large screenshot van het takenoverzicht in een mijnomgeving."
+      />
+      <a
+        className="screen-profile-pin screen-profile-pin--l1"
+        href="#annotatie-l1"
+        aria-label="Annotatie L.1: Paginatitel Mijn taken"
+      >
+        <span className="screen-profile-pin__label">L.1</span>
+      </a>
+      <a
+        className="screen-profile-pin screen-profile-pin--l2"
+        href="#annotatie-l2"
+        aria-label="Annotatie L.2: Taak selecteren"
+      >
+        <span className="screen-profile-pin__label">L.2</span>
+      </a>
+    </div>
+  </div>
+  <figcaption>
+    Snapshot gegenereerd vanuit Storybook via Playwright. Pinnen gebruiken de posities uit het schermprofiel.
+  </figcaption>
+</figure>
+
+## Zichtbare interacties
+
+<table className="screen-profile-interactions">
+  <thead>
+    <tr>
+      <th>Annotatie</th>
+      <th>Element</th>
+      <th>Interactie</th>
+      <th>API-koppeling</th>
+      <th>Resultaat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="annotatie-l1">
+      <td>L.1</td>
+      <td>Paginatitel</td>
+      <td>Pagina laden</td>
+      <td>
+        <code>POST /context/zoek</code>
+      </td>
+      <td>Lijst van taken voor de ingelogde klant wordt opgehaald en getoond.</td>
+    </tr>
+    <tr id="annotatie-l2">
+      <td>L.2</td>
+      <td>Taak in lijst</td>
+      <td>Klik op rij</td>
+      <td>—</td>
+      <td>Opent taak in context (<code>SCR-TAKEN-IN-CONTEXT</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+## Gebruikt in use cases
+
+- [UC-01 Taken raadplegen](../../../specificaties/interactieservices-api/use-cases/uc-01-taken-raadplegen.md)
+- [UC-02 Taak afhandelen](../../../specificaties/interactieservices-api/use-cases/uc-02-taak-afhandelen.md)
+
+## Huidige situatie
+
+Dit scherm is op dit moment uitgewerkt voor de Lokale Omgeving (aangeboden door de dienstverlener). MijnOverheid toont taken niet als aparte lijst, maar verwerkt ze in een generiek "Recent"-overzicht ([`SCR-RECENT`](./recent.md)) op de landingspagina. De API-aanroep is hier gedocumenteerd zodat ook andere portalen in de toekomst een takenoverzicht kunnen aanbieden.
+
+Bron voor rendering:
+[Storybook - Takenoverzicht schermvoorbeeld](https://nl-design-system.github.io/mijn-services/iframe.html?id=mijn-omgeving-taken--default&viewMode=story).

@@ -15,7 +15,7 @@ sidebar_position: 3
 
 ## A1 — Hoofdflow
 
-1. Klant opent het portaal en komt op een scherm waar de eigen taken worden getoond — bijvoorbeeld [`SCR-MIJN-TAKEN`](../../../kanalen/mijn-omgeving/schermprofielen/mijn-taken.md) (een dedicated takenoverzicht) of [`SCR-RECENT`](../../../kanalen/mijn-omgeving/schermprofielen/recent.md) (een "Recent"-blok waarin taken naast andere activiteiten verschijnen).
+1. Klant opent het portaal en komt op een scherm waar de eigen taken worden getoond — bijvoorbeeld [`SCR-MIJN-TAKEN`](../../../kanalen/mijn-omgeving/schermprofielen/mijn-taken.mdx) (een dedicated takenoverzicht) of [`SCR-RECENT`](../../../kanalen/mijn-omgeving/schermprofielen/recent.md) (een "Recent"-blok waarin taken naast andere activiteiten verschijnen).
 2. Klant ziet de eigen openstaande taken met titel, status en eventueel vervaldatum.
 3. Klant klikt een taak aan en komt op [`SCR-TAKEN-IN-CONTEXT`](../../../kanalen/mijn-omgeving/schermprofielen/taken-in-context.mdx).
 4. Klant leest de toelichting van de context en de daarbij behorende taken.
