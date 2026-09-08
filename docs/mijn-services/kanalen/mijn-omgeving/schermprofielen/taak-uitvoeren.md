@@ -17,11 +17,11 @@ Een betaaltaak leidt altijd direct tot een redirect naar de betaalprovider, zond
 
 ## Instappaden
 
-| Vanaf                                                     | Portaal | Hoe                                                                                                                            |
-| :-------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------- |
-| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)          | LO      | Knop _Uitvoeren_ (interactie C.8) — direct, geen portaalwissel                                                                 |
-| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)          | MO      | Knop _Uitvoeren_ (C.8) — uitsluitend voor taken uitvoerbaar in MO (upload; formulieren nog uit te werken); binnen MijnOverheid |
-| [`SCR-DIGID-EH`](./digid-eenvoudige-herauthenticatie.md)  | LO      | Na succesvolle herauthenticatie (portaalwissel vanuit MO); deeplink opent direct de specifieke taak voor uitvoering            |
+| Vanaf                                                    | Portaal | Hoe                                                                                                                            |
+| :------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------- |
+| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)         | LO      | Knop _Uitvoeren_ (interactie C.8) — direct, geen portaalwissel                                                                 |
+| [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx)         | MO      | Knop _Uitvoeren_ (C.8) — uitsluitend voor taken uitvoerbaar in MO (upload; formulieren nog uit te werken); binnen MijnOverheid |
+| [`SCR-DIGID-EH`](./digid-eenvoudige-herauthenticatie.md) | LO      | Na succesvolle herauthenticatie (portaalwissel vanuit MO); deeplink opent direct de specifieke taak voor uitvoering            |
 
 ## Schermvoorbeeld
 

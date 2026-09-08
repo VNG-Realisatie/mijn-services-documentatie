@@ -91,11 +91,6 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: '',
-      logo: {
-        alt: 'developer.overheid.nl',
-        src: 'img/logo-don.svg',
-      },
       items: [
         {
           to: '/initiatieven',

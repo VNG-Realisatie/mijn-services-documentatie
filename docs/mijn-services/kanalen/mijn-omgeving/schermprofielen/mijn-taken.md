@@ -28,11 +28,11 @@ annotations={[
 Deze interactietabel is nog niet bijgewerkt op de huidige API en is een werkversie. Sommige verwijzingen kunnen achterlopen op het OpenAPI-contract.
 :::
 
-| ID      | Element             | Interactie   | Bedoeling / resultaat                          | API                                                                              |
-| :------ | :------------------ | :----------- | :--------------------------------------------- | :------------------------------------------------------------------------------- |
+| ID      | Element             | Interactie   | Bedoeling / resultaat                          | API                                                                                                                         |
+| :------ | :------------------ | :----------- | :--------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
 | **L.1** | Paginatitel         | Pagina laden | Lijst van taken voor de ingelogde klant        | [`POST /context/zoek`](../../../specificaties/interactieservices-api/referentie/zoek-context) (`klantId`, geen `contextId`) |
-| **L.2** | Kolom _Titel_       | Klik op rij  | Opent taak in context (`SCR-TAKEN-IN-CONTEXT`) | —                                                                                |
-| **L.3** | Kolom _Vervaldatum_ | Sorteren     | Lijst wordt gesorteerd op vervaldatum          | —                                                                                |
+| **L.2** | Kolom _Titel_       | Klik op rij  | Opent taak in context (`SCR-TAKEN-IN-CONTEXT`) | —                                                                                                                           |
+| **L.3** | Kolom _Vervaldatum_ | Sorteren     | Lijst wordt gesorteerd op vervaldatum          | —                                                                                                                           |
 
 ## Gebruikt in use cases
 

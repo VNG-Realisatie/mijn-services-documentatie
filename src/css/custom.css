@@ -187,6 +187,10 @@ html {
   padding: var(--ifm-navbar-item-padding-vertical) 0;
 }
 
+.navbar__brand:empty {
+  display: none;
+}
+
 .navbar__icon-link {
   line-height: 1;
 }
