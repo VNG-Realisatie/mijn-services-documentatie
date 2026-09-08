@@ -10,7 +10,7 @@ Tussenliggend scherm dat verschijnt tijdens een **portaalwissel van MijnOverheid
 
 Dit scherm is alleen van toepassing op taken die **niet uitvoerbaar zijn in MijnOverheid**. Taken die MijnOverheid wel zelf kan afhandelen (betaling, bestandsupload; later formulieren) doorlopen dit scherm niet.
 
-Voor de end-to-end flow waarin dit scherm voorkomt, zie het [Procesoverzicht](../procesoverzicht.md).
+Voor de end-to-end flow waarin dit scherm voorkomt, zie het [Procesoverzicht](../../../specificaties/interactieservices-api/procesoverzicht.md).
 
 ## Schermvoorbeeld
 
@@ -24,7 +24,7 @@ _Mockup nog toe te voegen._
 | :------- | :-------------------------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-- |
 | **EH.1** | DigiD-herauthenticatie knop | Klik        | Stuurt klant naar DigiD voor eenvoudige herauthenticatie; na succesvolle verificatie terugkeer naar de taak in het LO-portaal                                                            | —   |
 | **EH.2** | Terugkeer na authenticatie  | Automatisch | Het LO-portaal opent [`SCR-TAAK-UITVOEREN`](./taak-uitvoeren.md) via een deeplink naar de specifieke taak; de klant hoeft geen keuze te maken in een lijst en start direct met uitvoeren | —   |
-| **EH.3** | Annuleren                   | Klik        | Klant annuleert de portaalwissel; terugkeer naar het vorige scherm ([`SCR-RECENT`](./recent.md) of [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.md))                                      | —   |
+| **EH.3** | Annuleren                   | Klik        | Klant annuleert de portaalwissel; terugkeer naar het vorige scherm ([`SCR-RECENT`](./recent.md) of [`SCR-TAKEN-IN-CONTEXT`](./taken-in-context.mdx))                                     | —   |
 
 :::note[Geen directe API-aanroepen]
 Dit scherm verloopt via de DigiD-koppeling van het LO-portaal. De MijnTaken API wordt pas aangeroepen nadat de herauthenticatie is geslaagd en het LO-portaal de taak opent.
@@ -32,7 +32,7 @@ Dit scherm verloopt via de DigiD-koppeling van het LO-portaal. De MijnTaken API 
 
 ## Gebruikt in use cases
 
-- [UC-02 Taak afhandelen](../use-cases/uc-02-taak-afhandelen.md)
+- [UC-02 Taak afhandelen](../../../specificaties/interactieservices-api/use-cases/uc-02-taak-afhandelen.md)
 
 ## Verschillen per portaal
 

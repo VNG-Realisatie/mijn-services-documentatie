@@ -44,7 +44,7 @@ Niet alle interacties zijn bij elke taak aanwezig. U.2 en U.3 gelden voor upload
 
 ## Gebruikt in use cases
 
-- [UC-02 Taak afhandelen](../use-cases/uc-02-taak-afhandelen.md)
+- [UC-02 Taak afhandelen](../../../specificaties/interactieservices-api/use-cases/uc-02-taak-afhandelen.md)
 
 ## Verschillen per portaal
 

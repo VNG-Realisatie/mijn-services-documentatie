@@ -58,6 +58,18 @@ Een belangrijk publicatiekanaal voor MijnServices is de kennisbank van [develope
 
 ## Tooling
 
+### Scherm-snapshots ophalen (Playwright)
+
+Automatisch screenshots genereren vanuit Storybook op basis van de definities in `docs/mijn-services/kanalen/mijn-omgeving/schermprofielen/schermprofiel.yaml`:
+
+```bash
+pnpm capture:screens
+```
+
+Dit script (`scripts/capture-screen-snapshots.mjs`) bezoekt de Storybook render-bronnen met de juiste viewport, slaat stabiele PNG-snapshots op onder `static/img/mijn-services/schermen/` en werkt het `capture-manifest.json` bij.
+
+### Validatie van aansluitprofielen (Python)
+
 Voor het valideren van aansluitprofielen is aanvullende tooling aanwezig onder `tools/mijn-services/`:
 
 ```bash
