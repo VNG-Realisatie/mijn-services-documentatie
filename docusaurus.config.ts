@@ -83,7 +83,7 @@ const config: Config = {
           'mijn-taken': {
             specPath: 'specs/interactieservices.openapi.yaml',
             outputDir: 'api-docs',
-            downloadUrl: 'https://raw.githubusercontent.com/VNG-Realisatie/mijn-taken-api/main/specs/interactieservices.openapi.yaml',
+            downloadUrl: 'https://raw.githubusercontent.com/VNG-Realisatie/mijn-services-documentatie/main/specs/interactieservices.openapi.yaml',
             showExtensions: true,
             showSchemas: true,
             sidebarOptions: {
