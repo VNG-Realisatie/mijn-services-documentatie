@@ -28,6 +28,6 @@ Zie ook het [procesoverzicht](../../../specificaties/interactieservices-api/proc
 
 ## Huidige situatie
 
-De InteractieServices API is opgezet als kanaalonafhankelijk: elk portaal of kanaal kan de API aanroepen. Op dit moment is [`SCR-RECENT`](./recent.md) alleen uitgewerkt voor MijnOverheid, en valt [`SCR-MIJN-TAKEN`](./mijn-taken.md) onder de Lokale Omgeving. In beide gevallen is de API-aanroep gedocumenteerd, zodat ook een Lokale Omgeving in de toekomst een eigen recent-scherm kan bouwen.
+De InteractieServices API is opgezet als kanaalonafhankelijk: elk portaal of kanaal kan de API aanroepen. Op dit moment is [`SCR-RECENT`](./recent.md) alleen uitgewerkt voor MijnOverheid, en valt [`SCR-MIJN-TAKEN`](./mijn-taken.mdx) onder de Lokale Omgeving. In beide gevallen is de API-aanroep gedocumenteerd, zodat ook een Lokale Omgeving in de toekomst een eigen recent-scherm kan bouwen.
 
 Daarnaast is er een machineleesbaar [schermprofiel (YAML)](./schermprofiel.yaml) beschikbaar voor geautomatiseerde validatie en tooling.

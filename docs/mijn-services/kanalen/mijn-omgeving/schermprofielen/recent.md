@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # [SCR-RECENT] Recent
 
-Landingspagina met een "Recent"-blok. Taken verschijnen hier naast andere recente activiteiten zoals berichten en zaken. Er is geen aparte takenlijstpagina in dit portaal; daarvoor is [`SCR-MIJN-TAKEN`](./mijn-taken.md) bedoeld.
+Landingspagina met een "Recent"-blok. Taken verschijnen hier naast andere recente activiteiten zoals berichten en zaken. Er is geen aparte takenlijstpagina in dit portaal; daarvoor is [`SCR-MIJN-TAKEN`](./mijn-taken.mdx) bedoeld.
 
 ## Schermvoorbeeld
 
@@ -32,4 +32,4 @@ MijnOverheid beheert het "Recent"-overzicht intern. De integratie met de MijnTak
 
 ## Huidige situatie
 
-Dit scherm is op dit moment uitgewerkt voor MijnOverheid. Het "Recent"-blok toont niet alleen taken, maar ook andere open items zoals berichten en zaken. Een aparte takenlijstpagina zoals [`SCR-MIJN-TAKEN`](./mijn-taken.md) bestaat niet in dit portaal.
+Dit scherm is op dit moment uitgewerkt voor MijnOverheid. Het "Recent"-blok toont niet alleen taken, maar ook andere open items zoals berichten en zaken. Een aparte takenlijstpagina zoals [`SCR-MIJN-TAKEN`](./mijn-taken.mdx) bestaat niet in dit portaal.
