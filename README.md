@@ -4,41 +4,73 @@
 
 <hr/>
 
-# MijnTaken API
+# MijnServices Documentatie
 
-> **Concept** — deze specificatie is in ontwikkeling en kan wijzigen.
+> **Aanlever-repository** voor [developer.overheid.nl](https://developer.overheid.nl) (DON).
 
-De **MijnTaken API** is een conceptstandaard voor overheidsbrede klantinteractie, ontwikkeld als onderdeel van de MijnServices-bouwsteen. De API standaardiseert hoe portalen (zoals MijnOverheid en MijnOmgeving) taken tonen aan burgers en hen in staat stelt die taken uit te voeren — ongeacht welke organisatie de taak beheert.
+Deze repository bevat de specificaties, interactiepatronen, bouwstenen en kanaalprofielen van **MijnServices**: de interactielaag tussen kanalen (zoals MijnOmgevingen, KCC/balie en portalen) en uitvoerende systemen van gemeenten, Rijk en uitvoerders.
 
-## Kern
+## Doel van deze repository
 
-- **Uniform contract** — alle providers implementeren dezelfde interface; portalen hoeven niet te weten hoe een provider intern is georganiseerd.
-- **Additief model** — de response bevat alle beschikbare velden; portalen gebruiken wat ze ondersteunen en negeren onbekende velden. Providers en portalen kunnen onafhankelijk groeien.
-- **Uitvoering bij de bron** — taakdata verlaat de bronorganisatie niet structureel; portalen tonen, providers voeren uit.
+1. **Centrale uitwerking van MijnServices**: hier wordt samengewerkt aan de functionele modellen, OpenAPI-specificaties, schermprofielen en aansluitprofielen.
+2. **Aanlevering aan developer.overheid.nl**: de documentatie en assets worden vanuit deze repository klaargezet en via geautomatiseerde export (`pnpm export:don`) aangeleverd aan de kennisbank van DON.
+3. **Lokale Docusaurus preview**: een eigen Docusaurus-instantie met dezelfde look-and-feel en styling als developer.overheid.nl om wijzigingen direct interactief te valideren.
 
-## Uitvoeringsscenario's
+## Structuur van de documentatie
 
-Portalen kiezen per taak het hoogste scenario dat ze ondersteunen:
+De content staat onder `docs/mijn-services/` conform de indeling op developer.overheid.nl:
 
-1. **Portaalwissel** — doorsturen naar de provider via `canonicalUrl`
-2. **Type-specifieke call-to-action** — herkend type (bijv. betaling), doorsturen via `canonicalUrl`
-3. **Lokale uitvoering** — uitvoeringsdefinitie aanwezig, taak wordt binnen het portaal afgehandeld
+- **[Bouwstenen](docs/mijn-services/bouwstenen)** — De 8 MijnServices-bouwstenen: MijnTaken, MijnZaken, MijnAgenda, MijnBerichten, MijnContactmomenten, MijnGesprekken, MijnProducten en MijnProfiel.
+- **[Interactiepatronen](docs/mijn-services/interactie-patronen)** — Generieke klantreizen en interactietypen.
+- **[Kanalen](docs/mijn-services/kanalen)** — Schermprofielen en functioneel ontwerp voor MijnOmgevingen (in lijn met NL Design System).
+- **[Specificaties](docs/mijn-services/specificaties)** — Functionele modellen en de **Interactieservices API** (inclusief use-cases, schermbeschrijvingen en OpenAPI-referentie).
+- **[Aansluitprofielen](docs/mijn-services/aansluitprofielen)** — Koppelingen tussen de interactielaag en bronsystemen (bijv. Open VTB, ZGW API, NotifyNL).
 
-## Documentatie
+## Ontwikkeling & Lokaal draaien
 
-Zie de volledige documentatie op [vng-realisatie.github.io/mijn-taken-api](https://vng-realisatie.github.io/mijn-taken-api):
+Installeer de afhankelijkheden en start de lokale Docusaurus-omgeving:
 
-- [Uitgangspunten](https://vng-realisatie.github.io/mijn-taken-api/docs/uitgangspunten) — ontwerpkeuzes en compatibiliteitsmodel
-- [Use cases](https://vng-realisatie.github.io/mijn-taken-api/docs/use-cases) — UC-01 Taken raadplegen, UC-02 Taak afhandelen
-- [Schermen](https://vng-realisatie.github.io/mijn-taken-api/docs/schermen) — schermflow per portaal en taaktype
-- [API-referentie](https://vng-realisatie.github.io/mijn-taken-api/api/mijntaken-api) — OpenAPI-specificatie
+```bash
+pnpm install
+pnpm start
+```
 
-## Gerelateerd
+De documentatie is vervolgens lokaal te bekijken op `http://localhost:3000`.
 
-| Naam                                 | Link                                                                                                                                                           |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Open VTB — Taken API                 | [API-documentatie](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/maykinmedia/open-vtb/main/src/openvtb/components/taken/openapi.yaml) |
-| Externe klanttaak binnen Objects API | [Documentatie](https://dienstverleningsplatform.gitbook.io/platform-generieke-dienstverlening-public/patronen/taken/externe-klanttaak)                         |
+### Bouwen & Validatie
+
+```bash
+# Typecheck
+pnpm typecheck
+
+# Controleer API specificatie
+pnpm lint:api
+
+# Volledige Docusaurus build
+pnpm build
+```
+
+## Aanleveren aan developer.overheid.nl (Export)
+
+Deze repository ondersteunt een geautomatiseerde exportflow naar DON:
+
+- **Drafts uitsluiten**: Pagina's met `draft: true` in hun YAML frontmatter worden bij export automatisch overgeslagen.
+- **Export genereren**:
+  ```bash
+  pnpm export:don
+  ```
+  Dit script (`scripts/export-don.mjs`) bundelt uitsluitend de niet-draft documentatie (`docs/mijn-services/`) en de bijbehorende statische assets (`static/img/mijn-services/`) in `dist/don/`.
+- **Automatische distributie**: Bij elke push naar `main` zorgt de GitHub Actions workflow `.github/workflows/sync-don.yml` ervoor dat de kant-en-klare DON-bundel gepubliceerd wordt naar de branch `don-delivery`.
+
+## Python Tooling
+
+Voor validatie van aansluitprofielen is aanvullende tooling beschikbaar onder `tools/mijn-services/`:
+
+```bash
+cd tools/mijn-services
+poetry install
+poetry run mijn-services validate
+```
 
 ## Licentie
 
