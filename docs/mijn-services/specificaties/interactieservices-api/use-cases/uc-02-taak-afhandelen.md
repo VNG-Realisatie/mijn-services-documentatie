@@ -26,7 +26,7 @@ sidebar_position: 3
 
 - **A2 — Taak is al afgerond:** de knop _Afronden_ ([C.5](../schermen/taken-in-context.md#interacties--detailpaneel)) is niet zichtbaar; klant kan alleen raadplegen.
 - **A3 — Conflict bij afronden:** de API geeft `409` (bv. status inmiddels gewijzigd door backend). UI toont een melding en herlaadt de taak.
-- **A4 — Taken in context:** de klant benadert [`SCR-TAKEN-IN-CONTEXT`](../schermen/taken-in-context.md) direct vanuit een zaak, product of ander object (bijv. via een deeplink vanuit MijnZaken of een erfpachtportaal). De lijst is vooraf gefilterd op het gerelateerde object via [`POST /context/zoek`](/api/zoek-context) met `contextId`.
+- **A4 — Taken in context:** de klant benadert [`SCR-TAKEN-IN-CONTEXT`](../schermen/taken-in-context.md) direct vanuit een zaak, product of ander object (bijv. via een deeplink vanuit MijnZaken of een erfpachtportaal). De lijst is vooraf gefilterd op het gerelateerde object via [`POST /context/zoek`](../referentie/zoek-context) met `contextId`.
 - **A5 — Taak vereist betaling:** in plaats van _Afronden_ wordt de klant via een redirect doorgestuurd naar het portaal van de lokale overheid, dat een betaalprovider aanroept. Na geslaagde betaling werkt de provider de taakstatus zelf bij en redirect de klant terug naar MijnOverheid/MijnOmgeving met een statusmelding. Het portaal herlaadt de taak via de API om de actuele status te tonen.
 
   ```mermaid

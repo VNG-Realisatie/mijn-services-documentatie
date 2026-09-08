@@ -23,7 +23,7 @@ sidebar_position: 2
 ## Alternatieve flows
 
 - **R2 — Geen taken beschikbaar:** het overzicht toont een lege-staat melding; er zijn geen rijen om op te klikken.
-- **R3 — Taken in context:** de klant benadert [`SCR-TAKEN-IN-CONTEXT`](../schermen/taken-in-context.md) vanuit een zaak, product of ander object (bijv. via een deeplink vanuit MijnZaken of een erfpachtportaal). De lijst is vooraf gefilterd op het gerelateerde object via [`POST /context/zoek`](/api/zoek-context) met `contextId`. De klant ziet alleen de taken die bij dat object horen en kan ze raadplegen en afhandelen zonder het overzicht van alle taken te zien.
+- **R3 — Taken in context:** de klant benadert [`SCR-TAKEN-IN-CONTEXT`](../schermen/taken-in-context.md) vanuit een zaak, product of ander object (bijv. via een deeplink vanuit MijnZaken of een erfpachtportaal). De lijst is vooraf gefilterd op het gerelateerde object via [`POST /context/zoek`](../referentie/zoek-context) met `contextId`. De klant ziet alleen de taken die bij dat object horen en kan ze raadplegen en afhandelen zonder het overzicht van alle taken te zien.
 
 ## Resultaat
 

@@ -8,7 +8,7 @@ sidebar_position: 3
 Dit document is nog in ontwikkeling en kan wijzigen.
 :::
 
-Dit document beschrijft de uitwerking van de [principes uit de API-introductie](/api/mijntaken-api): hoe het contract zich gedraagt, welke afwegingen ten grondslag liggen aan de structuur van het `Taak`-object, en welke scenario's een portaal kan ondersteunen.
+Dit document beschrijft de uitwerking van de [principes uit de API-introductie](./referentie/mijntaken-api): hoe het contract zich gedraagt, welke afwegingen ten grondslag liggen aan de structuur van het `Taak`-object, en welke scenario's een portaal kan ondersteunen.
 
 ## Uitwerking
 

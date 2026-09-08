@@ -50,10 +50,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          docItemComponent: '@theme/ApiItem',
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/vng-realisatie/mijn-services-documentatie/tree/main/',
         },
         blog: false,
         theme: {
@@ -65,29 +64,18 @@ const config: Config = {
 
   plugins: [
     [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'api',
-        path: 'api-docs',
-        routeBasePath: 'api',
-        sidebarPath: './api-sidebars.ts',
-        docItemComponent: '@theme/ApiItem',
-      },
-    ],
-    [
       'docusaurus-plugin-openapi-docs',
       {
         id: 'openapi',
-        docsPluginId: 'api',
+        docsPluginId: 'classic',
         config: {
-          'mijn-taken': {
-            specPath: 'specs/interactieservices.openapi.yaml',
-            outputDir: 'api-docs',
-            downloadUrl: 'https://raw.githubusercontent.com/VNG-Realisatie/mijn-services-documentatie/main/specs/interactieservices.openapi.yaml',
-            showExtensions: true,
+          interactieservicesApi: {
+            specPath: 'docs/mijn-services/specificaties/interactieservices-api/v0.1/openapi.yaml',
+            outputDir: 'docs/mijn-services/specificaties/interactieservices-api/referentie',
             showSchemas: true,
             sidebarOptions: {
               groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
             },
           } satisfies OpenApiPlugin.Options,
         },
@@ -109,17 +97,16 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
+          type: 'dropdown',
+          label: 'Initiatieven',
           position: 'left',
-          label: 'Kennisbank & Services',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'apiSidebar',
-          docsPluginId: 'api',
-          position: 'left',
-          label: 'Interactieservices API',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'docsSidebar',
+              label: 'MijnServices',
+            },
+          ],
         },
         {
           href: 'https://github.com/vng-realisatie/mijn-services-documentatie',

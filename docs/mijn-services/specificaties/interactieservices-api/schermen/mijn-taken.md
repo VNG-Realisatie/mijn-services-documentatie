@@ -30,7 +30,7 @@ Deze interactietabel is nog niet bijgewerkt op de huidige API en is een werkvers
 
 | ID      | Element             | Interactie   | Bedoeling / resultaat                          | API                                                                     |
 | :------ | :------------------ | :----------- | :--------------------------------------------- | :---------------------------------------------------------------------- |
-| **L.1** | Paginatitel         | Pagina laden | Lijst van taken voor de ingelogde klant        | [`POST /context/zoek`](/api/zoek-context) (`klantId`, geen `contextId`) |
+| **L.1** | Paginatitel         | Pagina laden | Lijst van taken voor de ingelogde klant        | [`POST /context/zoek`](../referentie/zoek-context) (`klantId`, geen `contextId`) |
 | **L.2** | Kolom _Titel_       | Klik op rij  | Opent taak in context (`SCR-TAKEN-IN-CONTEXT`) | —                                                                       |
 | **L.3** | Kolom _Vervaldatum_ | Sorteren     | Lijst wordt gesorteerd op vervaldatum          | —                                                                       |
 
