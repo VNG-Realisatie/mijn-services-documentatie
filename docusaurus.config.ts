@@ -175,7 +175,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Aanlever-repository voor developer.overheid.nl • VNG Realisatie`,
+      copyright: `MijnServices • VNG Realisatie`,
     },
     prism: {
       theme: prismThemes.github,

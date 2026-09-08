@@ -6,65 +6,59 @@
 
 # MijnServices Documentatie
 
-> **Aanlever-repository** voor [developer.overheid.nl](https://developer.overheid.nl) (DON).
+Deze repository bevat de documentatie, standaarden, specificaties en architectuur voor **MijnServices**: de interactielaag tussen overheidsbrede kanalen (zoals MijnOmgevingen, portalen, KCC/balie) en de uitvoerende systemen en registraties van gemeenten, Rijk en uitvoeringsorganisaties.
 
-Deze repository bevat de specificaties, interactiepatronen, bouwstenen en kanaalprofielen van **MijnServices**: de interactielaag tussen kanalen (zoals MijnOmgevingen, KCC/balie en portalen) en uitvoerende systemen van gemeenten, Rijk en uitvoerders.
+Het doel van MijnServices is om publieke dienstverlening begrijpelijk, proactief en betrouwbaar te maken door te standaardiseren op wat iemand wil weten, doen, volgen of beheren — over kanalen en organisaties heen.
 
-## Doel van deze repository
+## Inhoud van de documentatie
 
-1. **Centrale uitwerking van MijnServices**: hier wordt samengewerkt aan de functionele modellen, OpenAPI-specificaties, schermprofielen en aansluitprofielen.
-2. **Aanlevering aan developer.overheid.nl**: de documentatie en assets worden vanuit deze repository klaargezet en via geautomatiseerde export (`pnpm export:don`) aangeleverd aan de kennisbank van DON.
-3. **Lokale Docusaurus preview**: een eigen Docusaurus-instantie met dezelfde look-and-feel en styling als developer.overheid.nl om wijzigingen direct interactief te valideren.
-
-## Structuur van de documentatie
-
-De content staat onder `docs/mijn-services/` conform de indeling op developer.overheid.nl:
+De documentatie is onderverdeeld in de volgende onderdelen:
 
 - **[Bouwstenen](docs/mijn-services/bouwstenen)** — De 8 MijnServices-bouwstenen: MijnTaken, MijnZaken, MijnAgenda, MijnBerichten, MijnContactmomenten, MijnGesprekken, MijnProducten en MijnProfiel.
-- **[Interactiepatronen](docs/mijn-services/interactie-patronen)** — Generieke klantreizen en interactietypen.
-- **[Kanalen](docs/mijn-services/kanalen)** — Schermprofielen en functioneel ontwerp voor MijnOmgevingen (in lijn met NL Design System).
-- **[Specificaties](docs/mijn-services/specificaties)** — Functionele modellen en de **Interactieservices API** (inclusief use-cases, schermbeschrijvingen en OpenAPI-referentie).
-- **[Aansluitprofielen](docs/mijn-services/aansluitprofielen)** — Koppelingen tussen de interactielaag en bronsystemen (bijv. Open VTB, ZGW API, NotifyNL).
+- **[Interactiepatronen](docs/mijn-services/interactie-patronen)** — Generieke klantreizen, interactietypen en ontwerpprincipes.
+- **[Kanalen](docs/mijn-services/kanalen)** — Schermprofielen en functioneel ontwerp voor MijnOmgevingen (in lijn met het NL Design System).
+- **[Specificaties](docs/mijn-services/specificaties)** — Functionele modellen en de **Interactieservices API** (inclusief use-cases, schermbeschrijvingen en interactieve API-referentie).
+- **[Aansluitprofielen](docs/mijn-services/aansluitprofielen)** — Gestandaardiseerde koppelingen tussen de interactielaag en bronsystemen (zoals Open VTB, ZGW API, NotifyNL).
 
-## Ontwikkeling & Lokaal draaien
+## Lokale documentatiesite
 
-Installeer de afhankelijkheden en start de lokale Docusaurus-omgeving:
+Deze repository bevat een complete Docusaurus-omgeving om de documentatie lokaal te bekijken en te ontwikkelen:
 
 ```bash
 pnpm install
 pnpm start
 ```
 
-De documentatie is vervolgens lokaal te bekijken op `http://localhost:3000`.
+De documentatie is vervolgens interactief beschikbaar op `http://localhost:3000`.
 
-### Bouwen & Validatie
+### Validatie & Build
 
 ```bash
 # Typecheck
 pnpm typecheck
 
-# Controleer API specificatie
+# Controleer OpenAPI-specificatie met Spectral
 pnpm lint:api
 
-# Volledige Docusaurus build
+# Bouw de documentatiesite
 pnpm build
 ```
 
-## Aanleveren aan developer.overheid.nl (Export)
+## Publicatie naar developer.overheid.nl (DON)
 
-Deze repository ondersteunt een geautomatiseerde exportflow naar DON:
+Een belangrijk publicatiekanaal voor MijnServices is de kennisbank van [developer.overheid.nl](https://developer.overheid.nl). Om de documentatie daar naadloos te integreren, beschikt de repository over een geautomatiseerde exportflow:
 
-- **Drafts uitsluiten**: Pagina's met `draft: true` in hun YAML frontmatter worden bij export automatisch overgeslagen.
+- **Draft-ondersteuning**: Pagina's met `draft: true` in de YAML frontmatter worden lokaal wel getoond, maar bij de export automatisch uitgesloten.
 - **Export genereren**:
   ```bash
   pnpm export:don
   ```
-  Dit script (`scripts/export-don.mjs`) bundelt uitsluitend de niet-draft documentatie (`docs/mijn-services/`) en de bijbehorende statische assets (`static/img/mijn-services/`) in `dist/don/`.
-- **Automatische distributie**: Bij elke push naar `main` zorgt de GitHub Actions workflow `.github/workflows/sync-don.yml` ervoor dat de kant-en-klare DON-bundel gepubliceerd wordt naar de branch `don-delivery`.
+  Dit script (`scripts/export-don.mjs`) exporteert de niet-draft documentatie (`docs/mijn-services/`) en bijbehorende afbeeldingen (`static/img/mijn-services/`) naar `dist/don/`.
+- **Geautomatiseerde levering**: Bij elke push naar `main` publiceert GitHub Actions (`.github/workflows/sync-don.yml`) de kant-en-klare export naar de distributiebranch `don-delivery`.
 
-## Python Tooling
+## Tooling
 
-Voor validatie van aansluitprofielen is aanvullende tooling beschikbaar onder `tools/mijn-services/`:
+Voor het valideren van aansluitprofielen is aanvullende tooling aanwezig onder `tools/mijn-services/`:
 
 ```bash
 cd tools/mijn-services
