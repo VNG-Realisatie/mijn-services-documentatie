@@ -1,17 +1,23 @@
 import type { PropsWithChildren } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useLocation } from "@docusaurus/router";
+import Link from "@docusaurus/Link";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 function HomepageLink({
   pathname,
   siteName,
   tagline,
   children,
-}: PropsWithChildren<object>) {
+}: PropsWithChildren<{
+  pathname: string;
+  siteName: string;
+  tagline?: string;
+}>) {
   return pathname !== "" ? (
-    <a href="/" aria-label={`Logo ${siteName}, ${tagline}; naar de homepage`}>
+    <Link to="/" aria-label={`Logo ${siteName}, ${tagline}; naar de homepage`}>
       {children}
-    </a>
+    </Link>
   ) : (
     <>{children}</>
   );
@@ -20,6 +26,7 @@ function HomepageLink({
 // Default implementation, that you can customize
 function Root({ children }: PropsWithChildren<object>) {
   const { siteConfig } = useDocusaurusContext();
+  const logoUrl = useBaseUrl("/img/logo-rijksoverheid.svg");
   let { pathname } = useLocation();
   pathname = pathname.replace("/", "");
 
@@ -79,7 +86,7 @@ function Root({ children }: PropsWithChildren<object>) {
           </div>
         </HomepageLink>
         <div className="ro-header__ro-logo">
-          <img src="/img/logo-rijksoverheid.svg" alt="Logo Rijksoverheid" />
+          <img src={logoUrl} alt="Logo Rijksoverheid" />
         </div>
       </header>
       {children}

@@ -49,6 +49,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: 'initiatieven',
           sidebarPath: './sidebars.ts',
           docItemComponent: '@theme/ApiItem',
           editUrl:
@@ -116,15 +117,15 @@ const config: Config = {
           items: [
             {
               label: 'MijnServices Overzicht',
-              to: '/docs/mijn-services',
+              to: '/initiatieven/mijn-services',
             },
             {
               label: 'Bouwstenen',
-              to: '/docs/mijn-services/bouwstenen',
+              to: '/initiatieven/mijn-services/bouwstenen',
             },
             {
               label: 'Aansluitprofielen',
-              to: '/docs/mijn-services/aansluitprofielen',
+              to: '/initiatieven/mijn-services/aansluitprofielen',
             },
           ],
         },
