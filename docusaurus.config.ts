@@ -91,9 +91,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'MijnServices',
+      title: '',
       logo: {
-        alt: 'MijnServices Documentatie',
+        alt: 'developer.overheid.nl',
         src: 'img/logo-don.svg',
       },
       items: [
