@@ -41,7 +41,11 @@ function copyNonDrafts(srcDir, destDir) {
       const content = fs.readFileSync(srcPath, "utf-8");
       try {
         const parsed = matter(content);
-        if (parsed.data.draft === true) {
+        if (
+          parsed.data.draft === true ||
+          parsed.data.publish === false ||
+          parsed.data.status === "draft"
+        ) {
           console.log(
             `⏩ Skipping draft: ${path.relative(SOURCE_DOCS, srcPath)}`,
           );
