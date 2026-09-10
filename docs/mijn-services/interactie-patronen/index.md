@@ -8,17 +8,36 @@ sidebar_label: Interactie met de overheid
 MijnServices standaardiseert niet op één kanaal of één bronsysteem, maar op de
 interactie daartussen: wat inwoners en ondernemers willen weten, doen of volgen.
 
+## Uitgaan van wat iemand wil bereiken
+
+Inwoners en ondernemers komen niet naar de overheid om een dossier te starten of
+een formulier in te vullen. Ze willen iets bereiken in hun dagelijks leven of
+bedrijf: een dakkapel plaatsen, een verhuizing doorgeven of zeker weten of een
+regeling op tijd uitbetaald wordt. De overheidsinteractie is daarin slechts een
+noodzakelijke tussenstap.
+
+We ontwerpen interacties daarom vanuit het doel van de gebruiker:
+
+- **Wat probeert iemand op te lossen?** (de werkelijke opgave, niet de interne procedure).
+- **Welke handeling is nodig?** (een actie uitvoeren, document aanleveren, betalen).
+- **Welke zekerheid zoekt iemand?** (weten waar je aan toe bent, tijdige bevestiging, geen verrassingen).
+
+MijnServices stemt de interactielaag en bouwstenen hierop af, zodat iemand een
+stap soepel en met zekerheid kan afronden zonder de interne organisatie van de
+overheid te hoeven kennen.
+
 ## Generieke klantroute
 
-De generieke klantroute ordent dienstverlening vanuit de gebruiker. Zij maakt
-zichtbaar welke interactietypen in een klantreis terugkeren, zonder voor te
-schrijven dat iedereen dezelfde stappen in dezelfde volgorde doorloopt.
+Om deze doelen te ondersteunen ordent de generieke klantroute dienstverlening
+vanuit de gebruiker. Zij maakt zichtbaar welke interactietypen in een klantreis
+terugkeren, zonder voor te schrijven dat iedereen dezelfde stappen in dezelfde
+volgorde doorloopt.
 
-| Fase                         | Interactietypen                                 |
-| ---------------------------- | ----------------------------------------------- |
-| Oriënteren en voorbereiden   | Attenderen; mogelijkheden en rechten verkennen  |
-| Handelen en voortgang volgen | Taken uitvoeren; status volgen; bevestiging     |
-| Afronden en beheren          | Gegevens beheren; historie inzien; hulp krijgen |
+| Fase                         | Interactietypen                                         |
+| ---------------------------- | ------------------------------------------------------- |
+| Oriënteren en voorbereiden   | Attenderen; mogelijkheden en rechten verkennen          |
+| Handelen en voortgang volgen | Taken uitvoeren; status volgen; bevestiging             |
+| Afronden en overzicht houden | Gegevens inzien of bijwerken; historie bekijken; hulp krijgen |
 
 Hulp kan in elke fase nodig zijn. Een besluit of wijziging kan een nieuwe
 oriëntatie starten.
