@@ -1,0 +1,46 @@
+---
+id: uitvoeringinfo
+title: "UitvoeringInfo"
+description: "Uitvoeringsinformatie voor een taak: hoe de actieknop gelabeld wordt"
+sidebar_label: "UitvoeringInfo"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"type":"string","fallbackUrl":"https://portaal.gemeente.nl/taken/550e8400/uitvoeren?returnUrl=https%3A%2F%2Fmijnoverheid.nl%2Ftaken%2Fcontext%2Fzaak-2026-00042"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"UitvoeringInfo"}
+>
+</Heading>
+
+
+
+Uitvoeringsinformatie voor een taak: hoe de actieknop gelabeld wordt
+en waar de gebruiker naartoe gaat.
+
+`fallbackUrl` is altijd aanwezig als universele fallback.
+
+```mermaid
+flowchart TD
+    A{Type ondersteund?} -->|Nee| B[Label: \'Uitvoeren\']
+    A -->|Ja| C[Type-specifiek label]
+    B --> D[Redirect via fallbackUrl + returnUrl]
+    C --> E{Type-specifieke velden aanwezig?}
+    E -->|Nee| D
+    E -->|Ja| F[Lokale uitvoering via type-specifieke velden]
+```
+
+
+<Schema
+  {...require("./uitvoeringinfo.Schema.json")}
+>
+  
+</Schema>
+            

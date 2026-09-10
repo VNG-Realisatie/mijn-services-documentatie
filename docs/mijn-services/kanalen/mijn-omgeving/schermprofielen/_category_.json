@@ -1,0 +1,9 @@
+{
+  "label": "Schermprofielen",
+  "position": 2,
+  "key": "mijnservices-kanalen-mijnomgeving-schermprofielen",
+  "link": {
+    "type": "doc",
+    "id": "mijn-services/kanalen/mijn-omgeving/schermprofielen/index"
+  }
+}

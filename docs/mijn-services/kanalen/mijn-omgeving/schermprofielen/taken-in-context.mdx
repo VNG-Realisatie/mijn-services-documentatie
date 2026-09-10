@@ -1,0 +1,227 @@
+---
+sidebar_position: 1
+sidebar_label: Taken in context
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+<style>{`
+.screen-profile-summary {
+  max-width: 52rem;
+}
+
+.screen-profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.screen-profile-meta__item {
+  border: 1px solid var(--don-grijs-300);
+  border-radius: 0.25rem;
+  background: var(--don-grijs-50);
+  padding: 0.5rem 0.75rem;
+}
+
+.screen-profile-meta__label {
+  display: block;
+  color: var(--don-grijs-600);
+  font-size: 0.875rem;
+}
+
+.screen-profile-shot {
+  margin-block: 2rem;
+}
+
+.screen-profile-shot__viewport {
+  position: relative;
+  overflow-x: auto;
+  border: 1px solid var(--don-grijs-300);
+  background: white;
+}
+
+.screen-profile-shot__canvas {
+  position: relative;
+  min-width: 58rem;
+}
+
+.screen-profile-shot__canvas img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.screen-profile-pin {
+  position: absolute;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border: 3px solid white;
+  border-radius: 999px;
+  background: var(--don-robijnrood-500);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.75rem rgb(15 23 42 / 28%);
+  transform: translate(-50%, -50%);
+}
+
+.screen-profile-pin__label {
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+}
+
+.screen-profile-pin:hover,
+.screen-profile-pin:focus {
+  color: white;
+  outline: 3px solid var(--don-lichtblauw-500);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.screen-profile-pin--c2 {
+  inset-inline-start: 25%;
+  inset-block-start: 45%;
+}
+
+.screen-profile-pin--c5 {
+  inset-inline-start: 72%;
+  inset-block-start: 38%;
+}
+
+.screen-profile-shot figcaption {
+  color: var(--don-grijs-700);
+  font-size: 0.95rem;
+  margin-block-start: 0.75rem;
+}
+
+.screen-profile-interactions td:first-child {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.screen-profile-todo {
+  border-inline-start: 4px solid var(--don-lichtblauw-500);
+  background: var(--don-lichtblauw-50);
+  padding: 1rem;
+}
+`}</style>
+
+# Schermprofiel: Taken in context
+
+<div className="screen-profile-summary">
+  Deze pagina maakt het schermprofiel visueel: de snapshot komt uit Storybook,
+  de callouts komen uit de annotaties in het profiel. Zo kunnen we sneller zien
+  of de interacties op de juiste plek zitten voordat we de YAML verder
+  verfijnen.
+</div>
+
+<div className="screen-profile-meta" aria-label="Schermprofiel metadata">
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Scherm</span>
+    <strong>SCR-TAKEN-IN-CONTEXT</strong>
+  </div>
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Scenario</span>
+    <strong>web-large-content</strong>
+  </div>
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Viewport</span>
+    <strong>1440 x 1024</strong>
+  </div>
+  <div className="screen-profile-meta__item">
+    <span className="screen-profile-meta__label">Flow</span>
+    <strong>mijnTaken.contextZoeken</strong>
+  </div>
+</div>
+
+<figure className="screen-profile-shot">
+  <div className="screen-profile-shot__viewport">
+    <div className="screen-profile-shot__canvas">
+      <img
+        src={useBaseUrl(
+          "/img/mijn-services/schermen/mijn-omgeving/scr-taken-in-context-web-large.png",
+        )}
+        alt="Web-large screenshot van het scherm Taken in context in een mijnomgeving."
+      />
+      <a
+        className="screen-profile-pin screen-profile-pin--c2"
+        href="#annotatie-c2"
+        aria-label="Annotatie C.2: taak selecteren in lijst"
+      >
+        <span className="screen-profile-pin__label">C.2</span>
+      </a>
+      <a
+        className="screen-profile-pin screen-profile-pin--c5"
+        href="#annotatie-c5"
+        aria-label="Annotatie C.5: afronden"
+      >
+        <span className="screen-profile-pin__label">C.5</span>
+      </a>
+    </div>
+  </div>
+  <figcaption>
+    Snapshot uit Storybook. De pinnen gebruiken de percentages uit het
+    schermprofiel.
+  </figcaption>
+</figure>
+
+## Zichtbare interacties
+
+<table className="screen-profile-interactions">
+  <thead>
+    <tr>
+      <th>Annotatie</th>
+      <th>Element</th>
+      <th>Interactie</th>
+      <th>API-koppeling</th>
+      <th>Resultaat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="annotatie-c2">
+      <td>C.2</td>
+      <td>Taak in lijst</td>
+      <td>Klik op rij</td>
+      <td>
+        <code>interactieservicesApi.retrieveTaak</code>
+      </td>
+      <td>Het detailpaneel toont de geselecteerde taak.</td>
+    </tr>
+    <tr id="annotatie-c5">
+      <td>C.5</td>
+      <td>Actie afronden</td>
+      <td>Klik met bevestiging</td>
+      <td>
+        <code>taak.uitvoering.canonicalUrl</code>
+      </td>
+      <td>De gebruiker navigeert naar de uitvoerlocatie van de provider.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Nog te positioneren
+
+<div className="screen-profile-todo">
+  Deze interacties staan al in het schermprofiel, maar hebben nog geen positie
+  in deze snapshot of zijn niet zichtbaar in dit scenario.
+</div>
+
+| Annotatie | Element            | Status                           |
+| :-------- | :----------------- | :------------------------------- |
+| C.4       | Terug naar context | Heeft nog geen positie.          |
+| C.8       | Uitvoeren          | Niet zichtbaar in deze snapshot. |
+| C.9       | Betalen            | Niet zichtbaar in deze snapshot. |
+
+## Technische koppeling
+
+| Trigger                            | Operatie             | Gebruik in scherm                                 |
+| :--------------------------------- | :------------------- | :------------------------------------------------ |
+| Pagina laden                       | `POST /context/zoek` | Vult de context met relevante taken.              |
+| Taak selecteren of deeplink openen | `GET /taken/{uuid}`  | Vult het detailpaneel en bepaalt de uitvoeractie. |
+
+Bron voor rendering:
+[Storybook - Taak in context schermvoorbeeld](https://nl-design-system.github.io/mijn-services/iframe.html?id=mijn-omgeving-mijnzaken-detailpagina--default&viewMode=story).

@@ -1,0 +1,54 @@
+---
+sidebar_label: Overzicht
+sidebar_position: 1
+---
+
+# Functioneel model MijnTaken
+
+:::info[Gegenereerd]
+
+Deze pagina is gegenereerd uit het machineleesbare functionele model.
+Pas de bron aan als de inhoud moet wijzigen.
+
+:::
+
+**Versie:** `0.1.0`
+
+Functioneel model voor taken binnen MijnServices. Dit model beschrijft de domeinbegrippen, toestanden en functionele flows. API-specifieke DTO's, request bodies, headers en foutmodellen horen in de API-specificaties.
+
+## Artefact
+
+- [`v0.1/openapi.yaml`](./v0.1/openapi.yaml)
+
+## Flows
+
+| Flow | Doel | Primaire objecten |
+| :--- | :--- | :--- |
+| `mijnTaken.contextZoeken`<br />Taken in context zoeken | Zoek taken die relevant zijn voor een klant en optioneel voor een zaak, product of dossier. | `Taak`, `TaakContext` |
+| `mijnTaken.taakRaadplegen`<br />Taak raadplegen | Raadpleeg de informatie die nodig is om een taak te begrijpen en te kunnen uitvoeren. | `Taak`, `Uitvoeringsmogelijkheid` |
+| `mijnTaken.taakUitvoeren`<br />Taak uitvoeren | Start of voltooi de handeling die bij een taak hoort, bij de bron die verantwoordelijk is voor de uitvoering. | `Taak`, `Uitvoeringsmogelijkheid` |
+
+## Domeinobjecten
+
+| Object | Type | Verplicht | Betekenis |
+| :--- | :--- | :--- | :--- |
+| `Taak` | object | `identificatie`, `titel`, `status` | Functionele taak: een handeling die een inwoner, ondernemer of gemachtigde moet of kan uitvoeren binnen een overheidsdienstverlening. |
+| `TaakStatus` | string | - | Functionele toestand van een taak. |
+| `TaakContext` | object | `urn` | Context waaraan een taak is gekoppeld, zoals een zaak, product of dossier. |
+| `Uitvoeringsmogelijkheid` | object | `fallbackUrl` | Manier waarop een gebruiker een taak kan uitvoeren of vervolgen. |
+| `Uitvoeringstype` | string | - | Open lijst van functionele uitvoeringstypen. |
+| `Deadline` | string (date-time) | - | Laatste moment waarop de taak nog op tijd kan worden uitgevoerd. |
+| `GelokaliseerdeTekst` | object | `nl` | Tekst in een of meer talen, met Nederlands als verplichte basisvariant. |
+
+## Waardelijsten
+
+### TaakStatus
+
+| Waarde | Betekenis |
+| :--- | :--- |
+| `open` | Taak staat open en kan door de gebruiker worden uitgevoerd. |
+| `afgerond` | Taak is succesvol afgerond. |
+| `geannuleerd` | Taak is geannuleerd en niet meer uitvoerbaar. |
+
+
+_Bron: `docs/mijn-services/specificaties/functionele-modellen/mijn-taken/v0.1/openapi.yaml`_

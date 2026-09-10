@@ -1,0 +1,135 @@
+---
+id: mijntaken-api
+title: "MijnTaken API"
+description: "De **MijnTaken API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen."
+sidebar_label: Introduction
+sidebar_position: 0
+hide_title: true
+custom_edit_url: null
+---
+
+import ApiLogo from "@theme/ApiLogo";
+import Heading from "@theme/Heading";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+import Export from "@theme/ApiExplorer/Export";
+
+<span
+  className={"theme-doc-version-badge badge badge--secondary"}
+  children={"Version: 0.1.0"}
+>
+</span>
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"MijnTaken API"}
+>
+</Heading>
+
+<ApiLogo
+  logo={{"url":"https://vng-realisatie.github.io/mijn-taken-api/img/mijn-taken.svg","altText":"MijnTaken API"}}
+  darkLogo={undefined}
+>
+  
+</ApiLogo>
+
+De **MijnTaken API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen.
+
+De API is opgezet als een **kern met uitbreidingssets**: het `/context/zoek`-endpoint retourneert een samengesteld object waarvan de inhoud via de `include`-parameter wordt gestuurd. Initieel worden taken ondersteund; andere resource-typen (bijv. contactmomenten, zaakstatus) kunnen worden toegevoegd zonder bestaande implementaties te breken.
+
+Identificatie en authenticatie van eindgebruikers vallen buiten de scope van dit contract; die worden afgehandeld door een externe identity provider (zoals DigiD of eHerkenning).
+
+## Principes
+
+### 1. Uniform contract
+
+Alle providers implementeren dezelfde interface: dezelfde endpoints, dezelfde responsestructuur, hetzelfde gedrag. Het maakt voor een portaal niet uit hoe de provider intern is georganiseerd of waar de data vandaan komt.
+
+### 2. Backward en forward compatibility
+
+Portalen en providers moeten onafhankelijk van elkaar kunnen evolueren. Het contract is daarom uitbreidbaar zonder bestaande implementaties te breken:
+
+- **Backward compatible** — een ouder portaal werkt correct met een nieuwere provider (de provider breekt geen bestaande portalen bij het toevoegen van velden). De provider mag geen velden verwijderen, hernoemen of verplichte request-parameters toevoegen.
+- **Forward compatible** — een huidig portaal werkt correct met een toekomstige provider die nieuwe velden toevoegt (het portaal negeert wat het niet herkent). Het portaal móet onbekende velden in de response negeren.
+
+Dit volgt het [Robustness principle](https://en.wikipedia.org/wiki/Robustness_principle): wees conservatief in wat je stuurt, liberaal in wat je accepteert.
+
+### 3. Uitvoering bij de bron
+
+Een taak wordt altijd uitgevoerd bij de bron. Portalen tonen de taak, maar slaan geen uitvoeringsdata op. Dit borgt dataminimalisatie: uitvoeringsdata verlaat de bron niet structureel.
+
+
+<div
+  style={{"marginBottom":"2rem"}}
+>
+  <Heading
+    id={"authentication"}
+    as={"h2"}
+    className={"openapi-tabs__heading"}
+    children={"Authentication"}
+  >
+  </Heading><SchemaTabs
+    className={"openapi-tabs__security-schemes"}
+  >
+    <TabItem
+      label={"HTTP: Bearer Auth"}
+      value={"bearerAuth"}
+    >
+      
+      
+      
+      
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Security Scheme Type:
+              </th><td>
+                http
+              </td>
+            </tr><tr>
+              <th>
+                HTTP Authorization Scheme:
+              </th><td>
+                bearer
+              </td>
+            </tr><tr>
+              <th>
+                Bearer format:
+              </th><td>
+                JWT
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </TabItem>
+  </SchemaTabs>
+</div><div
+  style={{"display":"flex","flexDirection":"column","marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    Contact
+  </h3><span>
+    VNG Realisatie: [standaarden.ondersteuning@vng.nl](mailto:standaarden.ondersteuning@vng.nl)
+  </span><span>
+    URL: [https://github.com/vng-realisatie/mijn-taken-api](https://github.com/vng-realisatie/mijn-taken-api)
+  </span>
+</div><div
+  style={{"marginBottom":"var(--ifm-paragraph-margin-bottom)"}}
+>
+  <h3
+    style={{"marginBottom":"0.25rem"}}
+  >
+    License
+  </h3><a
+    href={"https://opensource.org/licenses/EUPL-1.2"}
+  >
+    EUPL 1.2
+  </a>
+</div>
+      
