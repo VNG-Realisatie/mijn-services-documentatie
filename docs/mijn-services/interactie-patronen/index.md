@@ -33,10 +33,10 @@ vanuit de gebruiker. Zij maakt zichtbaar welke interactietypen in een klantreis
 terugkeren, zonder voor te schrijven dat iedereen dezelfde stappen in dezelfde
 volgorde doorloopt.
 
-| Fase                         | Interactietypen                                         |
-| ---------------------------- | ------------------------------------------------------- |
-| Oriënteren en voorbereiden   | Attenderen; mogelijkheden en rechten verkennen          |
-| Handelen en voortgang volgen | Taken uitvoeren; status volgen; bevestiging             |
+| Fase                         | Interactietypen                                               |
+| ---------------------------- | ------------------------------------------------------------- |
+| Oriënteren en voorbereiden   | Attenderen; mogelijkheden en rechten verkennen                |
+| Handelen en voortgang volgen | Taken uitvoeren; status volgen; bevestiging                   |
 | Afronden en overzicht houden | Gegevens inzien of bijwerken; historie bekijken; hulp krijgen |
 
 Hulp kan in elke fase nodig zijn. Een besluit of wijziging kan een nieuwe
