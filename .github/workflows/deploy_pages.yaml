@@ -25,8 +25,8 @@ jobs:
           run_install: false
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Build
-        run: pnpm build
+      - name: Build (including drafts for preview)
+        run: pnpm build --dev
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact

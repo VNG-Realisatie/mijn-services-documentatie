@@ -58,9 +58,6 @@ afspraken willen inzien.
   ondernemer niet in via een digitaal authenticatiemiddel zoals DigiD of
   eHerkenning. Het afsprakensysteem kan geen BSN herleiden.
 - Er wordt in het afsprakensysteem geen BSN opgeslagen.
-- Voor het specificeren van de API's wordt de landelijk standaard gevolgd:
-  [https://docs.geostandaarden.nl/api/API-Strategie/](https://docs.geostandaarden.nl/api/API-Strategie/).
-- Er wordt gebruik gemaakt van OAuth 2.0 voor autorisatie in de API’s.
 - Het afspraaksysteem levert alleen agenda-afspraken die niet geannuleerd zijn.
 - Statusinformatie van de agenda-afspraak wordt door het afspraaksysteem niet
   geleverd.
@@ -285,8 +282,6 @@ context meegenomen in het model.
 | Mijngemeentecomponent                            | Applicatiecomponent | Component die via webtechnologie veilig toegang biedt tot persoonlijke informatie en gepersonaliseerde digitale dienstverlening.                                                                                                                                                                                                           |
 | Opvragen en tonen afspraken                      | Applicatiefunctie   | Functie voor het opvragen en tonen van agenda-afspraken.                                                                                                                                                                                                                                                                                   |
 | Profiel                                          | Dataobject          | Bevat persoonsgegevens van een klant die nodig zijn voor de communicatie tussen de klant en de overheidsorganisatie. Dit zijn zowel de contactgegevens (zoals e-mailadres of mobiele telefoonnummer) als de kanaalvoorkeuren (zoals e-mail, SMS of post) waarover de communicatie tussen de klant en de overheidsorganisaties plaatsvindt. |
-
-## Standaarden
 
 ## Sequentiediagrammen
 

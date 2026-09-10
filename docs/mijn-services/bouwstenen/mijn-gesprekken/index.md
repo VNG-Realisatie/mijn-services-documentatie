@@ -427,25 +427,6 @@ daarbij documenten te bewaren of op te vragen.
 verzamelcomponent voor procesondersteunende systemen die zaakgericht zijn
 ingericht. |
 
-## Standaarden
-
-MijnGesprekken hanteert de volgende standaarden:
-
-- Nederlandse API strategie
-  ([https://docs.geostandaarden.nl/api/API-Strategie/](https://docs.geostandaarden.nl/api/API-Strategie/))
-- NLGov REST API Design Rules 2.1.0
-  ([https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/))
-- NL GOV Assurance profile for OAuth 2.0 v1.1.0
-  ([https://gitdocumentatie.logius.nl/publicatie/api/oauth/](https://gitdocumentatie.logius.nl/publicatie/api/oauth/))
-- OpenAPI Specifications 3.0
-  ([https://www.forumstandaardisatie.nl/open-standaarden/openapi-specification](https://www.forumstandaardisatie.nl/open-standaarden/openapi-specification))
-- Digikoppeling Koppelvlakstandaard REST-API 3.0.1 (indien van toepassing)
-  ([https://gitdocumentatie.logius.nl/publicatie/dk/restapi/3.0.1/](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/3.0.1/))
-- Metamodel Informatiemodellering
-  [https://www.geonovum.nl/geo-standaarden/metamodel-informatiemodellering-mim](https://www.geonovum.nl/geo-standaarden/metamodel-informatiemodellering-mim)
-- Federatieve Service Connectiviteit
-  ([https://fsc-standaard.nl/standaard](https://fsc-standaard.nl/standaard))
-
 ## Sequentiediagrammen
 
 De werking van de MijnGesprekken service is in een aantal sequentiediagrammen
@@ -658,16 +639,6 @@ gedocumenteerd en gepubliceerd via onderstaande link.
   klantinteracties
   ([https://vng-realisatie.github.io/klantinteracties/](https://vng-realisatie.github.io/klantinteracties/)),
   een halfproduct.
-
-## API’s
-
-## **OAuth 2.0 Client Credentials (System-to-System)**
-
-## Datamodel
-
-## Informatiebeveiliging en Privacy
-
-## Beheer
 
 ## Omschrijving
 

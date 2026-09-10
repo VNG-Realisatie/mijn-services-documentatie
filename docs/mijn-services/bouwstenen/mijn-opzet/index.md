@@ -2,7 +2,7 @@
 title: Opzet en Definition of Done voor Bouwstenen
 sidebar_label: Opzet en DoD
 sidebar_position: 1
-publish: false
+draft: true
 ---
 
 # Opzet en Definition of Done voor Bouwstenen
