@@ -24,7 +24,7 @@ Schermen worden geïdentificeerd met het patroon `SCR-<ONDERWERP>`. IDs zijn sta
 | `SCR-TAAK-UITVOEREN`   | [Taak uitvoeren](./taak-uitvoeren.md)                                       |
 | `SCR-DIGID-EH`         | [DigiD eenvoudige herauthenticatie](./digid-eenvoudige-herauthenticatie.md) |
 
-Zie ook het [procesoverzicht](../../../specificaties/interactieservices-api/procesoverzicht.md) voor de BPMN en de volledige schermflow.
+Zie ook het [procesoverzicht](../../../specificaties/interactieservices-api/procesoverzicht.md) voor de volledige schermflow.
 
 ## Huidige situatie
 

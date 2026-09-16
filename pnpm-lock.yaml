@@ -29,9 +29,6 @@ importers:
       '@mdx-js/react':
         specifier: ^3.0.0
         version: 3.1.1(@types/react@19.2.14)(react@19.2.5)
-      bpmn-js:
-        specifier: ^18.15.0
-        version: 18.15.0
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
@@ -754,9 +751,6 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
-
-  '@bpmn-io/diagram-js-ui@0.2.3':
-    resolution: {integrity: sha512-OGyjZKvGK8tHSZ0l7RfeKhilGoOGtFDcoqSGYkX0uhFlo99OVZ9Jn1K7TJGzcE9BdKwvA5Y5kGqHEhdTxHvFfw==}
 
   '@braintree/sanitize-url@7.1.2':
     resolution: {integrity: sha512-jigsZK+sMF/cuiB7sERuo9V7N9jx+dhmHHnQyDSVdpZwVutaBu7WvNYqMDLSgFgfB30n452TP3vjDAvFC973mA==}
@@ -2772,13 +2766,6 @@ packages:
     resolution: {integrity: sha512-2hCgjEmP8YLWQ130n2FerGv7rYpfBmnmp9Uy2Le1vge6X3gZIfSmEzP5QTDElFxcvVcXlEn8Aq6MU/PZygIOog==}
     engines: {node: '>=14.16'}
 
-  bpmn-js@18.15.0:
-    resolution: {integrity: sha512-HISTx3gRJ2Ga4bScERV1lk7wA6ApShktB0r55A/hj2mbYtLjIDOPObdbuDj3LSL/7/GV5inTQWmcaDYFyscdGw==}
-
-  bpmn-moddle@10.0.0:
-    resolution: {integrity: sha512-vXePD5jkatcILmM3zwJG/m6IIHIghTGB7WvgcdEraEw8E8VdJHrTgrvBUhbzqaXJpnsGQz15QS936xeBY6l9aA==}
-    engines: {node: '>= 20.12'}
-
   brace-expansion@1.1.14:
     resolution: {integrity: sha512-MWPGfDxnyzKU7rNOW9SP/c50vi3xrmrua/+6hfPbCS2ABNWfx24vPidzvC7krjU/RTo235sV776ymlsMtGKj8g==}
 
@@ -3508,18 +3495,6 @@ packages:
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
-  diagram-js-direct-editing@3.3.0:
-    resolution: {integrity: sha512-EjXYb35J3qBU8lLz5U81hn7wNykVmF7U5DXZ7BvPok2IX7rmPz+ZyaI5AEMiqaC6lpSnHqPxFcPgKEiJcAiv5w==}
-    peerDependencies:
-      diagram-js: '*'
-
-  diagram-js@15.13.0:
-    resolution: {integrity: sha512-poM84+3749g66uF0Xw0S/BlV76XsqT+esXwzYGWopHDFkFfHw+6eeXt0/wcS+nwA2SITBhl52GKIX3kW7Co/8g==}
-
-  didi@11.0.0:
-    resolution: {integrity: sha512-PzCfRzQttvFpVcYMbSF7h8EsWjeJpVjWH4qDhB5LkMi1ILvHq4Ob0vhM2wLFziPkbUBi+PAo7ODbe2sacR7nJQ==}
-    engines: {node: '>= 20.12'}
-
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
@@ -3572,10 +3547,6 @@ packages:
   domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
-
-  domify@3.0.0:
-    resolution: {integrity: sha512-bs2yO68JDFOm6rKv8f0EnrM2cENduhRkpqOtt/s5l5JBA/eqGBZCzLPmdYoHtJ6utgLGgcBajFsEQbl12pT0lQ==}
-    engines: {node: '>=20'}
 
   dompurify@3.4.2:
     resolution: {integrity: sha512-lHeS9SA/IKeIFFyYciHBr2n0v1VMPlSj843HdLOwjb2OxNwdq9Xykxqhk+FE42MzAdHvInbAolSE4mhahPpjXA==}
@@ -4127,9 +4098,6 @@ packages:
     resolution: {integrity: sha512-A91dYTeIB6NoXG+PxTQpCCDDnfHsW9kc06Lvpu1TEe9gnd6ZFeiBoRO9JvzEv6xK7EX97/dUE8g/vBMTqTS3CA==}
     engines: {node: '>=14'}
 
-  htm@3.1.1:
-    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
-
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
@@ -4233,10 +4201,6 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
-  ids@3.0.2:
-    resolution: {integrity: sha512-t6YJP4mdC+GHF96Nbis/4FEANhP/8VWmYMvUuYpXvSdrhg5hpIVbq2XZlOA3UWTbtdwPCi0q7jEXOdHkAnqOnw==}
-    engines: {node: '>= 20.12'}
-
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
@@ -4281,9 +4245,6 @@ packages:
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-
-  inherits-browser@0.1.0:
-    resolution: {integrity: sha512-CJHHvW3jQ6q7lzsXPpapLdMx5hDpSF3FSh45pwsj6bKxJJ8Nl8v43i5yXnr3BdfOimGHKyniewQtnAIp3vyJJw==}
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -5106,12 +5067,6 @@ packages:
     resolution: {integrity: sha512-e5ISH9xMYU0DzrT+jl8q2ze9D6eWBto+I8CNpe+VI+K2J/F/k3PdkdTdz4wvGVH4NTpo+NRYTVIuMQEMMcsLqg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  min-dash@5.0.0:
-    resolution: {integrity: sha512-EGuoBnVL7/Fnv2sqakpX5WGmZehZ3YMmLayT7sM8E9DRU74kkeyMg4Rik1lsOkR2GbFNeBca4/L+UfU6gF0Edw==}
-
-  min-dom@5.3.0:
-    resolution: {integrity: sha512-0w5FEBgPAyHhmFojW3zxd7we3D+m5XYS3E/06OyvxmbHJoiQVa4Nagj6RWvoAKYRw5xth6cP5TMePc5cR1M9hA==}
-
   mini-css-extract-plugin@2.10.2:
     resolution: {integrity: sha512-AOSS0IdEB95ayVkxn5oGzNQwqAi2J0Jb/kKm43t7H73s8+f5873g0yuj0PNvK4dO75mu5DHg4nlgp4k6Kga8eg==}
     engines: {node: '>= 12.13.0'}
@@ -5129,15 +5084,6 @@ packages:
 
   mlly@1.8.2:
     resolution: {integrity: sha512-d+ObxMQFmbt10sretNDytwt85VrbkhhUA/JBGm1MPaWJ65Cl4wOgLaB1NYvJSZ0Ef03MMEU/0xpPMXUIQ29UfA==}
-
-  moddle-xml@12.0.0:
-    resolution: {integrity: sha512-NJc2+sCe4tvuGlaUBcoZcYf6j9f+z+qxHOyGm/LB3ZrlJXVPPHoBTg/KXgDRCufdBJhJ3AheFs3QU/abABNzRg==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      moddle: '>= 6.2.0'
-
-  moddle@8.1.0:
-    resolution: {integrity: sha512-dBddc1CNuZHgro8nQWwfPZ2BkyLWdnxoNpPu9d+XKPN96DAiiBOeBw527ft++ebDuFez5PMdaR3pgUgoOaUGrA==}
 
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
@@ -5277,9 +5223,6 @@ packages:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
     engines: {node: '>= 0.4'}
 
-  object-refs@0.4.0:
-    resolution: {integrity: sha512-6kJqKWryKZmtte6QYvouas0/EIJKPI1/MMIuRsiBlNuhIMfqYTggzX2F1AJ2+cDs288xyi9GL7FyasHINR98BQ==}
-
   object.assign@4.1.7:
     resolution: {integrity: sha512-nK28WOo+QIjBkDduTINE4JkF/UJJKyf2EJxvJKfblDpyg0Q+pkOHNTL0Qwy6NP6FhE/EnzV73BxxqcJaXY9anw==}
     engines: {node: '>= 0.4'}
@@ -5407,10 +5350,6 @@ packages:
   path-exists@5.0.0:
     resolution: {integrity: sha512-RjhtfwJOxzcFmNOi6ltcbcu4Iu+FL3zEj83dk4kAS+fVpTxXLO1b38RvJgT/0QwvV/L3aY9TAnyv0EOqW4GoMQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  path-intersection@4.1.0:
-    resolution: {integrity: sha512-urUP6WvhnxbHPdHYl6L7Yrc6+1ny6uOFKPCzPxTSUSYGHG0o94RmI7SvMMaScNAM5RtTf08bg4skc6/kjfne3A==}
-    engines: {node: '>= 14.20'}
 
   path-is-absolute@1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
@@ -5899,9 +5838,6 @@ packages:
     resolution: {integrity: sha512-EOgUMBazo7JNP4TDrd64TsooCiWzzo4143Ws8E8WYGEpn2PKpq+S4XRTDhuRTYHm3VKOpUZs7ZYZq7zSDuesqA==}
     engines: {node: '>=10'}
 
-  preact@10.29.1:
-    resolution: {integrity: sha512-gQCLc/vWroE8lIpleXtdJhTFDogTdZG9AjMUpVkDf2iTCNwYNWA+u16dL41TqUDJO4gm2IgrcMv3uTpjd4Pwmg==}
-
   pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
 
@@ -6331,10 +6267,6 @@ packages:
     resolution: {integrity: sha512-6R3J5M4AcbtLUdZmRv2SygeVaM7IhrLXu9BmnOGmmACak8fiUtOsYNWUS4uK7upbmHIBbLBeFeI//477BKLBzA==}
     engines: {node: '>=11.0.0'}
 
-  saxen@11.0.2:
-    resolution: {integrity: sha512-WDb4gqac8uiJzOdOdVpr9NWh9NrJMm7Brn5GX2Poj+mjE/QTXqYQENr8T/mom54dDDgbd3QjwTg23TRHYiWXRA==}
-    engines: {node: '>= 20.12'}
-
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
@@ -6720,10 +6652,6 @@ packages:
 
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
-
-  tiny-svg@4.1.4:
-    resolution: {integrity: sha512-cBaEACCbouYrQc9RG+eTXnPYosX1Ijqty/I6DdXovwDd89Pwu4jcmpOR7BuFEF9YCcd7/AWwasE0207WMK7hdw==}
-    engines: {node: '>= 20'}
 
   tiny-warning@1.0.3:
     resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
@@ -8117,11 +8045,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
-
-  '@bpmn-io/diagram-js-ui@0.2.3':
-    dependencies:
-      htm: 3.1.1
-      preact: 10.29.1
 
   '@braintree/sanitize-url@7.1.2': {}
 
@@ -11069,23 +10992,6 @@ snapshots:
       widest-line: 4.0.1
       wrap-ansi: 8.1.0
 
-  bpmn-js@18.15.0:
-    dependencies:
-      bpmn-moddle: 10.0.0
-      diagram-js: 15.13.0
-      diagram-js-direct-editing: 3.3.0(diagram-js@15.13.0)
-      ids: 3.0.2
-      inherits-browser: 0.1.0
-      min-dash: 5.0.0
-      min-dom: 5.3.0
-      tiny-svg: 4.1.4
-
-  bpmn-moddle@10.0.0:
-    dependencies:
-      min-dash: 5.0.0
-      moddle: 8.1.0
-      moddle-xml: 12.0.0(moddle@8.1.0)
-
   brace-expansion@1.1.14:
     dependencies:
       balanced-match: 1.0.2
@@ -11852,26 +11758,6 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  diagram-js-direct-editing@3.3.0(diagram-js@15.13.0):
-    dependencies:
-      diagram-js: 15.13.0
-      min-dash: 5.0.0
-      min-dom: 5.3.0
-
-  diagram-js@15.13.0:
-    dependencies:
-      '@bpmn-io/diagram-js-ui': 0.2.3
-      clsx: 2.1.1
-      didi: 11.0.0
-      inherits-browser: 0.1.0
-      min-dash: 5.0.0
-      min-dom: 5.3.0
-      object-refs: 0.4.0
-      path-intersection: 4.1.0
-      tiny-svg: 4.1.4
-
-  didi@11.0.0: {}
-
   dir-glob@3.0.1:
     dependencies:
       path-type: 4.0.0
@@ -11985,8 +11871,6 @@ snapshots:
   domhandler@5.0.3:
     dependencies:
       domelementtype: 2.3.0
-
-  domify@3.0.0: {}
 
   dompurify@3.4.2:
     optionalDependencies:
@@ -12711,8 +12595,6 @@ snapshots:
 
   hpagent@1.2.0: {}
 
-  htm@3.1.1: {}
-
   html-escaper@2.0.2: {}
 
   html-minifier-terser@6.1.0:
@@ -12833,8 +12715,6 @@ snapshots:
     dependencies:
       postcss: 8.5.13
 
-  ids@3.0.2: {}
-
   ieee754@1.2.1: {}
 
   ignore@5.3.2: {}
@@ -12864,8 +12744,6 @@ snapshots:
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
-
-  inherits-browser@0.1.0: {}
 
   inherits@2.0.4: {}
 
@@ -13916,13 +13794,6 @@ snapshots:
 
   mimic-response@4.0.0: {}
 
-  min-dash@5.0.0: {}
-
-  min-dom@5.3.0:
-    dependencies:
-      domify: 3.0.0
-      min-dash: 5.0.0
-
   mini-css-extract-plugin@2.10.2(webpack@5.106.2(@swc/core@1.15.33)):
     dependencies:
       schema-utils: 4.3.3
@@ -13943,16 +13814,6 @@ snapshots:
       pathe: 2.0.3
       pkg-types: 1.3.1
       ufo: 1.6.4
-
-  moddle-xml@12.0.0(moddle@8.1.0):
-    dependencies:
-      min-dash: 5.0.0
-      moddle: 8.1.0
-      saxen: 11.0.2
-
-  moddle@8.1.0:
-    dependencies:
-      min-dash: 5.0.0
 
   mrmime@2.0.1: {}
 
@@ -14094,8 +13955,6 @@ snapshots:
   object-inspect@1.13.4: {}
 
   object-keys@1.1.1: {}
-
-  object-refs@0.4.0: {}
 
   object.assign@4.1.7:
     dependencies:
@@ -14259,8 +14118,6 @@ snapshots:
   path-data-parser@0.1.0: {}
 
   path-exists@5.0.0: {}
-
-  path-intersection@4.1.0: {}
 
   path-is-absolute@1.0.1: {}
 
@@ -14795,8 +14652,6 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  preact@10.29.1: {}
-
   pretty-error@4.0.0:
     dependencies:
       lodash: 4.18.1
@@ -15300,8 +15155,6 @@ snapshots:
 
   sax@1.6.0: {}
 
-  saxen@11.0.2: {}
-
   scheduler@0.27.0: {}
 
   schema-dts@1.1.5: {}
@@ -15766,8 +15619,6 @@ snapshots:
   thunky@1.1.0: {}
 
   tiny-invariant@1.3.3: {}
-
-  tiny-svg@4.1.4: {}
 
   tiny-warning@1.0.3: {}
 
