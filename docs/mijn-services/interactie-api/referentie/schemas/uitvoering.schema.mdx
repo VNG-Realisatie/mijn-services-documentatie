@@ -1,0 +1,38 @@
+---
+id: uitvoering
+title: "Uitvoering"
+description: "Uitvoering van een taak. Bekende typen hebben een variant met een `const`-waarde op"
+sidebar_label: "Uitvoering"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"type":"upload","fallbackUrl":"https://portaal.gemeente.nl/taken/550e8400/uitvoeren?returnUrl=https%3A%2F%2Fmijnoverheid.nl%2Ftaken%2Fcontext%2Fzaak-2026-00042","submitUrl":"https://api.gemeente.nl/documenten/upload","maxBestanden":5,"toegestaneFormaten":["pdf","jpg","png"],"maxBestandsgrootte":10485760}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Uitvoering"}
+>
+</Heading>
+
+
+
+Uitvoering van een taak. Bekende typen hebben een variant met een `const`-waarde op
+`type` en type-specifieke velden. `OnbekendeUitvoering` dient als catch-all voor
+toekomstige of onbekende typen en zorgt ervoor dat `oneOf` altijd precies één match
+oplevert.
+
+Discriminator: veld `type`.
+
+
+<Schema
+  {...require("./uitvoering.Schema.json")}
+>
+  
+</Schema>
+            

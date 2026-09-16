@@ -1,0 +1,134 @@
+openapi: 3.1.0
+info:
+  title: Functioneel model MijnTaken
+  version: 0.1.0
+  description: |
+    Functioneel model voor taken binnen MijnServices. Dit model beschrijft de
+    domeinbegrippen, toestanden en functionele flows. API-specifieke DTO's,
+    request bodies, headers en foutmodellen horen in de API-specificaties.
+paths: {}
+x-mijnservices-flows:
+  - flowId: mijnTaken.contextZoeken
+    name: Taken in context zoeken
+    description:
+      Zoek taken die relevant zijn voor een klant en optioneel voor een zaak,
+      product of dossier.
+    primaryDomainObjects:
+      - Taak
+      - TaakContext
+  - flowId: mijnTaken.taakRaadplegen
+    name: Taak raadplegen
+    description:
+      Raadpleeg de informatie die nodig is om een taak te begrijpen en te kunnen
+      uitvoeren.
+    primaryDomainObjects:
+      - Taak
+      - Uitvoeringsmogelijkheid
+  - flowId: mijnTaken.taakUitvoeren
+    name: Taak uitvoeren
+    description:
+      Start of voltooi de handeling die bij een taak hoort, bij de bron die
+      verantwoordelijk is voor de uitvoering.
+    primaryDomainObjects:
+      - Taak
+      - Uitvoeringsmogelijkheid
+components:
+  schemas:
+    Taak:
+      type: object
+      description: |
+        Functionele taak: een handeling die een inwoner, ondernemer of gemachtigde
+        moet of kan uitvoeren binnen een overheidsdienstverlening.
+      required:
+        - identificatie
+        - titel
+        - status
+      properties:
+        identificatie:
+          type: string
+          description: Stabiele identificatie van de taak binnen de broncontext.
+        titel:
+          $ref: "#/components/schemas/GelokaliseerdeTekst"
+        toelichting:
+          $ref: "#/components/schemas/GelokaliseerdeTekst"
+        status:
+          $ref: "#/components/schemas/TaakStatus"
+        deadline:
+          $ref: "#/components/schemas/Deadline"
+        context:
+          $ref: "#/components/schemas/TaakContext"
+        uitvoering:
+          $ref: "#/components/schemas/Uitvoeringsmogelijkheid"
+
+    TaakStatus:
+      type: string
+      description: Functionele toestand van een taak.
+      enum:
+        - open
+        - afgerond
+        - geannuleerd
+      x-enumDescriptions:
+        open: Taak staat open en kan door de gebruiker worden uitgevoerd.
+        afgerond: Taak is succesvol afgerond.
+        geannuleerd: Taak is geannuleerd en niet meer uitvoerbaar.
+
+    TaakContext:
+      type: object
+      description:
+        Context waaraan een taak is gekoppeld, zoals een zaak, product of
+        dossier.
+      required:
+        - urn
+      properties:
+        urn:
+          type: string
+          pattern: "^urn:"
+          description: Portaal-agnostische identifier van de context.
+        canonicalUrl:
+          type: string
+          format: uri
+          description:
+            Optionele URL naar de context in de omgeving van de bronorganisatie.
+
+    Uitvoeringsmogelijkheid:
+      type: object
+      description:
+        Manier waarop een gebruiker een taak kan uitvoeren of vervolgen.
+      required:
+        - fallbackUrl
+      properties:
+        type:
+          $ref: "#/components/schemas/Uitvoeringstype"
+        fallbackUrl:
+          type: string
+          format: uri
+          description:
+            URL waar een kanaal de gebruiker altijd naartoe kan sturen als
+            lokale uitvoering niet mogelijk is.
+
+    Uitvoeringstype:
+      type: string
+      description: Open lijst van functionele uitvoeringstypen.
+      examples:
+        - upload
+        - formulier
+        - betaling
+
+    Deadline:
+      type: string
+      format: date-time
+      description:
+        Laatste moment waarop de taak nog op tijd kan worden uitgevoerd.
+
+    GelokaliseerdeTekst:
+      type: object
+      description:
+        Tekst in een of meer talen, met Nederlands als verplichte basisvariant.
+      required:
+        - nl
+      properties:
+        nl:
+          type: string
+          description: Nederlandse tekst.
+      additionalProperties:
+        type: string
