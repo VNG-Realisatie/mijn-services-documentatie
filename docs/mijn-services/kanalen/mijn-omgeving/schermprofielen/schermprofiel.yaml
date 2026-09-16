@@ -9,10 +9,10 @@ summary: >
 sources:
   functioneelModel:
     name: mijnTakenFunctioneelModel
-    url: ../../../specificaties/functionele-modellen/mijn-taken/v0.1/openapi.yaml
+    url: ../../../bouwstenen/mijn-taken/v0.1/openapi.yaml
   interactieservicesApi:
     name: interactieservicesApi
-    url: ../../../specificaties/interactieservices-api/v0.1/openapi.yaml
+    url: ../../../interactie-api/v0.1/openapi.yaml
   upstreamSchermdocumentatie:
     name: VNG-Realisatie/mijn-taken-api docs/schermen
     url: https://github.com/VNG-Realisatie/mijn-taken-api/tree/main/docs/schermen

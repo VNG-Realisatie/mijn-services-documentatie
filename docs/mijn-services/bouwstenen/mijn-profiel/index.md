@@ -1,7 +1,6 @@
 ---
 sidebar_position: 8
-description:
-  Profielcontext, contactgegevens en voorkeuren voor inwoners en ondernemers.
+description: Profielcontext, contactgegevens en voorkeuren voor inwoners en ondernemers.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-profiel.svg
 ---

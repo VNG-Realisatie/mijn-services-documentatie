@@ -150,7 +150,7 @@ def default_arazzo_files(root: Path) -> list[Path]:
 
 
 def default_functional_model_files(root: Path) -> list[Path]:
-    return sorted(root.glob("docs/mijn-services/specificaties/functionele-modellen/**/v*/openapi.yaml"))
+    return sorted(root.glob("docs/mijn-services/bouwstenen/**/v*/openapi.yaml"))
 
 
 def single_line(value: Any) -> str:

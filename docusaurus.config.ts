@@ -73,8 +73,8 @@ const config: Config = {
         docsPluginId: 'classic',
         config: {
           interactieservicesApi: {
-            specPath: 'docs/mijn-services/specificaties/interactieservices-api/v0.1/openapi.yaml',
-            outputDir: 'docs/mijn-services/specificaties/interactieservices-api/referentie',
+            specPath: 'docs/mijn-services/interactie-api/v0.1/openapi.yaml',
+            outputDir: 'docs/mijn-services/interactie-api/referentie',
             showSchemas: true,
             sidebarOptions: {
               groupPathsBy: 'tag',
@@ -125,6 +125,10 @@ const config: Config = {
             {
               label: 'Bouwstenen',
               to: '/initiatieven/mijn-services/bouwstenen',
+            },
+            {
+              label: 'Interactie API',
+              to: '/initiatieven/mijn-services/interactie-api',
             },
             {
               label: 'Aansluitprofielen',

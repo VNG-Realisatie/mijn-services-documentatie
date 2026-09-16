@@ -1,7 +1,7 @@
 ---
-id: mijntaken-api
-title: "MijnTaken API"
-description: "De **MijnTaken API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen."
+id: interactieservices-api
+title: "Interactieservices API"
+description: "De **Interactieservices API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen."
 sidebar_label: Introduction
 sidebar_position: 0
 hide_title: true
@@ -23,18 +23,17 @@ import Export from "@theme/ApiExplorer/Export";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"MijnTaken API"}
+  children={"Interactieservices API"}
 >
 </Heading>
 
 <ApiLogo
   logo={{"url":"https://vng-realisatie.github.io/mijn-taken-api/img/mijn-taken.svg","altText":"MijnTaken API"}}
-  darkLogo={undefined}
 >
   
 </ApiLogo>
 
-De **MijnTaken API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen.
+De **Interactieservices API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen.
 
 De API is opgezet als een **kern met uitbreidingssets**: het `/context/zoek`-endpoint retourneert een samengesteld object waarvan de inhoud via de `include`-parameter wordt gestuurd. Initieel worden taken ondersteund; andere resource-typen (bijv. contactmomenten, zaakstatus) kunnen worden toegevoegd zonder bestaande implementaties te breken.
 

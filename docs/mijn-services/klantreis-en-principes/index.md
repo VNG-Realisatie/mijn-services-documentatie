@@ -1,9 +1,9 @@
 ---
 sidebar_position: 0
-sidebar_label: Interactie met de overheid
+sidebar_label: Klantreis en principes
 ---
 
-# Interactie met de overheid
+# Klantreis en principes
 
 MijnServices standaardiseert niet op één kanaal of één bronsysteem, maar op de
 interactie daartussen: wat inwoners en ondernemers willen weten, doen of volgen.
@@ -61,10 +61,11 @@ privacygevoelige informatie in ongeschikte kanalen.
 
 ## Van interactie naar implementatie
 
-[Bouwstenen](../bouwstenen/) werken interactietypen uit in herbruikbare
-onderdelen. Specificaties leggen de informatie en API-contracten vast. Kanalen
-vertalen dit naar een gebruikersomgeving; aansluitprofielen verbinden die met
-bronsystemen.
+[Bouwstenen](../bouwstenen/) werken de interactiebehoeften uit in
+herbruikbare capabilities met een bijbehorend functioneel informatiemodel. Kanalen
+vertalen dit naar een gebruikersomgeving. De [Interactie API](../interactie-api/)
+biedt de gestandaardiseerde contracten voor kanalen, en [aansluitprofielen](../aansluitprofielen/)
+verbinden die met bronsystemen.
 
 ## Onderbouwing
 

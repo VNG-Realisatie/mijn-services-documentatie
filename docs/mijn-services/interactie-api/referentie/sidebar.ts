@@ -4,19 +4,19 @@ const sidebar: SidebarsConfig = {
   apisidebar: [
     {
       type: "doc",
-      id: "mijn-services/specificaties/interactieservices-api/referentie/mijntaken-api",
+      id: "mijn-services/interactie-api/referentie/interactieservices-api",
     },
     {
       type: "category",
       label: "Context",
       link: {
         type: "doc",
-        id: "mijn-services/specificaties/interactieservices-api/referentie/context",
+        id: "mijn-services/interactie-api/referentie/context",
       },
       items: [
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/zoek-context",
+          id: "mijn-services/interactie-api/referentie/zoek-context",
           label: "Zoek context",
           className: "api-method post",
         },
@@ -27,12 +27,12 @@ const sidebar: SidebarsConfig = {
       label: "Taken",
       link: {
         type: "doc",
-        id: "mijn-services/specificaties/interactieservices-api/referentie/taken",
+        id: "mijn-services/interactie-api/referentie/taken",
       },
       items: [
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/retrieve-taak",
+          id: "mijn-services/interactie-api/referentie/retrieve-taak",
           label: "Haal één taak op",
           className: "api-method get",
         },
@@ -44,73 +44,73 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/contextquery",
+          id: "mijn-services/interactie-api/referentie/schemas/contextquery",
           label: "ContextQuery",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/contextresultaat",
+          id: "mijn-services/interactie-api/referentie/schemas/contextresultaat",
           label: "ContextResultaat",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/contextlink",
+          id: "mijn-services/interactie-api/referentie/schemas/contextlink",
           label: "ContextLink",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/uitvoeringinfo",
+          id: "mijn-services/interactie-api/referentie/schemas/uitvoeringinfo",
           label: "UitvoeringInfo",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/uitvoering",
+          id: "mijn-services/interactie-api/referentie/schemas/uitvoering",
           label: "Uitvoering",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/uploaduitvoering",
+          id: "mijn-services/interactie-api/referentie/schemas/uploaduitvoering",
           label: "UploadUitvoering",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/formulieruitvoering",
+          id: "mijn-services/interactie-api/referentie/schemas/formulieruitvoering",
           label: "FormulierUitvoering",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/betaaluitvoering",
+          id: "mijn-services/interactie-api/referentie/schemas/betaaluitvoering",
           label: "BetaalUitvoering",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/onbekendeuitvoering",
+          id: "mijn-services/interactie-api/referentie/schemas/onbekendeuitvoering",
           label: "OnbekendeUitvoering",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/taakinfo",
+          id: "mijn-services/interactie-api/referentie/schemas/taakinfo",
           label: "TaakInfo",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/taak",
+          id: "mijn-services/interactie-api/referentie/schemas/taak",
           label: "Taak",
           className: "schema",
         },
         {
           type: "doc",
-          id: "mijn-services/specificaties/interactieservices-api/referentie/schemas/probleem",
+          id: "mijn-services/interactie-api/referentie/schemas/probleem",
           label: "Probleem",
           className: "schema",
         },

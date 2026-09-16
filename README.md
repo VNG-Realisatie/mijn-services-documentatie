@@ -14,11 +14,12 @@ Het doel van MijnServices is om publieke dienstverlening van buiten naar binnen 
 
 De documentatie is onderverdeeld in de volgende onderdelen:
 
-- **[Bouwstenen](docs/mijn-services/bouwstenen)** — De 8 MijnServices-bouwstenen: MijnTaken, MijnZaken, MijnAgenda, MijnBerichten, MijnContactmomenten, MijnGesprekken, MijnProducten en MijnProfiel.
-- **[Interactiepatronen](docs/mijn-services/interactie-patronen)** — Generieke klantreizen, interactietypen en ontwerpprincipes.
+- **[Klantreis en principes](docs/mijn-services/klantreis-en-principes)** — Generieke klantreizen, interactietypen en ontwerpprincipes.
+- **[Bouwstenen](docs/mijn-services/bouwstenen)** — De 8 MijnServices-bouwstenen (Taken, Zaken, Agenda, Berichten, Contactmomenten, Gesprekken, Producten en Profiel) inclusief interactiepatronen en functionele informatiemodellen.
 - **[Kanalen](docs/mijn-services/kanalen)** — Schermprofielen en functioneel ontwerp voor MijnOmgevingen (in lijn met het NL Design System).
-- **[Specificaties](docs/mijn-services/specificaties)** — Functionele modellen en de **Interactieservices API** (inclusief use-cases, schermbeschrijvingen en interactieve API-referentie).
+- **[Interactie API](docs/mijn-services/interactie-api)** — De gestandaardiseerde **Interactie API** (inclusief use-cases, schermbeschrijvingen en interactieve API-referentie).
 - **[Aansluitprofielen](docs/mijn-services/aansluitprofielen)** — Gestandaardiseerde koppelingen tussen de interactielaag en bronsystemen (zoals Open VTB, ZGW API, NotifyNL).
+- **[Architectuur en standaarden](docs/mijn-services/architectuur-en-standaarden)** — Referentiekaders, open standaarden en architectuurprincipes.
 
 ## Lokale documentatiesite
 

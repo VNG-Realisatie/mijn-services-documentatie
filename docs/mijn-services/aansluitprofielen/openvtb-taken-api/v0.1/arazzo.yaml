@@ -5,10 +5,10 @@ info:
   version: 0.1.0
 sourceDescriptions:
   - name: mijnTakenFunctioneelModel
-    url: ../../../specificaties/functionele-modellen/mijn-taken/v0.1/openapi.yaml
+    url: ../../../bouwstenen/mijn-taken/v0.1/openapi.yaml
     type: openapi
   - name: interactieservicesApi
-    url: ../../../specificaties/interactieservices-api/v0.1/openapi.yaml
+    url: ../../../interactie-api/v0.1/openapi.yaml
     type: openapi
   - name: openvtbTakenApi
     url: ./openapi.yaml
@@ -61,8 +61,7 @@ workflows:
           description: Identificatie van de taak die wordt geraadpleegd.
     steps:
       - stepId: retrieveTaak
-        description:
-          Haal de generieke taak op die als taakdetail kan worden aangeboden.
+        description: Haal de generieke taak op die als taakdetail kan worden aangeboden.
         operationId: externetakenRetrieve
         parameters:
           - name: uuid

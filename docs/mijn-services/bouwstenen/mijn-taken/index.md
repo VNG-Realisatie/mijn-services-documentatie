@@ -20,13 +20,13 @@ overheidsportaal plaatsvindt.
 ## Functioneel model
 
 De domeinbetekenis van MijnTaken staat in het
-[functioneel model MijnTaken](../../specificaties/functionele-modellen/mijn-taken/).
+[functioneel model](./overzicht).
 Dat model beschrijft begrippen zoals `Taak`, `TaakStatus`, `TaakContext`,
 `Uitvoeringsmogelijkheid` en de flows die door API's en aansluitprofielen worden
 gebruikt.
 
-API-specifieke DTO's staan niet in het functioneel model. De InteractieServices
-API vertaalt deze begrippen naar request- en responsevormen voor kanalen; een
+API-specifieke DTO's staan niet in het functioneel model. De [Interactie API](../../interactie-api/)
+vertaalt deze begrippen naar request- en responsevormen voor kanalen; een
 aansluitprofiel beschrijft hoe een bron-API die vormen kan vullen.
 
 ## Operaties
@@ -39,7 +39,7 @@ Voor de eerste uitwerking zijn de volgende functionele operaties leidend:
 | Taak raadplegen         | `mijnTaken.taakRaadplegen` | Informatie ophalen die nodig is om een taak te begrijpen.                     |
 | Taak uitvoeren          | `mijnTaken.taakUitvoeren`  | De handeling bij een taak starten of voltooien bij de verantwoordelijke bron. |
 
-In de InteractieServices API landen deze operaties voorlopig op
+In de [Interactie API](../../interactie-api/) landen deze operaties voorlopig op
 `POST /context/zoek` en `GET /taken/{uuid}`. Uitvoering zelf blijft bij de bron;
 het kanaal krijgt de informatie die nodig is om de gebruiker naar de juiste
 uitvoering te leiden.

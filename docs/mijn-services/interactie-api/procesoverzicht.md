@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## Schermflow
 
-Het onderstaande diagram toont de navigatieflow langs de [schermprofielen](../../kanalen/mijn-omgeving/schermprofielen/) per startpunt en taaktype. **Blauw** is het beoogde pad voor MijnOverheid, **groen** voor MijnOmgeving. De betaalprovider (grijs) is extern en bereikbaar vanuit beide portalen.
+Het onderstaande diagram toont de navigatieflow langs de [schermprofielen](../kanalen/mijn-omgeving/schermprofielen/) per startpunt en taaktype. **Blauw** is het beoogde pad voor MijnOverheid, **groen** voor MijnOmgeving. De betaalprovider (grijs) is extern en bereikbaar vanuit beide portalen.
 
 ```mermaid
 flowchart TD

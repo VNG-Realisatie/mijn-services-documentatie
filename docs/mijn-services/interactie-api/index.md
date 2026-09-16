@@ -1,6 +1,6 @@
-# Interactieservices API
+# Interactie API
 
-De InteractieServices API is het publieke contract tussen kanalen en providers
+De Interactie API is het publieke contract tussen kanalen en de interactielaag
 van MijnServices. Voor de eerste uitwerking ligt de focus op taken: een kanaal
 kan via dit contract taakcontext ophalen, terwijl de uitvoering en brondata bij
 de aangesloten provider blijven.
@@ -12,7 +12,7 @@ het bestand waar documentatie, validatie, downloads en tooling op aansluiten.
 
 De API bevat de operatiecontracten en DTO's. De betekenis van domeinbegrippen
 zoals taken, taakstatussen en uitvoeringsmogelijkheden staat in het
-[functioneel model MijnTaken](../functionele-modellen/mijn-taken/).
+[bouwsteen MijnTaken](../bouwstenen/mijn-taken/).
 
 Als de API wordt opgesplitst in een kern met extensies, blijven de onderhoudbare
 delen in bronbestanden staan en wordt `openapi.yaml` daaruit gegenereerd. De
@@ -22,10 +22,10 @@ voor beheer door de standaardisatiegroep.
 Voor versie `v0.1` is het publicatiebestand:
 
 - [`v0.1/openapi.yaml`](./v0.1/openapi.yaml)
-- [Gegenereerde API-referentie](./referentie/mijntaken-api)
+- [Gegenereerde API-referentie](./referentie/interactieservices-api)
 
 ## Aansluitprofielen
 
-Aansluitprofielen beschrijven hoe een bron-API de InteractieServices API kan
+Aansluitprofielen beschrijven hoe een bron-API de Interactie API kan
 vullen. Voor taken begint de uitwerking met de
-[OpenVTB Taken API](../../aansluitprofielen/openvtb-taken-api/).
+[OpenVTB Taken API](../aansluitprofielen/openvtb-taken-api/).

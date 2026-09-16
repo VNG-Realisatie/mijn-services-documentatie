@@ -10,7 +10,7 @@ Tussenliggend scherm dat verschijnt tijdens een **portaalwissel van MijnOverheid
 
 Dit scherm is alleen van toepassing op taken die **niet uitvoerbaar zijn in MijnOverheid**. Taken die MijnOverheid wel zelf kan afhandelen (betaling, bestandsupload; later formulieren) doorlopen dit scherm niet.
 
-Voor de end-to-end flow waarin dit scherm voorkomt, zie het [Procesoverzicht](../../../specificaties/interactieservices-api/procesoverzicht.md).
+Voor de end-to-end flow waarin dit scherm voorkomt, zie het [Procesoverzicht](../../../interactie-api/procesoverzicht.md).
 
 ## Schermvoorbeeld
 
@@ -32,7 +32,7 @@ Dit scherm verloopt via de DigiD-koppeling van het LO-portaal. De MijnTaken API 
 
 ## Gebruikt in use cases
 
-- [UC-02 Taak afhandelen](../../../specificaties/interactieservices-api/use-cases/uc-02-taak-afhandelen.md)
+- [UC-02 Taak afhandelen](../../../interactie-api/use-cases/uc-02-taak-afhandelen.md)
 
 ## Verschillen per portaal
 

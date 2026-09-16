@@ -10,7 +10,7 @@ Elk schermprofiel bevat:
 
 - Een korte omschrijving en screenshot of Figma-weergave
 - De **interactietabel**: per UI-element een ID, de interactie en de bijbehorende API-operatie
-- Welke [use cases](../../../specificaties/interactieservices-api/use-cases/index.md) het scherm gebruiken
+- Welke [use cases](../../../interactie-api/use-cases/index.md) het scherm gebruiken
 
 Schermen worden geïdentificeerd met het patroon `SCR-<ONDERWERP>`. IDs zijn stabiel en worden door use cases aangehaald.
 
@@ -24,7 +24,7 @@ Schermen worden geïdentificeerd met het patroon `SCR-<ONDERWERP>`. IDs zijn sta
 | `SCR-TAAK-UITVOEREN`   | [Taak uitvoeren](./taak-uitvoeren.md)                                       |
 | `SCR-DIGID-EH`         | [DigiD eenvoudige herauthenticatie](./digid-eenvoudige-herauthenticatie.md) |
 
-Zie ook het [procesoverzicht](../../../specificaties/interactieservices-api/procesoverzicht.md) voor de volledige schermflow.
+Zie ook het [procesoverzicht](../../../interactie-api/procesoverzicht.md) voor de volledige schermflow.
 
 ## Huidige situatie
 
