@@ -4,7 +4,7 @@ import process from "node:process";
 import { chromium } from "playwright";
 import YAML from "yaml";
 
-const DEFAULT_PROFILE = "docs/mijn-services/kanalen/mijn-omgeving/schermprofielen/schermprofiel.yaml";
+const DEFAULT_PROFILE = "docs/mijn-services/schermprofielen/schermprofiel.yaml";
 
 function readOption(name) {
   const prefix = `--${name}=`;
@@ -21,12 +21,17 @@ function staticPathFromAsset(asset) {
 
 function findRenderSource(screen, screenshot) {
   const sourceTitle = screenshot.source?.visualReference;
-  const renderSources = screen.visualReferences?.filter(
-    (reference) => reference.type === "storybook-iframe" && reference.role === "render-source",
-  ) ?? [];
+  const renderSources =
+    screen.visualReferences?.filter(
+      (reference) =>
+        reference.type === "storybook-iframe" &&
+        reference.role === "render-source",
+    ) ?? [];
 
   if (sourceTitle) {
-    const match = renderSources.find((reference) => reference.title === sourceTitle);
+    const match = renderSources.find(
+      (reference) => reference.title === sourceTitle,
+    );
     if (match) {
       return match;
     }
@@ -36,7 +41,9 @@ function findRenderSource(screen, screenshot) {
     return renderSources[0];
   }
 
-  throw new Error(`Unable to determine render-source for ${screen.screenId} / ${screenshot.scenario}`);
+  throw new Error(
+    `Unable to determine render-source for ${screen.screenId} / ${screenshot.scenario}`,
+  );
 }
 
 async function captureScreenshot(page, screen, screenshot) {
@@ -64,7 +71,9 @@ async function main() {
 
   const profile = YAML.parse(await readFile(profilePath, "utf8"));
   const screens = profile.screens ?? [];
-  const selectedScreens = screenId ? screens.filter((screen) => screen.screenId === screenId) : screens;
+  const selectedScreens = screenId
+    ? screens.filter((screen) => screen.screenId === screenId)
+    : screens;
 
   if (selectedScreens.length === 0) {
     throw new Error(`No screens matched ${screenId}`);
@@ -77,14 +86,18 @@ async function main() {
   try {
     for (const screen of selectedScreens) {
       const screenshots = (screen.visualReferences ?? []).filter(
-        (reference) => reference.type === "screenshot" && reference.role === "stable-documentation-snapshot",
+        (reference) =>
+          reference.type === "screenshot" &&
+          reference.role === "stable-documentation-snapshot",
       );
       const selectedScreenshots = scenario
         ? screenshots.filter((screenshot) => screenshot.scenario === scenario)
         : screenshots;
 
       if (scenario && selectedScreenshots.length === 0) {
-        throw new Error(`No screenshots matched ${screen.screenId} / ${scenario}`);
+        throw new Error(
+          `No screenshots matched ${screen.screenId} / ${scenario}`,
+        );
       }
 
       for (const screenshot of selectedScreenshots) {
@@ -102,7 +115,14 @@ async function main() {
   }
 
   await writeFile(
-    path.join(process.cwd(), "static", "img", "mijn-services", "schermen", "capture-manifest.json"),
+    path.join(
+      process.cwd(),
+      "static",
+      "img",
+      "mijn-services",
+      "schermen",
+      "capture-manifest.json",
+    ),
     `${JSON.stringify({ capturedAt: new Date().toISOString(), files: captured }, null, 2)}\n`,
     "utf8",
   );

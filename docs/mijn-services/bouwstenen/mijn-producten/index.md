@@ -3,16 +3,10 @@ sidebar_position: 7
 description: Een overzicht van aangevraagde producten en diensten.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-producten.svg
+draft: true
 ---
 
 # MijnProducten
-
-:::info[MijnProducten is in ontwikkeling]
-
-Deze pagina beschrijft een standaard die nog in ontwikkeling is. De inhoud kan
-veranderen.
-
-:::
 
 MijnProducten biedt de inwoner en ondernemer een overzicht van aangevraagde
 producten en diensten bij de overheidsorganisatie. Hierin verschijnt

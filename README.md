@@ -15,8 +15,8 @@ Het doel van MijnServices is om publieke dienstverlening van buiten naar binnen 
 De documentatie is onderverdeeld in de volgende onderdelen:
 
 - **[Klantreis en principes](docs/mijn-services/klantreis-en-principes)** — Generieke klantreizen, interactietypen en ontwerpprincipes.
-- **[Bouwstenen](docs/mijn-services/bouwstenen)** — De 8 MijnServices-bouwstenen (Taken, Zaken, Agenda, Berichten, Contactmomenten, Gesprekken, Producten en Profiel) inclusief interactiepatronen en functionele informatiemodellen.
-- **[Kanalen](docs/mijn-services/kanalen)** — Schermprofielen en functioneel ontwerp voor MijnOmgevingen (in lijn met het NL Design System).
+- **[Bouwstenen](docs/mijn-services/bouwstenen)** — De 8 MijnServices-bouwstenen (MijnTaken, MijnZaken, MijnAgenda, MijnBerichten, MijnContactmomenten, MijnGesprekken, MijnProducten en MijnProfiel) inclusief interactiepatronen en functionele informatiemodellen.
+- **[Schermprofielen](docs/mijn-services/schermprofielen)** — Schermprofielen en functioneel ontwerp voor portalen en apps (in lijn met het NL Design System, ingedeeld in Overzicht, Context en Uitvoering).
 - **[Interactie API](docs/mijn-services/interactie-api)** — De gestandaardiseerde **Interactie API** (inclusief use-cases, schermbeschrijvingen en interactieve API-referentie).
 - **[Aansluitprofielen](docs/mijn-services/aansluitprofielen)** — Gestandaardiseerde koppelingen tussen de interactielaag en bronsystemen (zoals Open VTB, ZGW API, NotifyNL).
 - **[Architectuur en standaarden](docs/mijn-services/architectuur-en-standaarden)** — Referentiekaders, open standaarden en architectuurprincipes.
@@ -61,7 +61,7 @@ Een belangrijk publicatiekanaal voor MijnServices is de kennisbank van [develope
 
 ### Scherm-snapshots ophalen (Playwright)
 
-Automatisch screenshots genereren vanuit Storybook op basis van de definities in `docs/mijn-services/kanalen/mijn-omgeving/schermprofielen/schermprofiel.yaml`:
+Automatisch screenshots genereren vanuit Storybook op basis van de definities in `docs/mijn-services/schermprofielen/schermprofiel.yaml`:
 
 ```bash
 pnpm capture:screens

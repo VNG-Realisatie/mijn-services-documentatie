@@ -5,16 +5,10 @@ description: >
   handelingsperspectief bij lopende en afgeronde dienstverlening.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-zaken.svg
+draft: true
 ---
 
 # MijnZaken
-
-:::info[MijnZaken is in ontwikkeling]
-
-Deze pagina beschrijft een standaard die nog in ontwikkeling is. De inhoud kan
-veranderen.
-
-:::
 
 MijnZaken brengt de context van een zaak samen: status, gebeurtenissen,
 documenten, besluiten, contact en relevante vervolgstappen. De bouwsteen maakt
@@ -237,8 +231,8 @@ informatie uit andere MijnServices-bouwstenen.
 ## Gebruik in kanalen
 
 De concrete presentatie van MijnZaken hoort bij de kanalen waarin de bouwsteen
-wordt gebruikt. De eerste uitwerking staat bij
-[kanaal: mijnomgeving](../../kanalen/mijn-omgeving).
+wordt gebruikt. De interactiepatronen en uitwerkingen staan bij
+[schermprofielen](../../schermprofielen/).
 
 ## Aansluiten op bronnen en standaarden
 

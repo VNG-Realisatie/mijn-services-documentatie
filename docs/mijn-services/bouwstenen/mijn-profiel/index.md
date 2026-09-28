@@ -3,16 +3,10 @@ sidebar_position: 8
 description: Profielcontext, contactgegevens en voorkeuren voor inwoners en ondernemers.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-profiel.svg
+draft: true
 ---
 
 # MijnProfiel
-
-:::info[MijnProfiel is in ontwikkeling]
-
-Deze pagina beschrijft een standaard die nog in ontwikkeling is. De inhoud kan
-veranderen.
-
-:::
 
 MijnProfiel ondersteunt inwoners en ondernemers bij het beginnen, hervatten en
 personaliseren van dienstverlening. De bouwsteen maakt duidelijk welke

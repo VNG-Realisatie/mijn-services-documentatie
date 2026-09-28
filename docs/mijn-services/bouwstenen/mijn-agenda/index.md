@@ -3,16 +3,10 @@ sidebar_position: 10
 description: Een overzicht van geplande afspraken met overheidsorganisaties.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-agenda.svg
+draft: true
 ---
 
 # MijnAgenda
-
-:::info[MijnAgenda is in ontwikkeling]
-
-Deze pagina beschrijft een standaard die nog in ontwikkeling is. De inhoud kan
-veranderen.
-
-:::
 
 MijnAgenda is een service waarmee inwoners en ondernemers hun geplande afspraken
 met overheidsorganisaties kunnen inzien.
@@ -201,7 +195,7 @@ Onderstaande capability is onderdeel van een andere, algemenere capability:
 ‘Bieden van interactieve dienstverlening’. Deze capability is van toepassing op
 Omnichannel en daarmee ook op de afzonderlijke MijnServices, zoals MijnAgenda.
 Naast de capability ten behoeve van MijnAgenda, zijn er in de algemene
-capability ook capabilities opgenomen voor MijnZaken, Mijntaken,
+capability ook capabilities opgenomen voor MijnZaken, MijnTaken,
 MijnContactmomenten, MijnBerichten en Notificieren.
 
 ![afbeelding.png](afbeelding.png)

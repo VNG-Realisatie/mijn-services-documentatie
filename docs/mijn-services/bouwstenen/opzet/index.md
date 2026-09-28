@@ -36,8 +36,8 @@ Om verkokering en overlap te voorkomen, hanteren we een duidelijke scheiding van
 | **Attenderingsmomenten (wanneer attenderen)**    | ✅ Ja (functioneel)  | Welke gebeurtenissen vragen attendering        |
 | **Begrippenkader (begrijpelijke taal)**          |        ✅ Ja         | Centraal in de bouwsteen                       |
 | **Samenhang & combinatie met andere bouwstenen** |        ✅ Ja         | Hoe bouwstenen elkaar versterken               |
-| **Vertaling naar kanalen (richtlijnen)**         | ✅ Ja (conceptueel)  | Concrete uitwerking onder `kanalen/`           |
-| **Schermontwerpen en gecombineerde UI-views**    |        ❌ Nee        | Onder `kanalen/mijn-omgeving/schermprofielen/` |
+| **Vertaling naar schermen (richtlijnen)**        | ✅ Ja (conceptueel)  | Concrete uitwerking onder `schermprofielen/`   |
+| **Schermontwerpen en gecombineerde UI-views**    |        ❌ Nee        | Onder `schermprofielen/`                       |
 | **Technische API-payloads en DTO's**             |        ❌ Nee        | Onder `specificaties/interactieservices-api/`  |
 | **Formele informatiemodellen**                   |        ❌ Nee        | Onder `specificaties/functionele-modellen/`    |
 | **Koppelingen met bronsystemen**                 |        ❌ Nee        | Onder `aansluitprofielen/` (bv. ZGW, Open VTB) |
@@ -76,7 +76,7 @@ Elke bouwsteenpagina volgt bij voorkeur deze vaste hoofdstukindeling:
 
 ### 6. Relatie en combinatie met andere bouwstenen
 
-- Hoe grijpt deze bouwsteen in op de andere 7 bouwstenen? (Bijv. MijnTaken leidt naar MijnZaken; MijnBerichten attendeert op een taak; MijnAgenda toont afspraken die horen bij een zaak).
+- Hoe grijpt deze bouwsteen in op de andere bouwstenen? (Bijv. MijnTaken leidt naar MijnZaken; MijnBerichten attendeert op een taak; MijnAgenda toont afspraken die horen bij een zaak).
 - **Samengestelde ervaringen**: Hoe kan deze bouwsteen in kanalen worden gecombineerd met andere bouwstenen tot één naadloze view (bijvoorbeeld een zaakdetailpagina die tegelijk de voortgang van een zaak, openstaande acties en de lopende dialoog toont)?
 
 ### 7. Gebruik in kanalen en attenderen

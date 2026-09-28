@@ -11,7 +11,7 @@ Voor elke versie is `openapi.yaml` de publiceerbare OpenAPI-specificatie. Dat is
 het bestand waar documentatie, validatie, downloads en tooling op aansluiten.
 
 De API bevat de operatiecontracten en DTO's. De betekenis van domeinbegrippen
-zoals taken, taakstatussen en uitvoeringsmogelijkheden staat in het
+zoals taken, taakstatussen en uitvoeringsmogelijkheden staat in de
 [bouwsteen MijnTaken](../bouwstenen/mijn-taken/).
 
 Als de API wordt opgesplitst in een kern met extensies, blijven de onderhoudbare

@@ -3,16 +3,10 @@ sidebar_position: 12
 description: Een overzicht van gevoerde gesprekken met overheidsorganisaties.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-gesprekken.svg
+draft: true
 ---
 
 # MijnGesprekken
-
-:::info[MijnGesprekken is in ontwikkeling]
-
-Deze pagina beschrijft een standaard die nog in ontwikkeling is. De inhoud kan
-veranderen.
-
-:::
 
 ## Inleiding
 
@@ -1208,7 +1202,7 @@ Aantekeningen, nog te verwerken
   - Basis leggen door Johannes en Paul en dan toetsen
 - Gelezen/ongelezen op elke gespreksbijdrage of alleen op laatste – keuze voor
   nu
-- MijnGesprekken is allen voor gevalideerde users na inlog in een portal
+- MijnGesprekken is alleen voor gevalideerde users na inlog in een portal
 
 Wat gaan we doen naar de toekomst
 
@@ -1231,7 +1225,7 @@ Wat gaan we doen naar de toekomst
   attenderen voor nieuwe gespreksbijdrage – beide kanten op, naar mw en naar
   klant – (in DB of met topics JanB graag meedenken
 - **Ronald** bespreekt met Paul wat te doen met contactmoment, wat is de relatie
-  met MijnGesprek
+  met MijnGesprekken
 - **Ronald**: uitwerken hoe een informatie object aan EN Gesprek EN Zaak
   gekoppeld is (relatie komt op twee plekke van informatie object op zaak en
   gesprek
