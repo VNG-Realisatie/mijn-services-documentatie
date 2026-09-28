@@ -1,0 +1,17 @@
+openapi: 3.1.0
+info:
+  title: InteractieServices functioneel informatiemodel - kern
+  version: 0.1.0
+  license:
+    name: EUPL 1.2
+    url: https://opensource.org/licenses/EUPL-1.2
+  description: |
+    Functionele kernbegrippen voor InteractieServices.
+
+    Dit bestand bevat geen API-operaties. Het wordt gebruikt als OpenAPI/JSON Schema-drager voor herbruikbare begrippen en attributen.
+servers:
+  - url: https://example.invalid
+    description: Niet van toepassing; dit bestand bevat alleen componenten.
+paths: {}
+components:
+  schemas: {}
