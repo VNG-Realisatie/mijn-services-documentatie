@@ -27,8 +27,8 @@ MijnOverheid beheert het "Recent"-overzicht intern. De integratie met de MijnTak
 
 ## Gebruikt in use cases
 
-- [UC-01 Taken raadplegen](../../interactie-api/use-cases/uc-01-taken-raadplegen.md)
-- [UC-02 Taak afhandelen](../../interactie-api/use-cases/uc-02-taak-afhandelen.md)
+- [UC-01 Taken raadplegen](../../bouwstenen/mijn-taken/index.md#uc-01-taken-raadplegen)
+- [UC-02 Taak afhandelen](../../bouwstenen/mijn-taken/index.md#uc-02-taak-afhandelen)
 
 ## Huidige situatie
 

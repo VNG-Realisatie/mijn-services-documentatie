@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-description: Een actie die de inwoner meestal via het overheidsportaal uitvoert.
+description: Weten wat er nog moet gebeuren en een gevraagde handeling met zekerheid afronden.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-taken.svg
 draft: true
@@ -8,50 +8,101 @@ draft: true
 
 # MijnTaken
 
-MijnTaken is een actie die de inwoner moet uitvoeren en die meestal vanuit het
-overheidsportaal plaatsvindt.
+MijnTaken helpt inwoners en ondernemers te weten wat er nog moet gebeuren,
+waarom een handeling nodig is en hoe ze verder kunnen. Bijvoorbeeld informatie
+aanleveren, een formulier invullen of betalen. De bouwsteen verbindt een verzoek
+van de overheid aan een begrijpelijke, uitvoerbare vervolgstap.
 
-## Functioneel model
+## Doel en gebruikersbehoeften
 
-De domeinbetekenis van MijnTaken staat in het
-[functioneel model](./overzicht).
-Dat model beschrijft begrippen zoals `Taak`, `TaakStatus`, `TaakContext`,
-`Uitvoeringsmogelijkheid` en de flows die door API's en aansluitprofielen worden
-gebruikt.
+Het doel is grip op wat iemand zelf moet of kan doen, zonder te hoeven weten
+welke afdeling, organisatie of welk systeem het verzoek afhandelt.
 
-API-specifieke DTO's staan niet in het functioneel model. De [Interactie API](../../interactie-api/)
-vertaalt deze begrippen naar request- en responsevormen voor kanalen; een
-aansluitprofiel beschrijft hoe een bron-API die vormen kan vullen.
+| Vraag van de gebruiker                    | Wat MijnTaken ondersteunt                                           |
+| ----------------------------------------- | ------------------------------------------------------------------- |
+| Moet ik nog iets doen?                    | Herkennen welke taken openstaan en welke aandacht vragen.           |
+| Wat wordt er van mij gevraagd, en waarom? | Een begrijpelijke toelichting in de context van de dienstverlening. |
+| Voor wanneer moet ik reageren?            | Een termijn, als die geldt, en uitleg over wat die betekent.        |
+| Hoe kan ik verder?                        | Een passende uitvoeringsmogelijkheid of hulp bij het verzoek.       |
+| Is het gelukt, of moet ik nog iets doen?  | Bevestiging en een actuele, begrijpelijke taakstatus.               |
 
-## Operaties
+## Scope en samenhang
 
-Voor de eerste uitwerking zijn de volgende functionele operaties leidend:
+Een taak is een concrete handeling die een inwoner of ondernemer moet of kan
+uitvoeren. Een taak is niet hetzelfde als een interne werkopdracht voor een
+medewerker of een volledig dienstverleningsproces.
 
-| Operatie                | FlowId                     | Doel                                                                          |
-| :---------------------- | :------------------------- | :---------------------------------------------------------------------------- |
-| Taken in context zoeken | `mijnTaken.contextZoeken`  | Taken ophalen die relevant zijn voor een klant en optionele context.          |
-| Taak raadplegen         | `mijnTaken.taakRaadplegen` | Informatie ophalen die nodig is om een taak te begrijpen.                     |
-| Taak uitvoeren          | `mijnTaken.taakUitvoeren`  | De handeling bij een taak starten of voltooien bij de verantwoordelijke bron. |
+MijnTaken beschrijft het vinden, begrijpen en afhandelen van zulke handelingen.
+De bouwsteen schrijft geen vast scherm of kanaal voor: dezelfde behoefte kan
+worden ondersteund in een mijnomgeving, via klantcontact of aan de balie.
 
-In de [Interactie API](../../interactie-api/) landen deze operaties voorlopig op
-`POST /context/zoek` en `GET /taken/{uuid}`. Uitvoering zelf blijft bij de bron;
-het kanaal krijgt de informatie die nodig is om de gebruiker naar de juiste
-uitvoering te leiden.
+[MijnZaken](../mijn-zaken/index.md) geeft de voortgang en samenhang van een zaak;
+MijnTaken maakt zichtbaar wat de gebruiker daarbij zelf kan doen. Een taak kan
+ook bij een product of andere dienstverlening horen. De verantwoordelijke
+organisatie bepaalt welke handeling nodig is en wanneer die is afgerond.
 
-## Schermen
+## Use cases
 
-Schermen koppelen gebruikersinteractie aan functionele flows en API-operaties.
-De exacte schermuitwerking kan per kanaal verschillen, maar de eerste koppeling
-voor MijnTaken is:
+### UC-01: Taken raadplegen
 
-| Scherm                 | Doel                                                 | FlowId                     |
-| :--------------------- | :--------------------------------------------------- | :------------------------- |
-| `SCR-TAKENOVERZICHT`   | Openstaande en relevante taken tonen.                | `mijnTaken.contextZoeken`  |
-| `SCR-TAKEN-IN-CONTEXT` | Taken tonen binnen een zaak, product of dossier.     | `mijnTaken.contextZoeken`  |
-| `SCR-TAAKDETAIL`       | Eén taak begrijpen voordat de gebruiker handelt.     | `mijnTaken.taakRaadplegen` |
-| `SCR-TAAKUITVOEREN`    | De gebruiker naar de uitvoering van een taak leiden. | `mijnTaken.taakUitvoeren`  |
-| `SCR-GEEN-TAKEN`       | Uitleg geven als er geen relevante taken zijn.       | `mijnTaken.contextZoeken`  |
+**Doel:** weten welke taken relevant zijn en begrijpen wat er wordt gevraagd.
 
-Bij de verdere uitwerking krijgt elk scherm een interactietabel met de
-bijbehorende InteractieServices-operatie en, waar relevant, het aansluitprofiel
-dat de gegevens levert.
+De inwoner of ondernemer mag de betreffende taken bekijken. Die kan beginnen
+bij een overzicht, maar ook direct bij een taak of vanuit een zaak of product.
+Er hoeven geen openstaande taken te zijn om deze use case te gebruiken.
+
+MijnTaken ondersteunt dat de gebruiker:
+
+- relevante taken kan vinden en herkennen;
+- bij een taak ziet waar het verzoek over gaat en van welke organisatie het komt;
+- begrijpt wat er nodig is, waarom en binnen welke termijn, als die geldt;
+- de actuele status en beschikbare vervolgstap kan zien;
+- duidelijkheid krijgt wanneer er geen taken zijn of informatie niet beschikbaar is.
+
+**Resultaat:** de gebruiker weet wat er wordt gevraagd, of dat er geen relevante
+openstaande taken zijn. Alleen raadplegen voert een taak niet uit en rondt haar
+niet af.
+
+Een concreet voorbeeld is het scenario
+[Ontbrekende informatie aanleveren](../../scenarios/ontbrekende-informatie-aanleveren.md).
+
+### UC-02: Taak afhandelen
+
+**Doel:** de gevraagde handeling uitvoeren en weten of er nog iets nodig is.
+
+De inwoner of ondernemer mag de handeling uitvoeren en de taak is nog
+uitvoerbaar. Na het begrijpen van het verzoek kiest die een passende manier
+om verder te gaan, bijvoorbeeld informatie aanleveren, reageren of betalen.
+
+MijnTaken ondersteunt dat de gebruiker:
+
+- weet wat nodig is om de handeling te beginnen;
+- kan doorgaan naar een beschikbare uitvoeringsmogelijkheid;
+- bij een overgang naar een andere omgeving weet waar die verdergaat;
+- een bevestiging krijgt van wat is ontvangen of uitgevoerd;
+- ziet of de taak is afgerond, nog wordt verwerkt of verdere actie vraagt;
+- bij een mislukte of onderbroken handeling weet hoe verder te gaan;
+- niet opnieuw wordt gevraagd een al afgeronde of geannuleerde taak uit te voeren.
+
+**Resultaat:** de gebruiker weet wat er is gebeurd en of er nog een vervolgstap
+nodig is. Een handeling starten of indienen betekent niet altijd dat de taak
+meteen afgerond is. De getoonde status volgt de bevestigde uitkomst van de
+verantwoordelijke organisatie.
+
+## Attenderen
+
+Een nieuwe taak, een relevant gewijzigde taak of een naderende termijn kan
+aanleiding zijn om de gebruiker te attenderen. De attendering maakt duidelijk
+of actie nodig is en waar iemand veilig verder kan. Inhoud en kanaal passen bij
+de situatie; gevoelige informatie hoort niet in een ongeschikt kanaal.
+
+Attenderen is geen voorwaarde om een taak te kunnen vinden. De gebruiker kan
+ook zelf nagaan of er iets openstaat.
+
+## Gerelateerd
+
+| Onderdeel       | Verwijzingen                                                                                                                                                                                                   |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scenario's      | [Ontbrekende informatie aanleveren](../../scenarios/ontbrekende-informatie-aanleveren.md)                                                                                                                      |
+| Schermprofielen | [Mijn taken](../../schermprofielen/overzicht/takenoverzicht.mdx), [Taken in context](../../schermprofielen/context/taken-in-context.mdx), [Taak uitvoeren](../../schermprofielen/uitvoering/taak-uitvoeren.md) |
+| Interactie API  | [Interactie API](../../interactie-api/index.md)                                                                                                                                                                |

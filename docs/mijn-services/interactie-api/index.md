@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Interactie API
 
 De Interactie API is het publieke contract tussen kanalen en de interactielaag

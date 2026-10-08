@@ -90,7 +90,7 @@ Elke bouwsteenpagina volgt bij voorkeur deze vaste hoofdstukindeling:
 ### 8. Specificaties en standaarden
 
 - Verwijzingen naar:
-  - Functioneel model (`specificaties/functionele-modellen/...`)
+  - Begrippen en functionele interacties binnen de bouwsteen
   - Interactieservices API (`specificaties/interactieservices-api/...`)
   - Relevante aansluitprofielen (`aansluitprofielen/...`)
 
@@ -112,7 +112,7 @@ Een bouwsteen geldt als **volledig uitgewerkt** wanneer aan de volgende criteria
 
 ### Technische koppeling
 
-- [ ] **Functioneel model**: Er is een semantisch model of begrippenkader aanwezig onder `specificaties/functionele-modellen/`.
+- [ ] **Begrippen en interacties**: De bouwsteen beschrijft de betekenis van de begrippen en de functionele interacties, zonder een apart modelartefact te vereisen.
 - [ ] **API-contract**: De benodigde operaties zijn gemapt op de Interactieservices API.
 - [ ] **Aansluiting op bronnen**: Er is minstens één aansluitprofiel of migratiepad beschreven.
 

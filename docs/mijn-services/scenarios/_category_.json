@@ -1,0 +1,9 @@
+{
+  "label": "Klantscenario's",
+  "position": 1.5,
+  "key": "mijnservices-scenarios",
+  "link": {
+    "type": "doc",
+    "id": "mijn-services/scenarios/index"
+  }
+}

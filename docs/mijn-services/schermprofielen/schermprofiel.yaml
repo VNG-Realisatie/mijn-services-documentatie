@@ -7,9 +7,6 @@ summary: >
   ontwerp en operaties van de InteractieServices API.
 
 sources:
-  functioneelModel:
-    name: mijnTakenFunctioneelModel
-    url: ../bouwstenen/mijn-taken/v0.1/openapi.yaml
   interactieservicesApi:
     name: interactieservicesApi
     url: ../interactie-api/v0.1/openapi.yaml

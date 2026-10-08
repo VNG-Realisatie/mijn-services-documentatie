@@ -84,7 +84,6 @@ De eerste workflows worden handmatig uitgewerkt in Arazzo, zodat de
 mappingconventies zichtbaar kunnen groeien. Zodra de patronen stabiel zijn, ligt
 de volgende tooling voor de hand:
 
-- valideren dat elke `x-mijnservices-flowId` bestaat in het functioneel model;
 - valideren dat elke `x-mijnservices-targetOperationId` bestaat in de
   InteractieServices API;
 - valideren dat elke gebruikte `operationId` bestaat in de OpenVTB Taken API;
@@ -98,13 +97,13 @@ de volgende tooling voor de hand:
   aansluitprofielenoverzicht.
 
 Een generator of validator gebruikt `v0.1/arazzo.yaml` als workflowbasis. Vanuit
-Arazzo volgt de generator de `sourceDescriptions` naar het functioneel model, de
-InteractieServices API en de bron-API.
+Arazzo volgt de generator de `sourceDescriptions` naar de InteractieServices API
+en de bron-API.
 
 De harde checks en generatoren horen in de aparte MijnServices-bronrepo. Deze
 publicatierepo bevat alleen de gepubliceerde content en artefacten. De eerste
 check in die bronrepo bewaakt referentiele integriteit: Arazzo-profielen mogen
-niet verwijzen naar onbekende flowIds, target operationIds, source-bestanden,
+niet verwijzen naar onbekende target operationIds, source-bestanden,
 step operationIds, component-contexts of step outputs. Daarna kan dezelfde basis
 worden uitgebreid met semantische checks voor velddekking, verplichte
 doelattributen, transformaties en compleetheid per profiel of profielcombinatie.

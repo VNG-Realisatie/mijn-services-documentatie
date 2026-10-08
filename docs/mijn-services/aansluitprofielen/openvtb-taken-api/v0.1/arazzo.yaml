@@ -4,9 +4,6 @@ info:
   summary: Workflowmapping voor OpenVTB Taken API naar InteractieServices API.
   version: 0.1.0
 sourceDescriptions:
-  - name: mijnTakenFunctioneelModel
-    url: ../../../bouwstenen/mijn-taken/v0.1/openapi.yaml
-    type: openapi
   - name: interactieservicesApi
     url: ../../../interactie-api/v0.1/openapi.yaml
     type: openapi
@@ -47,7 +44,6 @@ workflows:
     x-mijnservices-targetOperationId: interactieservicesApi.retrieveTaak
     x-mijnservices-flowId: mijnTaken.taakRaadplegen
     x-mijnservices-status: ontwerp
-    x-mijnservices-domainObject: mijnTakenFunctioneelModel.Taak
     x-mijnservices-valueMappings:
       taak.status: openvtbTaakStatusNaarMijnTakenStatus
     inputs:

@@ -32,7 +32,7 @@ Dit scherm verloopt via de DigiD-koppeling van het LO-portaal. De MijnTaken API 
 
 ## Gebruikt in use cases
 
-- [UC-02 Taak afhandelen](../../interactie-api/use-cases/uc-02-taak-afhandelen.md)
+- [UC-02 Taak afhandelen](../../bouwstenen/mijn-taken/index.md#uc-02-taak-afhandelen)
 
 ## Verschillen per portaal
 
