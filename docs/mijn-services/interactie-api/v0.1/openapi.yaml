@@ -43,10 +43,21 @@ servers:
     description: Productie
 
 tags:
-  - name: Context
-    description: Raadpleeg samengestelde klantgerelateerde gegevens
+  - name: Operaties
+    description: Operaties van de kernmodule.
+  - name: Schema's
+    description: Gedeelde schema's van de kernmodule.
   - name: Taken
-    description: Raadpleeg en beheer taken
+    description: Operaties en schema's van de uitbreidingsmodule Taken.
+
+x-tagGroups:
+  - name: Kernmodule
+    tags:
+      - Operaties
+      - Schema's
+  - name: Uitbreidingsmodules
+    tags:
+      - Taken
 
 paths:
   /context/zoek:
@@ -81,7 +92,7 @@ paths:
         Zodra HTTP QUERY breed ondersteund wordt door clients en gateways, kan
         dit endpoint zonder gedragswijziging worden gemigreerd.
       tags:
-        - Context
+        - Operaties
       requestBody:
         required: true
         content:
@@ -140,6 +151,8 @@ paths:
 components:
   schemas:
     ContextQuery:
+      x-tags:
+        - Schema's
       type: object
       description: Zoekcriteria voor het opvragen van een samengestelde contextrespons.
       required:
@@ -181,6 +194,8 @@ components:
           example: ["taken"]
 
     ContextResultaat:
+      x-tags:
+        - Schema's
       type: object
       description: |
         Samengesteld object met klantgerelateerde gegevens.
@@ -204,6 +219,8 @@ components:
             $ref: "#/components/schemas/TaakInfo"
 
     ContextLink:
+      x-tags:
+        - Schema's
       type: object
       description: |
         De context waaraan de taak is gekoppeld (bijv. een zaak of product),
@@ -243,6 +260,8 @@ components:
           example: "https://portaal.gemeente.nl/zaken/2026-00042"
 
     UitvoeringInfo:
+      x-tags:
+        - Taken
       type: object
       description: |
         Uitvoeringsinformatie voor een taak: hoe de actieknop gelabeld wordt
@@ -280,6 +299,8 @@ components:
             - "https://portaal.gemeente.nl/taken/550e8400/uitvoeren?returnUrl=https%3A%2F%2Fmijnoverheid.nl%2Ftaken%2Fcontext%2Fzaak-2026-00042"
             - "https://betalen.gemeente.nl/pay?kenmerk=REF-2026-00042&bedrag=6550&returnUrl=https%3A%2F%2Fmijnoverheid.nl%2Ftaken%2Fcontext%2Fzaak-2026-00042"
     Uitvoering:
+      x-tags:
+        - Taken
       description: |
         Uitvoering van een taak. Bekende typen hebben een variant met een `const`-waarde op
         `type` en type-specifieke velden. `OnbekendeUitvoering` dient als catch-all voor
@@ -294,6 +315,8 @@ components:
         - $ref: "#/components/schemas/OnbekendeUitvoering"
 
     UploadUitvoering:
+      x-tags:
+        - Taken
       allOf:
         - $ref: "#/components/schemas/UitvoeringInfo"
         - type: object
@@ -324,6 +347,8 @@ components:
               example: 10485760
 
     FormulierUitvoering:
+      x-tags:
+        - Taken
       allOf:
         - $ref: "#/components/schemas/UitvoeringInfo"
         - type: object
@@ -343,6 +368,8 @@ components:
               description: Formulierconfiguratie (JSON Schema of vergelijkbaar). Structuur nog nader te bepalen.
 
     BetaalUitvoering:
+      x-tags:
+        - Taken
       allOf:
         - $ref: "#/components/schemas/UitvoeringInfo"
         - type: object
@@ -354,6 +381,8 @@ components:
               const: betaling
 
     OnbekendeUitvoering:
+      x-tags:
+        - Taken
       allOf:
         - $ref: "#/components/schemas/UitvoeringInfo"
         - type: object
@@ -376,6 +405,8 @@ components:
                 type → generiek label „Uitvoeren“ + `fallbackUrl` als fallback.
 
     TaakInfo:
+      x-tags:
+        - Taken
       type: object
       description: |
         Taakrepresentatie zoals teruggegeven door `POST /context/zoek`.
@@ -468,6 +499,8 @@ components:
           $ref: "#/components/schemas/UitvoeringInfo"
 
     Taak:
+      x-tags:
+        - Taken
       allOf:
         - $ref: "#/components/schemas/TaakInfo"
         - type: object
@@ -480,6 +513,8 @@ components:
               $ref: "#/components/schemas/Uitvoering"
 
     Probleem:
+      x-tags:
+        - Schema's
       type: object
       description: Probleemdetails conform [RFC 9457 Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc9457).
       properties:

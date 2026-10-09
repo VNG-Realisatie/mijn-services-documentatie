@@ -75,10 +75,12 @@ const config: Config = {
           interactieservicesApi: {
             specPath: 'docs/mijn-services/interactie-api/v0.1/openapi.yaml',
             outputDir: 'docs/mijn-services/interactie-api/referentie',
-            showSchemas: true,
+            showSchemas: false,
+            showInfoPage: false,
+            tagTemplate: 'plugins/openapi-tag-template.mdx',
             sidebarOptions: {
               groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
+              categoryLinkSource: 'auto',
             },
           } satisfies OpenApiPlugin.Options,
         },

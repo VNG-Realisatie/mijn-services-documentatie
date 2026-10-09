@@ -3,15 +3,12 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebar: SidebarsConfig = {
   apisidebar: [
     {
-      type: "doc",
-      id: "mijn-services/interactie-api/referentie/interactieservices-api",
-    },
-    {
       type: "category",
-      label: "Context",
+      label: "Operaties",
       link: {
-        type: "doc",
-        id: "mijn-services/interactie-api/referentie/context",
+        type: "generated-index",
+        title: "Operaties",
+        slug: "/category/mijn-services/interactie-api/referentie/operaties",
       },
       items: [
         {
@@ -24,23 +21,12 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Taken",
+      label: "Schema's",
       link: {
-        type: "doc",
-        id: "mijn-services/interactie-api/referentie/taken",
+        type: "generated-index",
+        title: "Schema's",
+        slug: "/category/mijn-services/interactie-api/referentie/schemas",
       },
-      items: [
-        {
-          type: "doc",
-          id: "mijn-services/interactie-api/referentie/retrieve-taak",
-          label: "Haal één taak op",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Schemas",
       items: [
         {
           type: "doc",
@@ -60,6 +46,23 @@ const sidebar: SidebarsConfig = {
           label: "ContextLink",
           className: "schema",
         },
+        {
+          type: "doc",
+          id: "mijn-services/interactie-api/referentie/schemas/probleem",
+          label: "Probleem",
+          className: "schema",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Taken",
+      link: {
+        type: "generated-index",
+        title: "Taken",
+        slug: "/category/mijn-services/interactie-api/referentie/taken",
+      },
+      items: [
         {
           type: "doc",
           id: "mijn-services/interactie-api/referentie/schemas/uitvoeringinfo",
@@ -110,9 +113,9 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "mijn-services/interactie-api/referentie/schemas/probleem",
-          label: "Probleem",
-          className: "schema",
+          id: "mijn-services/interactie-api/referentie/retrieve-taak",
+          label: "Haal één taak op",
+          className: "api-method get",
         },
       ],
     },
