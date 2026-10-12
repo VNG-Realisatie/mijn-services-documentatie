@@ -11,9 +11,9 @@ dienstverlener blijven.
 De documentatie en het ontwerp van de Interactie API zijn opgebouwd langs de
 volgende onderdelen:
 
-- [Positionering](./positionering.md) — Rolverdeling in het landschap (frontends, BFF's en gefedereerde ketens).
 - [Implementatieniveaus](./implementatieniveaus.md) — De drie niveaus van interactiediepte (van doorverwijzen tot embedded uitvoering) en het additieve groeimodel.
 - [Portaalwissels](./portaalwissels.md) — De gebruikers- en systeemflows bij cross-domein sessieoverdracht en herauthenticatie.
+- [Positionering](./positionering.md) — Rolverdeling in het landschap (frontends, BFF's en gefedereerde ketens).
 - **Kernmodule** — De gedeelde contractbasis (klant- en contextquery's, foutmodellen en kern-DTO's).
 - **Uitbreidingsmodules** — Domeinspecifieke modules die hierop voortbouwen, te beginnen met **Taken**.
 

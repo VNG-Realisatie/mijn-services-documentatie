@@ -136,9 +136,9 @@ const sidebars: SidebarsConfig = {
         label: 'Interactie API',
         link: {type: 'doc', id: 'mijn-services/interactie-api/index'},
         items: [
-          {type: 'doc', id: 'mijn-services/interactie-api/positionering'},
           {type: 'doc', id: 'mijn-services/interactie-api/implementatieniveaus'},
           {type: 'doc', id: 'mijn-services/interactie-api/portaalwissels'},
+          {type: 'doc', id: 'mijn-services/interactie-api/positionering'},
           ...moduleSidebar,
         ],
       },
