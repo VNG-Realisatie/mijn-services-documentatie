@@ -33,14 +33,7 @@ flowchart TD
     BRON --> REGISTER
 ```
 
-### Uitgangspunten voor de rolverdeling
-
-1. **Interactiecontract, geen beheerregister**  
-   De Interactie API is geen zaaksysteem of administratief register. De API beantwoordt de vraag: _welke informatie, context en handelingsmogelijkheden moet een kanaal op dit moment aan de gebruiker tonen?_ Het registreren, behandelen en archiveren van dossiers blijft bij de verantwoordelijke organisatie.
-2. **Uitvoering bij de bron**  
-   Het kanaal toont de taak of context en faciliteert de interactie, maar de verwerking en definitieve statusbepaling liggen altijd bij de bronorganisatie.
-3. **Context als primair concept**  
-   Informatie en handelingen worden opgevraagd in samenhang: bijvoorbeeld taken binnen de context van een zaak of product.
+Deze scheiding waarborgt de [uitgangspunten van de Interactie API](./index.md#uitgangspunten-voor-de-rolverdeling): een interactiecontract (geen beheerregister), uitvoering bij de bron en context als primair concept.
 
 ---
 

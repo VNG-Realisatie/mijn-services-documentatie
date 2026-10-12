@@ -147,10 +147,10 @@ const sidebars: SidebarsConfig = {
         label: 'Aansluitprofielen',
         link: {type: 'doc', id: 'mijn-services/aansluitprofielen/index'},
         items: [
+          {type: 'doc', id: 'mijn-services/aansluitprofielen/zgw'},
+          {type: 'doc', id: 'mijn-services/aansluitprofielen/openvtb-taken-api/index'},
           {type: 'doc', id: 'mijn-services/aansluitprofielen/combinaties'},
           {type: 'doc', id: 'mijn-services/aansluitprofielen/notifynl-api'},
-          {type: 'doc', id: 'mijn-services/aansluitprofielen/openvtb-taken-api/index'},
-          {type: 'doc', id: 'mijn-services/aansluitprofielen/zgw'},
         ],
       },
       {type: 'doc', id: 'mijn-services/architectuur-en-standaarden/index'},

@@ -10,8 +10,12 @@ Wanneer een portaal een handeling niet lokaal uitvoert (Implementatieniveau 1 of
 
 Niet elke doorverwijzing is een portaalwissel:
 
-- **Portaalwissel (Cross-domein):** De overgang tussen twee verschillende organisaties (bijvoorbeeld van MijnOverheid naar de MijnOmgeving van een gemeente of uitvoerder). Omdat de doelorgaan geen toegang heeft tot de sessie van het vertrekkende portaal, is **herauthenticatie** vereist (zoals DigiD Eenvoudige Herauthenticatie).
-- **Interne applicatie-overdracht (Binnen één domein):** Een portaal leidt de gebruiker door naar een specialistische deelfunctie binnen dezelfde organisatie (zoals een parkeerapplicatie of formulierenserver). Dit wordt intern afgehandeld via SSO, gedeelde cookies of een beveiligde token-URL; er is geen nieuwe DigiD-stap nodig.
+- **Portaalwissel (Cross-domein):** De overgang tussen twee verschillende organisaties (bijvoorbeeld van MijnOverheid naar de MijnOmgeving van een gemeente of uitvoerder). Omdat de doelorganisatie geen toegang heeft tot de sessie van het vertrekkende portaal, is **herauthenticatie** vereist (zoals DigiD Eenvoudige Herauthenticatie).
+- **Interne applicatie-overdracht (Binnen één domein):** Een portaal leidt de gebruiker door naar een specialistische interne applicatie die beschikt over een **eigen portaalfunctie** (een eigen webinterface voor inwoners of ondernemers, zoals een specifiek parkeerloket, vergunningensilo of formulierenserver). Dit vindt plaats binnen hetzelfde vertrouwensdomein en wordt intern afgehandeld via SSO, gedeelde cookies of een beveiligde token-URL; er is geen nieuwe DigiD-stap nodig.
+
+  :::info[Gebruik in transitie naar gestandaardiseerde interactie]
+  Interne applicatie-overdracht is een effectief overgangspatroon: een organisatie kan overzichten en taken al centraal ontsluiten in de centrale MijnOmgeving op basis van de Interactie API (Niveau 1 of 2 via `fallbackUrl`), terwijl de daadwerkelijke interactie tijdelijk nog plaatsvindt in de bestaande eigen portaalfunctie van de vakapplicatie — totdat deze applicatie is gemigreerd naar gestandaardiseerde API's voor embedded uitvoering (Niveau 3).
+  :::
 
 ---
 

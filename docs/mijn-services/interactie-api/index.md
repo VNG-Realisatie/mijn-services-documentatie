@@ -6,6 +6,15 @@ lokale MijnOmgeving) klantgerelateerde gegevens en taken uniform kunnen tonen en
 uitvoeren, terwijl de data en daadwerkelijke verwerking bij de verantwoordelijke
 dienstverlener blijven.
 
+## Uitgangspunten voor de rolverdeling
+
+1. **Interactiecontract, geen beheerregister**  
+   De Interactie API is geen zaaksysteem of administratief register. De API beantwoordt de vraag: _welke informatie, context en handelingsmogelijkheden moet een kanaal op dit moment aan de gebruiker tonen?_ Het registreren, behandelen en archiveren van dossiers blijft bij de verantwoordelijke organisatie.
+2. **Uitvoering bij de bron**  
+   Het kanaal toont de taak of context en faciliteert de interactie, maar de verwerking en definitieve statusbepaling liggen altijd bij de bronorganisatie.
+3. **Context als primair concept**  
+   Informatie en handelingen worden opgevraagd in samenhang: bijvoorbeeld taken binnen de context van een zaak of product.
+
 ## Opzet van de Interactie API
 
 De documentatie en het ontwerp van de Interactie API zijn opgebouwd langs de
