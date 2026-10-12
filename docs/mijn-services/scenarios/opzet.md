@@ -26,15 +26,6 @@ resultaat? De behoefte is de waarom; het scenario beschrijft de situatie en het
 verloop. Alleen een handeling noemen, zoals "een document uploaden", maakt nog
 niet duidelijk welke behoefte die handeling dient.
 
-## BDD-achtig, in gewone taal
-
-Een scenario mag BDD-achtig zijn zonder Gherkin te gebruiken. Beschrijf de
-gebruiker, de situatie, wat diegene doet en wat diegene daardoor ziet of weet.
-Zet concrete, waarneembare verwachtingen bij de relevante stap. Zo blijft het
-gedrag toetsbaar en linkbaar, zonder elk scenario om te zetten in een lange
-lijst met _Gegeven / Als / Dan_. Gebruik Gherkin alleen wanneer een regel of
-uitzondering anders onvoldoende precies is.
-
 Formuleer de behoefte in gewone taal en vermijd interne begrippen als _taak_
 of _zaak_ wanneer gebruikers die niet vanzelfsprekend kennen. Gebruik in de
 scenariotitel een korte, herkenbare werktitel. Zet de langere behoefte als
