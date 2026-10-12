@@ -10,7 +10,7 @@ Tussenliggend scherm dat verschijnt tijdens een **portaalwissel van MijnOverheid
 
 Dit scherm is alleen van toepassing op taken die **niet uitvoerbaar zijn in MijnOverheid**. Taken die MijnOverheid wel zelf kan afhandelen (betaling, bestandsupload; later formulieren) doorlopen dit scherm niet.
 
-Voor de end-to-end flow waarin dit scherm voorkomt, zie het [Procesoverzicht](../../interactie-api/procesoverzicht.md).
+Voor de end-to-end flow waarin dit scherm voorkomt, zie [Portaalwissels](../../interactie-api/portaalwissels.md).
 
 ## Schermvoorbeeld
 

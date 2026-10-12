@@ -137,13 +137,9 @@ const sidebars: SidebarsConfig = {
         link: {type: 'doc', id: 'mijn-services/interactie-api/index'},
         items: [
           {type: 'doc', id: 'mijn-services/interactie-api/positionering'},
-          {type: 'doc', id: 'mijn-services/interactie-api/over-de-portalen-heen'},
-          {type: 'doc', id: 'mijn-services/interactie-api/procesoverzicht'},
+          {type: 'doc', id: 'mijn-services/interactie-api/implementatieniveaus'},
+          {type: 'doc', id: 'mijn-services/interactie-api/portaalwissels'},
           ...moduleSidebar,
-          ...(process.env.NODE_ENV !== 'production'
-            ? [{type: 'doc' as const, id: 'mijn-services/interactie-api/uitgangspunten'}]
-            : []),
-          {type: 'doc', id: 'mijn-services/interactie-api/vragen'},
         ],
       },
       {

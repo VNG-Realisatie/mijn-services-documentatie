@@ -1,35 +1,34 @@
----
-sidebar_position: 2
----
-
 # Interactie API
 
 De Interactie API is het publieke contract tussen kanalen en de interactielaag
-van MijnServices. Voor de eerste uitwerking ligt de focus op taken: een kanaal
-kan via dit contract taakcontext ophalen, terwijl de uitvoering en brondata bij
-de aangesloten provider blijven.
+van MijnServices. De API maakt het mogelijk dat kanalen (zoals MijnOverheid of een
+lokale MijnOmgeving) klantgerelateerde gegevens en taken uniform kunnen tonen en
+uitvoeren, terwijl de data en daadwerkelijke verwerking bij de verantwoordelijke
+dienstverlener blijven.
 
-## Single source of truth
+## Opzet van de Interactie API
 
-Voor elke versie is `openapi.yaml` de publiceerbare OpenAPI-specificatie. Dat is
-het bestand waar documentatie, validatie, downloads en tooling op aansluiten.
+De documentatie en het ontwerp van de Interactie API zijn opgebouwd langs de
+volgende onderdelen:
 
-De API bevat de operatiecontracten en DTO's. De betekenis van domeinbegrippen
-zoals taken, taakstatussen en uitvoeringsmogelijkheden staat in de
-[bouwsteen MijnTaken](../bouwstenen/mijn-taken/).
+- [Positionering](./positionering.md) — Rolverdeling in het landschap (frontends, BFF's en gefedereerde ketens).
+- [Implementatieniveaus](./implementatieniveaus.md) — De drie niveaus van interactiediepte (van doorverwijzen tot embedded uitvoering) en het additieve groeimodel.
+- [Portaalwissels](./portaalwissels.md) — De gebruikers- en systeemflows bij cross-domein sessieoverdracht en herauthenticatie.
+- **Kernmodule** — De gedeelde contractbasis (klant- en contextquery's, foutmodellen en kern-DTO's).
+- **Uitbreidingsmodules** — Domeinspecifieke modules die hierop voortbouwen, te beginnen met **Taken**.
 
-Als de API wordt opgesplitst in een kern met extensies, blijven de onderhoudbare
-delen in bronbestanden staan en wordt `openapi.yaml` daaruit gegenereerd. De
-bundel blijft dan het stabiele publicatiepunt; de bronbestanden zijn bedoeld
-voor beheer door de standaardisatiegroep.
+## Contracten en specificaties
 
-Voor versie `v0.1` is het publicatiebestand:
+Voor versie `v0.1` is de publiceerbare specificatie beschikbaar via:
 
 - [`v0.1/openapi.yaml`](./v0.1/openapi.yaml)
-- [Gegenereerde API-referentie](./referentie/interactieservices-api)
+- [Gegenereerde API-referentie](./referentie/interactieservices-api.info.mdx)
+
+Domeinbegrippen en functionele behoeften zijn beschreven in de bijbehorende
+bouwstenen, zoals [MijnTaken](../bouwstenen/mijn-taken/index.md).
 
 ## Aansluitprofielen
 
-Aansluitprofielen beschrijven hoe een bron-API de Interactie API kan
-vullen. Voor taken begint de uitwerking met de
-[OpenVTB Taken API](../aansluitprofielen/openvtb-taken-api/).
+Aansluitprofielen beschrijven hoe bestaande bronsystemen en back-end API's kunnen
+aansluiten op het contract van de Interactie API. Zie hiervoor de sectie
+[Aansluitprofielen](../aansluitprofielen/index.md).
