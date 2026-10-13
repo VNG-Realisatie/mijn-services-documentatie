@@ -1,0 +1,49 @@
+---
+id: contextlink
+title: "ContextLink"
+description: "De context waaraan de taak is gekoppeld (bijv. een zaak of product),"
+sidebar_label: "ContextLink"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"urn":"urn:nl:gemeenten:zaak:2026-00042","canonicalUrl":"https://portaal.gemeente.nl/zaken/2026-00042"}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"ContextLink"}
+>
+</Heading>
+
+
+
+De context waaraan de taak is gekoppeld (bijv. een zaak of product),
+aangeduid met een **URN** en optioneel een **canonicalUrl**.
+
+`canonicalUrl` is afwezig als de dienstverlener geen eigen portaal heeft
+(bijv. bedrijfsonderdelen die geen eigen portaal hebben).
+
+Portalen die de URN kunnen omzetten naar een interne URL doen dat;
+`canonicalUrl` is dan irrelevant. Anders geldt: gebruik `canonicalUrl`
+als die aanwezig is. Het type context is af te leiden uit de URN-structuur.
+
+```mermaid
+flowchart TD
+    A{URN → Interne URL?} -->|Ja| B[Gebruik interne URL]
+    A -->|Nee| C{Heeft canonicalUrl?}
+    C -->|Ja| D[Gebruik canonicalUrl]
+    C -->|Nee| E[Nader te bepalen]
+```
+
+
+<Schema
+  {...require("./contextlink.Schema.json")}
+>
+  
+</Schema>
+            

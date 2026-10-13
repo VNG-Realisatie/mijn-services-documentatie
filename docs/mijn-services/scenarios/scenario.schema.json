@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MijnServices scenariometadata versie 1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "id", "steps"],
+  "properties": {
+    "version": { "const": 1 },
+    "id": { "type": "string", "pattern": "^SCN-[A-Z0-9]+(?:-[A-Z0-9]+)*$" },
+    "doel": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/step" }
+    }
+  },
+  "definitions": {
+    "expectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "beschrijving"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "beschrijving": { "type": "string", "minLength": 1, "pattern": "\\S" }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["doc"],
+      "properties": {
+        "doc": {
+          "type": "string",
+          "pattern": "^[a-z0-9_-]+(?:/[a-z0-9_-]+)*$"
+        },
+        "anchor": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "bouwstenen", "schermen"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 1, "pattern": "\\S" },
+        "verwachtingen": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/expectation" }
+        },
+        "bouwstenen": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/reference" }
+        },
+        "schermen": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/definitions/reference" }
+        }
+      }
+    }
+  }
+}
