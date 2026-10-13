@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-description: >
-  MijnZaken geeft kanaalonafhankelijk overzicht, uitleg en
-  handelingsperspectief bij lopende en afgeronde dienstverlening.
+sidebar_label: MijnZaken
+title: MijnZaken
+description: Kanaalonafhankelijk overzicht, duiding en voortgang bij lopende en afgeronde dienstverlening.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-zaken.svg
 draft: true
