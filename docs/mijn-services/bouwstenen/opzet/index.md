@@ -7,92 +7,120 @@ draft: true
 
 # Opzet en Definition of Done voor Bouwstenen
 
-:::info[Werkdocument (Draft)]
-Dit document beschrijft de standaardstructuur en de kwaliteitseisen (Definition of Done) voor interactiebouwstenen binnen MijnServices. Het dient als referentiekader om bestaande en nieuwe bouwstenen uniform en scherp afgebakend uit te werken.
+:::info[Referentiekader voor auteurs]
+Dit document beschrijft de standaardstructuur en de kwaliteitseisen (Definition of Done) voor interactiebouwstenen binnen MijnServices. Het dient als inhoudelijk en redactioneel kader om bouwstenen uniform, scherp afgebakend en conceptueel zuiver uit te werken.
 :::
 
-## Wat is een interactiebouwsteen?
+## De keten: van abstract naar concreet
 
-Een interactiebouwsteen binnen MijnServices beschrijft een herkenbaar onderdeel van overheidsdienstverlening **vanuit het perspectief van de burger of ondernemer**.
+Om te borgen dat de verschillende onderdelen van MijnServices elkaar versterken zonder overlap, hanteren we een heldere scheiding van abstract naar concreet:
 
-Een bouwsteen:
+```mermaid
+flowchart TD
+    A["1. Klantreis & Klantscenario's<br/>De menselijke opgave: wat probeert iemand op te lossen?"]
+    B["2. Bouwstenen (Conceptueel & Abstract)<br/>De herbruikbare interactie-capability: betekenis, behoeften en use cases"]
+    C["3. Schermprofielen (Presentatie & UX)<br/>De vertaling naar toegankelijke interactiepatronen en schermen"]
+    D["4. Interactie API (Technisch Contract)<br/>Het kanaalonafhankelijke API-contract (operaties, DTO's en modules)"]
+    E["5. Aansluitprofielen (Realisatie bij de bron)<br/>De mapping van bestaande bronsystemen op de Interactie API"]
 
-- vertrekt vanuit wat iemand wil weten, doen of volgen (buiten-naar-binnen);
-- is **combineerbaar (composability)**: ontworpen als modulaire capability, zodat kanalen meerdere bouwstenen vrij kunnen samensmelten in één scherm, tijdlijn of interactie (zoals de voortgang van een zaak gecombineerd met een gesprek of openstaande taak);
-- is **kanaalonafhankelijk**: de bouwsteen kan vorm krijgen in een mijnomgeving, bij de balie, in het KCC of via een attendering (notificatie, e-mail, SMS);
-- is **bronsysteemonafhankelijk**: de bouwsteen beschrijft de betekenis van de interactie, niet de interne datastructuur van een specifiek zaaksysteem of registratie;
-- vormt de brug tussen de behoefte van de gebruiker enerzijds en de technische specificaties (modellen, API's, aansluitprofielen) anderzijds.
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+Binnen deze keten is de **bouwsteen de inhoudelijke en functionele basis**:
+
+- De bouwsteen beschrijft **wat** de interactie inhoudt en **waarom** deze waarde heeft voor de inwoner of ondernemer.
+- De bouwsteen is **kanaalonafhankelijk**: de interactie kan vorm krijgen in een mijnomgeving, bij de balie, in het KCC of via een notificatie.
+- De bouwsteen is **bronsysteemonafhankelijk**: de betekenis van begrippen staat centraal, niet de database- of zaaksysteemstructuur van een leverancier.
+- De bouwsteen is **combineerbaar (composable)**: ontworpen als zelfstandige bouwsteen die kanalen vrij kunnen combineren (bijvoorbeeld een zaakstatus gecombineerd met openstaande acties).
+
+### Bouwstenen als gestandaardiseerde interactiemomenten (Jobs to Be Done)
+
+Een inwoner of ondernemer komt niet naar de overheid om "een zaak te beheren" of "een taak uit te voeren". De werkelijke opgave ligt in het dagelijks leven of ondernemen: een dakkapel plaatsen, verhuizen of een subsidie ontvangen (de _Job to Be Done_).
+
+Een **bouwsteen is daarom geen doel op zich**, maar een **gestandaardiseerd interactiemoment** waarmee een specifieke stap binnen die bredere opgave wordt ondersteund. Eén klantreis of scenario doorloopt in de praktijk meerdere van zulke interactiemomenten:
+
+- De inwoner wil weten hoe het staat met de aanvraag → interactiemoment via **MijnZaken**.
+- De overheid vraagt om een ontbrekend bewijsstuk → interactiemoment via **MijnTaken**.
+- De leges moeten worden voldaan → interactiemoment via **MijnTaken** (betaling).
+- Het besluit wordt gecommuniceerd → interactiemoment via **MijnBerichten** en **MijnZaken**.
+
+De bouwsteen beschrijft de herbruikbare capability die nodig is om zo'n interactiemoment betekenisvol, begrijpelijk en consistent in te vullen.
 
 ---
 
 ## Wat hoort WEL en NIET in een bouwsteen?
 
-Om verkokering en overlap te voorkomen, hanteren we een duidelijke scheiding van verantwoordelijkheden:
+Om verkokering en overlap te voorkomen, hanteren we een strikte afbakening:
 
-| Onderdeel                                        | Wel in de bouwsteen? | Waar hoort het dan wel?                        |
-| :----------------------------------------------- | :------------------: | :--------------------------------------------- |
-| **Doel en gebruikersbehoeften**                  |        ✅ Ja         | Centraal in de bouwsteen                       |
-| **Functionele interacties (capabilities)**       |        ✅ Ja         | Centraal in de bouwsteen                       |
-| **Attenderingsmomenten (wanneer attenderen)**    | ✅ Ja (functioneel)  | Welke gebeurtenissen vragen attendering        |
-| **Begrippenkader (begrijpelijke taal)**          |        ✅ Ja         | Centraal in de bouwsteen                       |
-| **Samenhang & combinatie met andere bouwstenen** |        ✅ Ja         | Hoe bouwstenen elkaar versterken               |
-| **Vertaling naar schermen (richtlijnen)**        | ✅ Ja (conceptueel)  | Concrete uitwerking onder `schermprofielen/`   |
-| **Schermontwerpen en gecombineerde UI-views**    |        ❌ Nee        | Onder `schermprofielen/`                       |
-| **Technische API-payloads en DTO's**             |        ❌ Nee        | Onder `specificaties/interactieservices-api/`  |
-| **Formele informatiemodellen**                   |        ❌ Nee        | Onder `specificaties/functionele-modellen/`    |
-| **Koppelingen met bronsystemen**                 |        ❌ Nee        | Onder `aansluitprofielen/` (bv. ZGW, Open VTB) |
-| **Interne behandelprocessen van ambtenaren**     |        ❌ Nee        | Buiten scope van MijnServices                  |
+| Onderdeel                                                 | Wel in de bouwsteen? | Waar hoort het dan wel?                                     |
+| :-------------------------------------------------------- | :------------------: | :---------------------------------------------------------- |
+| **Doel en gebruikersbehoeften** _(weten, doen, volgen)_   |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Scope en afbakening** _(wat wel / wat expliciet niet)_  |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Begrippenkader & betekenis** _(inwonertaal, statussen)_ |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Use cases** _(functionele gebruikersdoelen & flows)_    |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Attenderingsmomenten** _(wanneer en wat signaleren)_    |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Samenhang met andere bouwstenen**                       |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Concrete schermontwerpen, wireframes en componenten**   |        ❌ Nee        | Onder [Schermprofielen](../../schermprofielen/index.md)     |
+| **Technische API-payloads, endpoints en DTO's**           |        ❌ Nee        | Onder [Interactie API](../../interactie-api/index.md)       |
+| **Aansluiting op bronsystemen** _(bv. ZGW, OpenVTB)_      |        ❌ Nee        | Onder [Aansluitprofielen](../../aansluitprofielen/index.md) |
+| **Interne behandelprocessen van ambtenaren**              |        ❌ Nee        | Buiten scope van MijnServices                               |
 
 ---
 
-## Standaardstructuur (Sjabloon)
+## Standaardstructuur (Sjabloon voor een bouwsteen)
 
-Elke bouwsteenpagina volgt bij voorkeur deze vaste hoofdstukindeling:
+Elke bouwsteen volgt bij voorkeur deze vaste hoofdstukindeling:
 
 ### 1. Inleiding & Doel
 
 - Korte samenvatting van de bouwsteen in 2 à 3 zinnen.
-- Welke opgave of welk doel in het leven of bedrijf van de burger of ondernemer ondersteunt deze bouwsteen?
+- Welke maatschappelijke opgave of doel in het leven van de burger of ondernemer ondersteunt deze bouwsteen?
 
-### 2. Gebruikersbehoeften
+### 2. Doel en gebruikersbehoeften
 
-- Wat wil de gebruiker in deze context:
-  - **Weten?** (inzicht, status, betekenis, rechten)
-  - **Doen?** (actie uitvoeren, document aanleveren, afspraak plannen)
+- Wat wil de inwoner of ondernemer in deze interactie:
+  - **Weten?** (inzicht, betekenis, rechten, actuele stand van zaken)
+  - **Doen?** (handeling verrichten, informatie aanleveren, reageren, betalen)
   - **Volgen?** (voortgang, bevestiging, gemoedsrust)
 
-### 3. Afbakening & Scope
+### 3. Scope en samenhang
 
-- **Wat valt er wél onder:** de kern van deze interactie.
-- **Wat valt er expliciet níet onder:** raakvlakken die bij een andere bouwsteen of bronsysteem horen (bv. _"MijnZaken toont de context van een zaak, maar de actiegerichte taak die daaruit voortvloeit wordt afgehandeld via MijnTaken"_).
+- **Wat valt er wél onder:** de kern van deze interactiecapability.
+- **Wat valt er expliciet níet onder:** raakvlakken die bij een andere bouwsteen of organisatieproces horen (bv. _"MijnZaken toont de context en status van een zaak, maar een actiegerichte handeling die daaruit voortvloeit wordt afgehandeld via MijnTaken"_).
+- **Combineren met andere bouwstenen:** hoe deze bouwsteen samensmelt met andere bouwstenen in kanalen (bijvoorbeeld een zaakdetailpagina die tegelijk status, openstaande acties en berichten toont).
 
-### 4. Functionele interacties (Capabilities)
+### 4. Begrippenkader
 
-- Overzicht van de belangrijkste functionele handelingen die mogelijk zijn, beschreven in functionele operaties (bijv. raadplegen, zoeken, reageren, bevestigen).
+- Heldere definities van kernbegrippen en functionele toestanden (zoals statussen) in **begrijpelijke taal**.
+- Geen interne zaaksysteemtermen of leveranciersjargon; redeneer vanuit wat de gebruiker ervaart.
 
-### 5. Begrippenlijst
+### 5. Use cases
 
-- Heldere definities van de kernbegrippen in begrijpelijke taal (geen interne zaaksysteemtermen).
+- De primaire functionele interacties die de bouwsteen mogelijk maakt (genummerd: `UC-01`, `UC-02`, etc.).
+- Per use case:
+  - **Doel:** Wat wil de actor bereiken?
+  - **Wat de bouwsteen ondersteunt:** Puntenlijst van functionele behoeften en interactiemogelijkheden.
+  - **Resultaat:** De toestand na afloop (wat weet of heeft de gebruiker nu?).
+  - Verwijzing naar concrete [Klantscenario's](../../scenarios/index.md) die deze use case illustreren.
 
-### 6. Relatie en combinatie met andere bouwstenen
+### 6. Attenderen
 
-- Hoe grijpt deze bouwsteen in op de andere bouwstenen? (Bijv. MijnTaken leidt naar MijnZaken; MijnBerichten attendeert op een taak; MijnAgenda toont afspraken die horen bij een zaak).
-- **Samengestelde ervaringen**: Hoe kan deze bouwsteen in kanalen worden gecombineerd met andere bouwstenen tot één naadloze view (bijvoorbeeld een zaakdetailpagina die tegelijk de voortgang van een zaak, openstaande acties en de lopende dialoog toont)?
+- Bij welke gebeurtenissen binnen deze bouwsteen is attendering van de gebruiker relevant (bijvoorbeeld een nieuw verzoek, gewijzigde status of naderende termijn)?
+- Wat moet de attendering functioneel overbrengen en waarnaar moet veilig worden verwezen?
+- Let op: attendering is functioneel beschreven, onafhankelijk van het specifieke bezorgkanaal (SMS, e-mail, notificatie).
 
-### 7. Gebruik in kanalen en attenderen
+### 7. Gerelateerd
 
-- **Attenderingsmomenten**: Bij welke gebeurtenissen binnen deze bouwsteen is attendering van de burger of ondernemer relevant (bijvoorbeeld een nieuwe taak, gewijzigde zaakstatus of naderende afspraak)?
-- **Kanaalmanifestaties**: Hoe manifesteert deze interactie zich in:
-  - **MijnOmgeving / Portaal** (losse lijsten én gecombineerde schermprofielen).
-  - **Attenderingen & Notificaties** (e-mail, SMS, pushnotificatie via NotifyNL die direct deeplinkt naar de gecombineerde context).
-  - **Contact & Balie** (KCC, fysieke balie).
+Een compacte referentietabel met doorkliklinks naar gerelateerde onderdelen:
 
-### 8. Specificaties en standaarden
-
-- Verwijzingen naar:
-  - Begrippen en functionele interacties binnen de bouwsteen
-  - Interactieservices API (`specificaties/interactieservices-api/...`)
-  - Relevante aansluitprofielen (`aansluitprofielen/...`)
+| Onderdeel           | Verwijzingen                                                          |
+| :------------------ | :-------------------------------------------------------------------- |
+| **Klantscenario's** | Directe link(s) naar scenario's waarin deze bouwsteen wordt toegepast |
+| **Schermprofielen** | Directe link(s) naar schermen die deze bouwsteen presenteren          |
+| **Interactie API**  | Directe link naar de relevante module van de Interactie API           |
 
 ---
 
@@ -102,22 +130,23 @@ Een bouwsteen geldt als **volledig uitgewerkt** wanneer aan de volgende criteria
 
 ### Kwaliteit & Inhoud
 
-- [ ] **Buiten-naar-binnen geformuleerd**: De beschrijving redeneert vanuit de burger of ondernemer, niet vanuit een interne afdeling of wet.
-- [ ] **Combineerbaar ontworpen (composability)**: De interacties kunnen in kanalen vrij worden samengevoegd met andere bouwstenen (geen aannames over een 'eigen' geïsoleerd scherm).
-- [ ] **Attenderingsmomenten scherp**: Er is helder beschreven wanneer attendering (notificatie/mail/SMS) nodig is en hoe die deeplinkt naar de juiste context.
-- [ ] **Geen kanaal-lockin**: De tekst schrijft geen vaste schermen of UI-knoppen voor.
-- [ ] **Geen systeem-lockin**: Er worden geen bronspecifieke eigenschappen (zoals databasevelden van één leverancier) voorgeschreven.
-- [ ] **Begrippen eenduidig**: Termen zijn afgestemd met het overkoepelende begrippenkader van MijnServices.
-- [ ] **Duidelijke samenhang**: De koppeling met gerelateerde bouwstenen is expliciet benoemd.
+- [ ] **Buiten-naar-binnen geformuleerd:** De tekst redeneert vanuit de burger of ondernemer, niet vanuit een gemeentelijke afdeling of wet.
+- [ ] **Begrijpelijke taal:** Kernbegrippen en statussen zijn gedefinieerd in duidelijke taal (geen zaaksysteemtermen).
+- [ ] **Kanaalonafhankelijk:** De tekst schrijft geen specifieke schermen, knoppen of UI-layouts voor.
+- [ ] **Bronsysteemonafhankelijk:** Geen aannames over specifieke leverancierssoftware of interne brondatastructuren.
+- [ ] **Combineerbaar ontworpen (composability):** De interacties kunnen in kanalen vrij worden gecombineerd met andere bouwstenen.
+- [ ] **Samenhang expliciet:** De afbakening en wisselwerking met andere bouwstenen is scherp benoemd.
+- [ ] **Use cases scherp:** De functionele gebruikersdoelen (`UC-01`, `UC-02`) zijn uitgewerkt met doel, ondersteuning en resultaat.
+- [ ] **Attenderingsmomenten benoemd:** Er is beschreven wanneer en waarom een attendering nodig is.
 
-### Technische koppeling
+### Samenhang & Traceerbaarheid
 
-- [ ] **Begrippen en interacties**: De bouwsteen beschrijft de betekenis van de begrippen en de functionele interacties, zonder een apart modelartefact te vereisen.
-- [ ] **API-contract**: De benodigde operaties zijn gemapt op de Interactieservices API.
-- [ ] **Aansluiting op bronnen**: Er is minstens één aansluitprofiel of migratiepad beschreven.
+- [ ] **Gekoppeld aan scenario's:** Er is minstens één klantscenario gekoppeld waarin deze bouwsteen een rol speelt.
+- [ ] **Koppeling met Interactie API:** De functionele interacties sluiten aan op een module binnen de Interactie API.
+- [ ] **Gerelateerd-tabel compleet:** De pagina bevat de compacte doorkliktabel naar scenario's, schermen en API.
 
 ### Publicatiestatus
 
-- [ ] **Voldoet aan de schrijfwijzer**: Begrijpelijke taal, actieve zinnen, geen onnodig vakjargon.
-- [ ] **Review door werkgroep/community**: Getoetst met ontwerpers en architecten.
-- [ ] **Klaar voor DON**: `draft: true` kan worden verwijderd zodat de bouwsteen meegaat in `export:don`.
+- [ ] **Voldoet aan de schrijfwijzer:** Actieve zinnen, beknopt, geen onnodig vakjargon.
+- [ ] **Review door werkgroep/community:** Afgestemd met ontwerpers en inhoudelijk deskundigen.
+- [ ] **Gereed voor publicatie:** `draft: true` kan worden verwijderd zodra de inhoud formeel is vastgesteld.
