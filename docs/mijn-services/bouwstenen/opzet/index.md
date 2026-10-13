@@ -34,7 +34,8 @@ Binnen deze keten is de **bouwsteen de inhoudelijke en functionele basis**:
 - De bouwsteen beschrijft **wat** de interactie inhoudt en **waarom** deze waarde heeft voor de inwoner of ondernemer.
 - De bouwsteen is **kanaalonafhankelijk**: de interactie kan vorm krijgen in een mijnomgeving, bij de balie, in het KCC of via een notificatie.
 - De bouwsteen is **bronsysteemonafhankelijk**: de betekenis van begrippen staat centraal, niet de database- of zaaksysteemstructuur van een leverancier.
-- De bouwsteen is **combineerbaar (composable)**: ontworpen als zelfstandige bouwsteen die kanalen vrij kunnen combineren (bijvoorbeeld een zaakstatus gecombineerd met openstaande acties).
+- De bouwstenen zijn **complementair**: elke bouwsteen heeft een strikt afgebakende, eigen verantwoordelijkheid zonder overlap met andere bouwstenen.
+- De bouwstenen zijn **combineerbaar in de UX (composability)**: juist doordat bouwstenen complementair zijn en elkaar niet dupliceren, kunnen kanalen meerdere bouwstenen vrij samenvoegen in één scherm, tijdlijn of interactie (zoals de voortgang van een zaak gecombineerd met openstaande acties).
 
 ### Bouwstenen als gestandaardiseerde interactiemomenten (Jobs to Be Done)
 
@@ -60,9 +61,9 @@ Om verkokering en overlap te voorkomen, hanteren we een strikte afbakening:
 | **Doel en gebruikersbehoeften** _(weten, doen, volgen)_   |        ✅ Ja         | Centraal in de bouwsteen                                    |
 | **Scope en afbakening** _(wat wel / wat expliciet niet)_  |        ✅ Ja         | Centraal in de bouwsteen                                    |
 | **Begrippenkader & betekenis** _(inwonertaal, statussen)_ |        ✅ Ja         | Centraal in de bouwsteen                                    |
-| **Use cases** _(functionele gebruikersdoelen & flows)_    |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Functionele use cases** _(capabilities van de bouwsteen)_ |      ✅ Ja         | Centraal in de bouwsteen                                    |
 | **Attenderingsmomenten** _(wanneer en wat signaleren)_    |        ✅ Ja         | Centraal in de bouwsteen                                    |
-| **Samenhang met andere bouwstenen**                       |        ✅ Ja         | Centraal in de bouwsteen                                    |
+| **Samenhang & complementariteit met andere bouwstenen**   |        ✅ Ja         | Centraal in de bouwsteen                                    |
 | **Concrete schermontwerpen, wireframes en componenten**   |        ❌ Nee        | Onder [Schermprofielen](../../schermprofielen/index.md)     |
 | **Technische API-payloads, endpoints en DTO's**           |        ❌ Nee        | Onder [Interactie API](../../interactie-api/index.md)       |
 | **Aansluiting op bronsystemen** _(bv. ZGW, OpenVTB)_      |        ❌ Nee        | Onder [Aansluitprofielen](../../aansluitprofielen/index.md) |
@@ -90,21 +91,27 @@ Elke bouwsteen volgt bij voorkeur deze vaste hoofdstukindeling:
 
 - **Wat valt er wél onder:** de kern van deze interactiecapability.
 - **Wat valt er expliciet níet onder:** raakvlakken die bij een andere bouwsteen of organisatieproces horen (bv. _"MijnZaken toont de context en status van een zaak, maar een actiegerichte handeling die daaruit voortvloeit wordt afgehandeld via MijnTaken"_).
-- **Combineren met andere bouwstenen:** hoe deze bouwsteen samensmelt met andere bouwstenen in kanalen (bijvoorbeeld een zaakdetailpagina die tegelijk status, openstaande acties en berichten toont).
+- **Complementariteit:** hoe deze bouwsteen scherp afgebakend is ten opzichte van andere bouwstenen om overlap of verkokering te voorkomen.
+- **Combineren in de UX (composability):** hoe kanalen deze bouwsteen in één weergave kunnen combineren met complementaire bouwstenen (bijvoorbeeld een zaakdetailpagina die tegelijk status, openstaande acties en berichten toont).
 
 ### 4. Begrippenkader
 
 - Heldere definities van kernbegrippen en functionele toestanden (zoals statussen) in **begrijpelijke taal**.
 - Geen interne zaaksysteemtermen of leveranciersjargon; redeneer vanuit wat de gebruiker ervaart.
 
-### 5. Use cases
+### 5. Use cases (Capabilities van de bouwsteen)
+
+:::tip[Onderscheid: Klantscenario vs. Use case van een bouwsteen]
+- Een **[Klantscenario](../../scenarios/index.md)** beschrijft de menselijke situatie en context van de inwoner of ondernemer binnen een bredere reis (bijvoorbeeld: *"Ontbrekende informatie aanleveren bij een aanvraag"*). Een scenario kan meerdere bouwstenen tegelijk raken.
+- Een **Use case van een bouwsteen** beschrijft de **functionele capability** die *deze specifieke bouwsteen* levert (bijvoorbeeld bij MijnTaken: `UC-01: Taken raadplegen` en `UC-02: Taak afhandelen`). Dit is het afgebakende functionele aanbod van de bouwsteen zelf, onafhankelijk van een specifieke casus of kanaalflow.
+:::
 
 - De primaire functionele interacties die de bouwsteen mogelijk maakt (genummerd: `UC-01`, `UC-02`, etc.).
 - Per use case:
-  - **Doel:** Wat wil de actor bereiken?
+  - **Doel:** Wat stelt deze interactie de gebruiker in staat te bereiken?
   - **Wat de bouwsteen ondersteunt:** Puntenlijst van functionele behoeften en interactiemogelijkheden.
-  - **Resultaat:** De toestand na afloop (wat weet of heeft de gebruiker nu?).
-  - Verwijzing naar concrete [Klantscenario's](../../scenarios/index.md) die deze use case illustreren.
+  - **Resultaat:** De functionele toestand na afloop (wat weet of heeft de gebruiker nu?).
+  - Indien beschikbaar: verwijzing naar concrete klantscenario's die deze capability toepassen.
 
 ### 6. Attenderen
 
@@ -112,21 +119,27 @@ Elke bouwsteen volgt bij voorkeur deze vaste hoofdstukindeling:
 - Wat moet de attendering functioneel overbrengen en waarnaar moet veilig worden verwezen?
 - Let op: attendering is functioneel beschreven, onafhankelijk van het specifieke bezorgkanaal (SMS, e-mail, notificatie).
 
-### 7. Gerelateerd
+### 7. Gerelateerd (Optioneel / Redactioneel)
 
-Een compacte referentietabel met doorkliklinks naar gerelateerde onderdelen:
+Onder aan een bouwsteen kan een compacte referentietabel worden opgenomen met doorkliklinks naar gerelateerde onderdelen:
 
-| Onderdeel           | Verwijzingen                                                          |
-| :------------------ | :-------------------------------------------------------------------- |
-| **Klantscenario's** | Directe link(s) naar scenario's waarin deze bouwsteen wordt toegepast |
-| **Schermprofielen** | Directe link(s) naar schermen die deze bouwsteen presenteren          |
-| **Interactie API**  | Directe link naar de relevante module van de Interactie API           |
+:::info[Taak voor site-integratie, niet voor de inhoudelijke auteur]
+Het vullen van deze tabel **hoeft niet door de auteur van de bouwsteen te gebeuren**. Auteurs richten zich puur op de inhoudelijke en conceptuele kwaliteit van de bouwsteen. 
+
+Het leggen van de doorklikverbindingen naar uitgewerkte klantscenario's, schermprofielen en API-modules is een taak voor **degene die de integrale site samenstelt** (of wordt later door tooling ondersteund). Auteurs mogen deze sectie dus gerust weglaten of leeg laten.
+:::
+
+| Onderdeel           | Verwijzingen                                                                      |
+| :------------------ | :-------------------------------------------------------------------------------- |
+| **Klantscenario's** | *(Optioneel)* Link(s) naar gepubliceerde scenario's die deze bouwsteen toepassen  |
+| **Schermprofielen** | *(Optioneel)* Link(s) naar gepubliceerde schermen die deze bouwsteen presenteren  |
+| **Interactie API**  | *(Optioneel)* Link naar de gepubliceerde module van de Interactie API             |
 
 ---
 
 ## Definition of Done (DoD) voor een bouwsteen
 
-Een bouwsteen geldt als **volledig uitgewerkt** wanneer aan de volgende criteria is voldaan:
+Een bouwsteen geldt als **conceptueel gereed** wanneer aan de volgende criteria is voldaan:
 
 ### Kwaliteit & Inhoud
 
@@ -134,19 +147,14 @@ Een bouwsteen geldt als **volledig uitgewerkt** wanneer aan de volgende criteria
 - [ ] **Begrijpelijke taal:** Kernbegrippen en statussen zijn gedefinieerd in duidelijke taal (geen zaaksysteemtermen).
 - [ ] **Kanaalonafhankelijk:** De tekst schrijft geen specifieke schermen, knoppen of UI-layouts voor.
 - [ ] **Bronsysteemonafhankelijk:** Geen aannames over specifieke leverancierssoftware of interne brondatastructuren.
-- [ ] **Combineerbaar ontworpen (composability):** De interacties kunnen in kanalen vrij worden gecombineerd met andere bouwstenen.
-- [ ] **Samenhang expliciet:** De afbakening en wisselwerking met andere bouwstenen is scherp benoemd.
-- [ ] **Use cases scherp:** De functionele gebruikersdoelen (`UC-01`, `UC-02`) zijn uitgewerkt met doel, ondersteuning en resultaat.
+- [ ] **Complementair afgebakend:** De interactie heeft een scherp begrensde scope en overlapt niet met andere bouwstenen.
+- [ ] **Combineerbaar in de UX:** De interacties kunnen in kanalen vrij worden gecombineerd met complementaire bouwstenen.
+- [ ] **Use cases scherp:** De functionele interacties (`UC-01`, `UC-02`) zijn uitgewerkt met doel, ondersteuning en resultaat.
 - [ ] **Attenderingsmomenten benoemd:** Er is beschreven wanneer en waarom een attendering nodig is.
 
-### Samenhang & Traceerbaarheid
-
-- [ ] **Gekoppeld aan scenario's:** Er is minstens één klantscenario gekoppeld waarin deze bouwsteen een rol speelt.
-- [ ] **Koppeling met Interactie API:** De functionele interacties sluiten aan op een module binnen de Interactie API.
-- [ ] **Gerelateerd-tabel compleet:** De pagina bevat de compacte doorkliktabel naar scenario's, schermen en API.
-
-### Publicatiestatus
+### Publicatiestatus & Integratie
 
 - [ ] **Voldoet aan de schrijfwijzer:** Actieve zinnen, beknopt, geen onnodig vakjargon.
 - [ ] **Review door werkgroep/community:** Afgestemd met ontwerpers en inhoudelijk deskundigen.
 - [ ] **Gereed voor publicatie:** `draft: true` kan worden verwijderd zodra de inhoud formeel is vastgesteld.
+- [ ] **Site-integratie (door redactie):** Doorkliklinks naar gerelateerde scenario's, schermen en API worden bij publicatie toegevoegd door de beheerder van de integrale site.
