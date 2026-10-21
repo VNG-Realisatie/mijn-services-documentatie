@@ -43,7 +43,6 @@ In een digitale mijnomgeving worden deze interacties vaak gecombineerd in één 
 ## Begrippenkader
 Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder is in de tabel de definitie van de begrippen opgenomen.
 
-### Model
 ```mermaid
 ---
 config:
@@ -84,8 +83,7 @@ direction TB
     ZAAK --> PARTIJ : heeft als belanghebbende
     ZAAK --> PLAN : is onderdeel van
 ```
-
-### Definities
+&nbsp;
 | Begrip | Definitie |
 | --- | --- |
 | **ACTOR**             | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert. |
