@@ -4,6 +4,10 @@ sidebar_position: 0
 
 # Aansluitprofielen
 
+:::info[Niet-normatief / implementatiehulp]
+Aansluitprofielen maken nadrukkelijk **geen onderdeel uit van de formele standaard** van de Interactie API. De Interactie API definieert het uniforme en bron-agnostische contract richting kanalen en portalen. Aansluitprofielen dienen als niet-normatieve referentiemappings en adapter-patronen om te laten zien hoe bestaande bronsystemen en back-end API's (zoals OpenVTB of ZGW) op dat contract kunnen aansluiten.
+:::
+
 Een aansluitprofiel beschrijft hoe een bestaand systeem of een bestaande API
 aansluit op MijnServices. Het maakt de vertaling van een interactiebouwsteen en
 de bijbehorende specificaties naar een concrete koppeling expliciet.

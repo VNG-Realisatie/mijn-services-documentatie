@@ -15,7 +15,7 @@ dienstverlener blijven.
 3. **Context als primair concept**  
    Informatie en handelingen worden opgevraagd in samenhang: bijvoorbeeld taken binnen de context van een zaak of product.
 4. **Recursief en samenstelbaar**  
-   Het contract kan recursief worden toegepast: een aggregator of federatief knooppunt kan de Interactie API aanbieden aan portalen en tegelijkertijd zelf als client onderliggende Interactie API's van andere dienstverleners raadplegen (zie [Positionering](./positionering.md#geschakelde-en-gefedereerde-werking)).
+   Het contract kan recursief worden toegepast: een aggregator of federatief knooppunt kan de Interactie API aanbieden aan (de BFF van) een portaal en tegelijkertijd zelf als client onderliggende Interactie API's van andere aanbieders of bronnen raadplegen (zie [Positionering](./positionering.md#geschakelde-en-gefedereerde-werking)).
 
 ## Opzet van de Interactie API
 
@@ -37,9 +37,3 @@ Voor versie `v0.1` is de publiceerbare specificatie beschikbaar via:
 
 Domeinbegrippen en functionele behoeften zijn beschreven in de bijbehorende
 bouwstenen, zoals [MijnTaken](../bouwstenen/mijn-taken/index.md).
-
-## Aansluitprofielen
-
-Aansluitprofielen beschrijven hoe bestaande bronsystemen en back-end API's kunnen
-aansluiten op het contract van de Interactie API. Zie hiervoor de sectie
-[Aansluitprofielen](../aansluitprofielen/index.md).
