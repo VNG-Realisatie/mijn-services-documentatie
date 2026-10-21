@@ -41,6 +41,9 @@ MijnZaken richt zich op de context, status en historie van de behandeling. Ander
 In een digitale mijnomgeving worden deze interacties vaak gecombineerd in één scherm: bijvoorbeeld een zaakdetailpagina die tegelijkertijd de actuele status toont (MijnZaken), openstaande acties presenteert (MijnTaken) en de dialoog met de behandelaar weergeeft (MijnGesprekken).
 
 ## Begrippenkader
+Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder is in de tabel de definitie van de begrippen opgenomen.
+
+### Model
 ```mermaid
 ---
 config:
@@ -82,9 +85,9 @@ direction TB
     ZAAK --> PLAN : is onderdeel van
 ```
 
-
-| Begrip        | Definitie                                                                                                                |
-| :------------ | :----------------------------------------------------------------------------------------------------------------------- |
+### Definities
+| Begrip | Definitie |
+| --- | --- |
 | **ACTOR**             | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert. |
 | **BESLUIT**           | Een schriftelijke beslissing van een bestuursorgaan, inhoudende een publiekrechtelijke rechtshandeling. |
 | **GESPREK**           | Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s). |
