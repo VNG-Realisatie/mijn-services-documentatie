@@ -59,6 +59,104 @@ bevat het bijbehorende interactiepatroon (hoe de interactie verloopt en welke ha
 mogelijk zijn) én het functionele informatiemodel (welke begrippen, statussen en gegevens
 betekenisvol zijn).
 
+## Kernmodel begrippen
+Elke bouwsteen is opgebouwd uit een aantal begrippen en bevat één kernbegrip. De kernbegrippen zijn ook onderling met elkaar verbonden en worden in onderstaand kernmodel van begrippen in relatiegebracht.
+
+```mermaid
+---
+config:
+  layout: elk
+  class:
+    hideEmptyMembersBox: true
+---
+classDiagram
+    direction TB
+
+    class GESPREK
+    class KLANTCONTACT
+    class ZAAK
+    class BESLUIT
+    class VERZOEK
+    class PRODUCT
+    class BERICHT
+    class TAAK
+    class PLAN
+    class ACTOR
+    class AGENDA_AFSPRAAK["AGENDA-AFSPRAAK"]
+    class PARTIJ
+    class GEGEVENSPROFIEL
+
+    %% GESPREK
+    GESPREK --> ZAAK : betreft
+    GESPREK --> BESLUIT : betreft
+    GESPREK --> VERZOEK : betreft
+    GESPREK --> PRODUCT : betreft
+    GESPREK --> BERICHT : betreft
+    GESPREK --> TAAK : betreft
+    GESPREK --> PLAN : betreft
+    GESPREK --> AGENDA_AFSPRAAK : betreft
+    GESPREK --> ACTOR : is met
+    GESPREK --> PARTIJ : is met
+
+    %% KLANTCONTACT
+    KLANTCONTACT --> GESPREK : betreft
+    KLANTCONTACT --> ZAAK : betreft
+    KLANTCONTACT --> BESLUIT : betreft
+    KLANTCONTACT --> VERZOEK : betreft
+    KLANTCONTACT --> PRODUCT : betreft
+    KLANTCONTACT --> BERICHT : betreft
+    KLANTCONTACT --> TAAK : betreft
+    KLANTCONTACT --> PLAN : betreft
+    KLANTCONTACT --> ACTOR : is met
+    KLANTCONTACT --> PARTIJ : is met
+
+    %% ZAAK
+    BESLUIT --> ZAAK : is uitkomst van
+    PRODUCT --> ZAAK : is geleverd vanuit
+    ZAAK --> VERZOEK : betreft behandeling van
+    ZAAK --> PLAN : is onderdeel van
+    ZAAK --> ACTOR : wordt behandeld door
+    ZAAK --> PARTIJ : heeft als belanghebbende
+    ZAAK --> PARTIJ : heeft als initiator
+
+    %% VERZOEK
+    VERZOEK --> PRODUCT : betreft levering van
+    VERZOEK --> PARTIJ : is ingediend door
+    VERZOEK --> PARTIJ : heeft als belanghebbende
+    VERZOEK --> ACTOR : wordt behandeld door
+
+    %% PRODUCT
+    PRODUCT --> PARTIJ : is geleverd aan
+
+    %% BERICHT
+    BERICHT --> BESLUIT : betreft
+    BERICHT --> ACTOR : is verzonden door
+    BERICHT --> PARTIJ : is bestemd voor
+
+    %% TAAK
+    TAAK --> ZAAK : hoort bij
+    TAAK --> PRODUCT : hoort bij
+    TAAK --> PLAN : hoort bij
+    TAAK --> ACTOR : wordt behandeld door
+    TAAK --> PARTIJ : wordt uitgevoerd door
+
+    %% PLAN
+    PLAN --> ACTOR : wordt behandeld door
+    PLAN --> PARTIJ : heeft
+
+    %% AGENDA-AFSPRAAK
+    AGENDA_AFSPRAAK --> ZAAK : betreft
+    AGENDA_AFSPRAAK --> PRODUCT : betreft
+    AGENDA_AFSPRAAK --> PLAN : betreft
+    AGENDA_AFSPRAAK --> ACTOR : is met
+    AGENDA_AFSPRAAK --> PARTIJ : is met
+
+    %% GEGEVENSPROFIEL
+    GEGEVENSPROFIEL --> PARTIJ : hoort bij
+    GEGEVENSPROFIEL --> ACTOR : wordt gebruikt door
+```
+&nbsp;
+
 Vanuit de bouwsteen wordt de uitwerking verder geconcretiseerd in kanalen (zoals
 schermprofielen in de mijnomgeving), de Interactie API en aansluitprofielen naar
 bronsystemen.
