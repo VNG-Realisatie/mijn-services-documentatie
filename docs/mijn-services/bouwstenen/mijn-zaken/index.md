@@ -82,7 +82,8 @@ direction TB
     ZAAK --> PLAN : is onderdeel van
 ```
 
-| Begrip        | Betekenis voor de inwoner of ondernemer                                                                                  |
+
+| Begrip        | Definitie                                                                                                                |
 | :------------ | :----------------------------------------------------------------------------------------------------------------------- |
 | **ACTOR**             | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert. |
 | **BESLUIT**           | Een schriftelijke beslissing van een bestuursorgaan, inhoudende een publiekrechtelijke rechtshandeling. |
