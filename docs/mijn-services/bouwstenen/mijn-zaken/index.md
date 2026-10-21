@@ -58,7 +58,7 @@ direction TB
     class ZAAKTYPE
     class VERZOEK
     class TAAK
-    class ENKINFOOBJ["ENKELVOUDIG INFORMATIEOBJECT"]
+    class ENKINFOOBJ["INFORMATIEOBJECT"]
     class PRODUCT
     class ACTOR
     class PARTIJ
@@ -87,7 +87,7 @@ direction TB
 | :------------ | :----------------------------------------------------------------------------------------------------------------------- |
 | **Zaak**      | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden.                                              |
 | **Zaaktype**  | Specificatie van de wijze van besturing van, en vast te leggen informatie over een bedrijfsproces dat als zaak uitgevoerd wordt. |
-| **Status**    | De actuele stand van de zaak in begrijpelijke taal (geen interne ambtelijke statussen).                                  |
+| **Status**    | Een aanduiding van de stand van zaken van een ZAAK op basis van betekenisvol behaald resultaat voor de initiator van de ZAAK.                           |
 | **Mijlpaal**  | Een herkenbare tussenstap in de tijdlijn (bijvoorbeeld _Aanvraag ontvangen_, _In behandeling_, _Beoordeeld_).            |
 | **Besluit**   | De formele beslissing van het bestuursorgaan (met rechtsgevolg).                                                         |
 | **Resultaat** | De uiteindelijke uitkomst van een afgeronde zaak (bijvoorbeeld _Toegekend_, _Afgevallen_, _Verleend_).                   |
