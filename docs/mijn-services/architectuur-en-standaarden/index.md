@@ -26,22 +26,17 @@ MijnServices sluit aan bij de bestaande Nederlandse en Europese standaarden voor
 - **[Digikoppeling Koppelvlakstandaard REST-API (3.0.1)](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/3.0.1/)**  
   Voor betrouwbare en beveiligde gegevensuitwisseling tussen overheidsorganisaties, waar van toepassing.
 
-### 3. Gegevens en semantiek (Informatiemodellering)
-
-- **[Metamodel Informatiemodellering (MIM 1.2)](https://www.geonovum.nl/geo-standaarden/metamodel-informatiemodellering-mim)**  
-  De eenduidige standaard voor het beschrijven van informatiemodellen en begrippenkaders, onafhankelijk van specifieke databasetoepassingen.
-
-### 4. Koppeling en federatie (Connectiviteit)
+### 3. Koppeling en federatie (Connectiviteit)
 
 - **[Federatieve Service Connectiviteit (FSC)](https://fsc-standaard.nl/standaard)**  
   Kaders en afspraken voor veilige service-to-service connectiviteit, routing en auditing tussen federatieve knooppunten (zie ook [Logius FSC documentatie](https://gitdocumentatie.logius.nl/publicatie/fsc/core/)).
 
-### 5. Notificaties en attenderingen
+### 4. Notificaties en attenderingen
 
 - **[CloudEvents (NL GOV profile)](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/event-cloudevents)**  
   Gestandaardiseerd formaat voor het beschrijven van gebeurtenissen (events), attenderingen en notificaties over systemen en kanalen heen.
 
-### 6. Toegankelijkheid en interactie
+### 5. Toegankelijkheid en interactie
 
 - **[NL Design System](https://nldesignsystem.nl/)**  
   Herbruikbare, toegankelijke en huisstijlonafhankelijke componenten voor publieke portalen en mijnomgevingen.
