@@ -40,7 +40,7 @@ MijnZaken richt zich op de context, status en historie van de behandeling. Ander
 
 In een digitale mijnomgeving worden deze interacties vaak gecombineerd in één scherm: bijvoorbeeld een zaakdetailpagina die tegelijkertijd de actuele status toont (MijnZaken), openstaande acties presenteert (MijnTaken) en de dialoog met de behandelaar weergeeft (MijnGesprekken).
 
-## Bedrijfsobjectenmodel
+## Begrippenkader
 ```mermaid
 ---
 config:
@@ -70,6 +70,7 @@ direction TB
     GESPREK --> ZAAK : betreft
     KLANTCONTACT --> ZAAK : betreft
     PRODUCT --> ZAAK : is geleverd vanuit
+
     ZAAK --> STATUS : heeft
     TAAK --> ZAAK : hoort bij
     ZAAK --> ZAAKTYPE : is van
@@ -81,17 +82,22 @@ direction TB
     ZAAK --> PLAN : is onderdeel van
 ```
 
-## Begrippenkader
-
 | Begrip        | Betekenis voor de inwoner of ondernemer                                                                                  |
 | :------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| **Zaak**      | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden.                                              |
-| **Zaaktype**  | Specificatie van de wijze van besturing van, en vast te leggen informatie over een bedrijfsproces dat als zaak uitgevoerd wordt. |
-| **Status**    | Een aanduiding van de stand van zaken van een ZAAK op basis van betekenisvol behaald resultaat voor de initiator van de ZAAK.                           |
-| **Mijlpaal**  | Een herkenbare tussenstap in de tijdlijn (bijvoorbeeld _Aanvraag ontvangen_, _In behandeling_, _Beoordeeld_).            |
-| **Besluit**   | De formele beslissing van het bestuursorgaan (met rechtsgevolg).                                                         |
-| **Resultaat** | De uiteindelijke uitkomst van een afgeronde zaak (bijvoorbeeld _Toegekend_, _Afgevallen_, _Verleend_).                   |
-| **Document**  | Een formeel stuk dat bij de zaak hoort (zoals de aanvraag, een bewijsstuk of de besluitbrief).                           |
+| **ACTOR**             | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert. |
+| **BESLUIT**           | Een schriftelijke beslissing van een bestuursorgaan, inhoudende een publiekrechtelijke rechtshandeling. |
+| **GESPREK**           | Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s). |
+| **INFORMATIEOBJECT**  | Een INFORMATIEOBJECT waarvan aard, omvang en/of vorm aanleiding geven het als één geheel te behandelen en te beheren. |
+| **KLANTCONTACT**      | Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden. |
+| **PARTIJ**            | Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft. |
+| **PLAN**              | Een gestructureerde en vastgelegde beschrijving van doelen, keuzes, activiteiten en middelen, waarin wordt uitgewerkt wat de burger wil bereiken, hoe dat gebeurt, wanneer en met welke inzet. |
+| **PRODUCT**           | Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie.  |
+| **RESULTAAT**         | Een gedefinieerde, concrete uitkomst van een ZAAK zoals het verlenen of weigeren van een vergunning, een toekenning of een afwijzing, en is het het 'antwoord' op de aanleiding van die ZAAK.  |
+| **STATUS**            | STATUS: Een aanduiding van de stand van zaken van een ZAAK op basis van betekenisvol behaald resultaat voor de initiator van de ZAAK. |
+| **TAAK**              | Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT. |
+| **VERZOEK**           | Een tot een overheidsorganisatie gerichte vraag of aanspraak om een bepaalde beslissing, handeling of reactie te verkrijgen. |
+| **ZAAK**              | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
+| **ZAAKTYPE**          | Specificatie van de wijze van besturing van, en vast te leggen informatie over een bedrijfsproces dat als zaak uitgevoerd wordt. |
 
 ## Use cases
 
