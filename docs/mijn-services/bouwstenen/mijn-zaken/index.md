@@ -41,7 +41,7 @@ MijnZaken richt zich op de context, status en historie van de behandeling. Ander
 In een digitale mijnomgeving worden deze interacties vaak gecombineerd in één scherm: bijvoorbeeld een zaakdetailpagina die tegelijkertijd de actuele status toont (MijnZaken), openstaande acties presenteert (MijnTaken) en de dialoog met de behandelaar weergeeft (MijnGesprekken).
 
 ## Begrippenkader
-Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder is in de tabel de definitie van de begrippen opgenomen.
+Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder zijn in de tabel de definities van de begrippen opgenomen.
 
 ```mermaid
 ---

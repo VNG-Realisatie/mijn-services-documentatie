@@ -45,15 +45,51 @@ MijnTaken richt zich zuiver op de actie van de gebruiker. Andere bouwstenen vull
 Een openstaande taak staat zelden op zichzelf. In een portaal of app wordt MijnTaken vaak ingebed in de context van andere bouwstenen: bijvoorbeeld een actieknop "Ontbrekend document aanleveren" direct geplaatst in de tijdlijn van een lopende vergunningaanvraag (MijnZaken).
 
 ## Begrippenkader
+Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder zijn in de tabel de definities van de begrippen opgenomen.
 
-| Begrip                    | Betekenis voor de inwoner of ondernemer                                                                                                                                             |
-| :------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Taak**                  | Een concrete handeling die van de inwoner of ondernemer wordt gevraagd (of die de gebruiker vrijwillig kan starten) om verder te kunnen in een proces.                              |
-| **Toelichting**           | De uitleg in begrijpelijke taal over wat er precies verwacht wordt en waarom dat nodig is.                                                                                          |
-| **Vervaldatum / Termijn** | De datum tot wanneer de handeling kan worden verricht, inclusief duiding wat er gebeurt als de datum verstrijkt.                                                                    |
-| **Status**                | De toestand van de handeling vanuit het perspectief van de burger (bijvoorbeeld _Open_, _In behandeling / ontvangen_, _Afgerond_, _Vervallen_).                                     |
-| **Uitvoeringswijze**      | De manier waarop de handeling verricht kan worden (bijvoorbeeld direct in het portaal een bestand toevoegen, doorgestuurd worden naar een betaalpagina, of een formulier invullen). |
-| **Bevestiging**           | Het signaal dat de handeling succesvol is ontvangen of voltooid.                                                                                                                    |
+```mermaid
+---
+config:
+  layout: elk
+  class:
+    hideEmptyMembersBox: true
+---
+classDiagram
+    direction TB
+
+    class TAAK
+    class GESPREK
+    class KLANTCONTACT
+    class TAAKSTATUS
+    class PRODUCT
+    class ZAAK
+    class INFORMATIEOBJECT
+    class ACTOR
+    class PARTIJ
+
+    GESPREK --> TAAK : betreft
+    KLANTCONTACT --> TAAK : betreft
+
+    TAAK --> TAAKSTATUS : heeft
+    TAAK --> PRODUCT : hoort bij
+    TAAK --> ZAAK : hoort bij
+    TAAK --> INFORMATIEOBJECT : heeft
+    TAAK --> ACTOR : wordt behandeld door
+    TAAK --> PARTIJ : wordt uitgevoerd door
+```
+&nbsp;
+| Begrip | Definitie |
+| --- | --- |
+| **ACTOR** |	Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert. |
+| **GESPREK** |	Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s). |
+| **INFORMATIEOBJECT** |	Een INFORMATIEOBJECT waarvan aard, omvang en/of vorm aanleiding geven het als één geheel te behandelen en te beheren. |
+| **KLANTCONTACT** |	Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden. |
+| **PARTIJ** |	Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft. |
+| **PRODUCT** |	Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie. |
+| **TAAK** |	Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT. |
+| **TAAKSTATUS** |	Een aanduiding van de stand van zaken van een TAAK op basis van betekenisvol behaald resultaat voor de initiator van de TAAK. |
+| **ZAAK** |	Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
+
 
 ## Use cases
 
