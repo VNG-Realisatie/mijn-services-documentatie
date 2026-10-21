@@ -33,13 +33,13 @@ flowchart TD
     BRON --> REGISTER
 ```
 
-Deze scheiding waarborgt de [uitgangspunten van de Interactie API](./index.md#uitgangspunten-voor-de-rolverdeling): een interactiecontract (geen beheerregister), uitvoering bij de bron en context als primair concept.
+Deze scheiding waarborgt de [uitgangspunten van de Interactie API](./index.md#uitgangspunten-voor-de-rolverdeling): een interactiecontract (geen beheerregister), uitvoering bij de bron, context als primair concept en een recursief samenstelbare werking.
 
 ---
 
 ## Geschakelde en gefedereerde werking
 
-In een landschap met meerdere overheden en portalen kan de Interactie API op verschillende niveaus worden ingezet. Een Interactie API hoeft niet altijd direct op een bronsysteem aan te sluiten: **een Interactie API kan zelf als bron fungeren voor een bovenliggende Interactie API**.
+In een landschap met meerdere overheden en portalen kan de Interactie API op verschillende niveaus worden ingezet. De interface is recursief toepasbaar en hoeft niet altijd direct op een bronsysteem aan te sluiten: **een Interactie API kan zelf als bron fungeren voor een bovenliggende Interactie API**.
 
 ```mermaid
 flowchart LR

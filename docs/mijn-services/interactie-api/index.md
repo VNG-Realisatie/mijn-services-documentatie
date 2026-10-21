@@ -14,6 +14,8 @@ dienstverlener blijven.
    Het kanaal toont de taak of context en faciliteert de interactie, maar de verwerking en definitieve statusbepaling liggen altijd bij de bronorganisatie.
 3. **Context als primair concept**  
    Informatie en handelingen worden opgevraagd in samenhang: bijvoorbeeld taken binnen de context van een zaak of product.
+4. **Recursief en samenstelbaar**  
+   Het contract kan recursief worden toegepast: een aggregator of federatief knooppunt kan de Interactie API aanbieden aan portalen en tegelijkertijd zelf als client onderliggende Interactie API's van andere dienstverleners raadplegen (zie [Positionering](./positionering.md#geschakelde-en-gefedereerde-werking)).
 
 ## Opzet van de Interactie API
 
