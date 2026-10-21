@@ -31,7 +31,7 @@ volgende onderdelen:
 Voor versie `v0.1` is de publiceerbare specificatie beschikbaar via:
 
 - [`v0.1/openapi.yaml`](./v0.1/openapi.yaml)
-- [Gegenereerde API-referentie](./referentie/interactieservices-api.info.mdx)
+- [Gegenereerde API-referentie](./referentie/interactie-api.info.mdx)
 
 Domeinbegrippen en functionele behoeften zijn beschreven in de bijbehorende
 bouwstenen, zoals [MijnTaken](../bouwstenen/mijn-taken/index.md).

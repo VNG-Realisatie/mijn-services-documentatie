@@ -1,8 +1,8 @@
 openapi: 3.1.0
 info:
-  title: Interactieservices API
+  title: Interactie API
   description: |
-    De **Interactieservices API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen.
+    De **Interactie API** standaardiseert hoe portalen klantgerelateerde gegevens tonen en acties uitvoeren namens hun gebruikers. Het doel: een eindgebruiker kan informatie en taken raadplegen op elk aangesloten portaal, ongeacht welke organisatie de gegevens beheert — vergelijkbaar met hoe je met je telefoon in het buitenland belt via een ander netwerk, zonder dat je iets hoeft in te stellen.
 
     De API is opgezet als een **kern met uitbreidingssets**: het `/context/zoek`-endpoint retourneert een samengesteld object waarvan de inhoud via de `include`-parameter wordt gestuurd. Initieel worden taken ondersteund; andere resource-typen (bijv. contactmomenten, zaakstatus) kunnen worden toegevoegd zonder bestaande implementaties te breken.
 

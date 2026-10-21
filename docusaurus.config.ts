@@ -72,7 +72,7 @@ const config: Config = {
         id: 'openapi',
         docsPluginId: 'classic',
         config: {
-          interactieservicesApi: {
+          interactieApi: {
             specPath: 'docs/mijn-services/interactie-api/v0.1/openapi.yaml',
             outputDir: 'docs/mijn-services/interactie-api/referentie',
             showSchemas: false,

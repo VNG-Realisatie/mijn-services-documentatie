@@ -4,7 +4,7 @@ status: ontwerp
 title: Schermprofiel MijnTaken in de mijnomgeving
 summary: >
   Kanaalprofiel dat schermen in een mijnomgeving koppelt aan het functioneel
-  ontwerp en operaties van de InteractieServices API.
+  ontwerp en operaties van de Interactie API.
 
 sources:
   interactieservicesApi:

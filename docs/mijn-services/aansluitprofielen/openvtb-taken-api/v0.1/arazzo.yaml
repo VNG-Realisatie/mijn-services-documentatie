@@ -1,7 +1,7 @@
 arazzo: 1.1.0
 info:
   title: Aansluitprofiel OpenVTB Taken API
-  summary: Workflowmapping voor OpenVTB Taken API naar InteractieServices API.
+  summary: Workflowmapping voor OpenVTB Taken API naar Interactie API.
   version: 0.1.0
 sourceDescriptions:
   - name: interactieservicesApi
@@ -23,7 +23,7 @@ workflows:
     summary: Vul taken in zoekContext vanuit OpenVTB Taken API.
     description: |
       Deze workflow beschrijft hoe taken uit de OpenVTB Taken API kunnen worden
-      opgehaald om het taken-deel van de InteractieServices-operatie zoekContext
+      opgehaald om het taken-deel van de Interactie API-operatie zoekContext
       te vullen.
     x-mijnservices-targetOperationId: interactieservicesApi.zoekContext
     x-mijnservices-flowId: mijnTaken.contextZoeken

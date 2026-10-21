@@ -8,13 +8,13 @@ sidebar_label: OpenVTB Taken API
 
 Dit aansluitprofiel is een eerste uitwerking voor taken. Het profiel beschrijft
 hoe MijnServices kan aansluiten op de OpenVTB Taken API als bron voor taken in
-de InteractieServices API.
+de Interactie API.
 
 :::
 
 De OpenVTB Taken API kan worden gebruikt als bron voor taken die in MijnServices
 worden getoond of afgehandeld. De bron-API blijft verantwoordelijk voor de
-uitvoering en registratie van taken; de InteractieServices API biedt het
+uitvoering en registratie van taken; de Interactie API biedt het
 uniforme contract richting kanalen.
 
 ## Single source of truth
@@ -23,7 +23,7 @@ Voor versie `v0.1` zijn de artefacten:
 
 - [`v0.1/openapi.yaml`](./v0.1/openapi.yaml): snapshot van de bron-API.
 - [`v0.1/arazzo.yaml`](./v0.1/arazzo.yaml): workflowmapping tussen de bron-API
-  en de InteractieServices API.
+  en de Interactie API.
 
 Arazzo is de single source of truth voor de workflow: welke bronoperaties nodig
 zijn, welke functionele flow wordt ondersteund en welke bronwaarden doelvelden
@@ -31,10 +31,10 @@ vullen. Aanvullende mappings houden we zo beperkt mogelijk en leggen we alleen
 vast in het Arazzo-bestand als ze nodig zijn voor het mappingoverzicht.
 
 DTO's worden niet in het aansluitprofiel opnieuw gedefinieerd. De doelstructuur
-staat in de InteractieServices API; de bronstructuur staat in de OpenVTB Taken
+staat in de Interactie API; de bronstructuur staat in de OpenVTB Taken
 API.
 
-De InteractieServices API-documentatie blijft daarmee de plek voor het publieke
+De Interactie API-documentatie blijft daarmee de plek voor het publieke
 API-contract en de pluginweergave van operaties en DTO's. Het aansluitprofiel is
 de plek voor de afgeleide documentatie: mappings, sequences, transformaties,
 openstaande ontwerpvragen en issues die ontstaan bij het koppelen van een of
@@ -71,7 +71,7 @@ taak nodig zijn om de vervolgstap bij de andere API uit te voeren.
 
 Wanneer voor een takenflow aanvullende bronfamilies nodig zijn, zoals ZGW voor
 zaken, documenten of besluiten, documenteren we die niet als onderdeel van de
-InteractieServices API zelf. Ze horen bij het aansluitprofiel dat de flow
+Interactie API zelf. Ze horen bij het aansluitprofiel dat de flow
 realiseert en, zodra meerdere profielen samen nodig zijn, bij het
 [combinatieoverzicht](../combinaties). De Arazzo-workflow benoemt de betrokken
 bronnen via `sourceDescriptions`; de gegenereerde profieltekst maakt vervolgens
@@ -85,7 +85,7 @@ mappingconventies zichtbaar kunnen groeien. Zodra de patronen stabiel zijn, ligt
 de volgende tooling voor de hand:
 
 - valideren dat elke `x-mijnservices-targetOperationId` bestaat in de
-  InteractieServices API;
+  Interactie API;
 - valideren dat elke gebruikte `operationId` bestaat in de OpenVTB Taken API;
 - genereren van een mappingoverzicht uit `arazzo.yaml` per flow, source
   operation en doeloperatie;
@@ -97,7 +97,7 @@ de volgende tooling voor de hand:
   aansluitprofielenoverzicht.
 
 Een generator of validator gebruikt `v0.1/arazzo.yaml` als workflowbasis. Vanuit
-Arazzo volgt de generator de `sourceDescriptions` naar de InteractieServices API
+Arazzo volgt de generator de `sourceDescriptions` naar de Interactie API
 en de bron-API.
 
 De harde checks en generatoren horen in de aparte MijnServices-bronrepo. Deze
@@ -125,19 +125,19 @@ vergeleken met het schema van `interactieservicesApi.retrieveTaak`.
 Naast de expliciete mapping moet het overzicht ook verschillen zichtbaar maken:
 
 - **Gemapte attributen:** bronattributen die via Arazzo worden gebruikt om een
-  veld in de InteractieServices API te vullen.
+  veld in de Interactie API te vullen.
 - **Transformaties:** mappings waarbij type, formaat of betekenis niet
   een-op-een overeenkomt. Voor `deadline` levert OpenVTB bijvoorbeeld
-  `einddatumHandelingsTermijn` als `date`, terwijl de InteractieServices API een
+  `einddatumHandelingsTermijn` als `date`, terwijl de Interactie API een
   `date-time` verwacht.
 - **Ongebruikte bronattributen:** attributen die wel terugkomen uit de OpenVTB
-  Taken API, maar niet in de InteractieServices API terechtkomen.
-- **Niet-gevulde doelattributen:** attributen die de InteractieServices API wel
+  Taken API, maar niet in de Interactie API terechtkomen.
+- **Niet-gevulde doelattributen:** attributen die de Interactie API wel
   kan vragen of teruggeven, maar waarvoor dit aansluitprofiel nog geen bronveld
   of transformatie aanwijst.
 
 Zo wordt zichtbaar of een aansluitprofiel informatie verliest, waar de
-InteractieServices API ruimer is dan de bron-API en welke mappings nog ontwerp-
+Interactie API ruimer is dan de bron-API en welke mappings nog ontwerp-
 of besluitwerk vragen.
 
 ## Compleetheid

@@ -5,12 +5,12 @@ sidebar_label: Combinaties
 # Combinaties van aansluitprofielen
 
 Combinaties van aansluitprofielen beschrijven hoe meerdere bron-API's samen een
-flow of doeloperatie van de InteractieServices API realiseren. Een combinatie is
+flow of doeloperatie van de Interactie API realiseren. Een combinatie is
 nodig wanneer een enkel aansluitprofiel niet alle brondata, acties of context
 kan leveren die voor een functionele flow nodig zijn.
 
 De losse aansluitprofielen blijven de plek waar de mapping tussen een bron-API
-en de InteractieServices API wordt beschreven. Deze pagina is het register voor
+en de Interactie API wordt beschreven. Deze pagina is het register voor
 combinaties: welke profielen samen worden gebruikt, welke flow zij ondersteunen
 en welk compleetheidsbeeld daaruit volgt.
 
