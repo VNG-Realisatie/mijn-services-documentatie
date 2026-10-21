@@ -63,12 +63,14 @@ direction TB
     class ACTOR
     class PARTIJ
     class PLAN
+    class STATUS
 
     RESULTAAT --> ZAAK : is bereikt bij afsluiting van
     BESLUIT --> ZAAK : is uitkomst van
     GESPREK --> ZAAK : betreft
     KLANTCONTACT --> ZAAK : betreft
     PRODUCT --> ZAAK : is geleverd vanuit
+    ZAAK --> STATUS : heeft
     TAAK --> ZAAK : hoort bij
     ZAAK --> ZAAKTYPE : is van
     ZAAK --> VERZOEK : betreft behandeling van
@@ -83,8 +85,8 @@ direction TB
 
 | Begrip        | Betekenis voor de inwoner of ondernemer                                                                                  |
 | :------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| **Zaak**      | De samenhangende behandeling van een aanvraag, melding, bezwaar of verzoek.                                              |
-| **Zaaktype**  | Het onderwerp of de dienst (bijvoorbeeld _Parkeervergunning_ of _Melding openbare ruimte_), zodat zaken herkenbaar zijn. |
+| **Zaak**      | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden.                                              |
+| **Zaaktype**  | Specificatie van de wijze van besturing van, en vast te leggen informatie over een bedrijfsproces dat als zaak uitgevoerd wordt. |
 | **Status**    | De actuele stand van de zaak in begrijpelijke taal (geen interne ambtelijke statussen).                                  |
 | **Mijlpaal**  | Een herkenbare tussenstap in de tijdlijn (bijvoorbeeld _Aanvraag ontvangen_, _In behandeling_, _Beoordeeld_).            |
 | **Besluit**   | De formele beslissing van het bestuursorgaan (met rechtsgevolg).                                                         |
