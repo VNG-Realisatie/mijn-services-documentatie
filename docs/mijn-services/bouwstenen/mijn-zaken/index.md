@@ -40,6 +40,45 @@ MijnZaken richt zich op de context, status en historie van de behandeling. Ander
 
 In een digitale mijnomgeving worden deze interacties vaak gecombineerd in één scherm: bijvoorbeeld een zaakdetailpagina die tegelijkertijd de actuele status toont (MijnZaken), openstaande acties presenteert (MijnTaken) en de dialoog met de behandelaar weergeeft (MijnGesprekken).
 
+## Bedrijfsobjectenmodel
+```mermaid
+---
+config:
+  layout: elk
+  class:
+    hideEmptyMembersBox: true
+---
+classDiagram
+direction TB
+    class ZAAK
+    class RESULTAAT
+    class BESLUIT
+    class GESPREK
+    class KLANTCONTACT
+    class ZAAKTYPE
+    class VERZOEK
+    class TAAK
+    class ENKINFOOBJ["ENKELVOUDIG INFORMATIEOBJECT"]
+    class PRODUCT
+    class ACTOR
+    class PARTIJ
+    class PLAN
+
+    RESULTAAT --> ZAAK : is bereikt bij afsluiting van
+    BESLUIT --> ZAAK : is uitkomst van
+    GESPREK --> ZAAK : betreft
+    KLANTCONTACT --> ZAAK : betreft
+    PRODUCT --> ZAAK : is geleverd vanuit
+    TAAK --> ZAAK : hoort bij
+    ZAAK --> ZAAKTYPE : is van
+    ZAAK --> VERZOEK : betreft behandeling van
+    ZAAK --> ENKINFOOBJ : heeft
+    ZAAK --> ACTOR : wordt behandeld door
+    ZAAK --> PARTIJ : heeft als initiator
+    ZAAK --> PARTIJ : heeft als belanghebbende
+    ZAAK --> PLAN : is onderdeel van
+```
+
 ## Begrippenkader
 
 | Begrip        | Betekenis voor de inwoner of ondernemer                                                                                  |
