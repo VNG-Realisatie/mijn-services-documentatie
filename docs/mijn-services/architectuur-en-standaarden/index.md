@@ -18,6 +18,8 @@ MijnServices sluit aan bij de bestaande Nederlandse en Europese standaarden voor
   De verplichte ('pas-toe-of-leg-uit') standaard van Forum Standaardisatie voor uniforme, voorspelbare REST API's.
 - **[OpenAPI Specification (OAS 3.0 / 3.1)](https://www.forumstandaardisatie.nl/open-standaarden/openapi-specification)**  
   De standaard voor machinaal leesbare en interactieve contractbeschrijvingen van API-endpoints, parameters en DTO's.
+- **[CloudEvents (NL GOV profile)](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/event-cloudevents)**  
+  ADR-ontwerprichtlijn en standaard envelopformaat voor het beschrijven van gebeurtenissen (events) en attenderingen bij asynchrone gegevensuitwisseling.
 
 ### 2. Beveiliging en toegangscontrole
 
@@ -31,12 +33,7 @@ MijnServices sluit aan bij de bestaande Nederlandse en Europese standaarden voor
 - **[Federatieve Service Connectiviteit (FSC)](https://fsc-standaard.nl/standaard)**  
   Kaders en afspraken voor veilige service-to-service connectiviteit, routing en auditing tussen federatieve knooppunten (zie ook [Logius FSC documentatie](https://gitdocumentatie.logius.nl/publicatie/fsc/core/)).
 
-### 4. Notificaties en attenderingen
-
-- **[CloudEvents (NL GOV profile)](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/event-cloudevents)**  
-  Gestandaardiseerd formaat voor het beschrijven van gebeurtenissen (events), attenderingen en notificaties over systemen en kanalen heen.
-
-### 5. Toegankelijkheid en interactie
+### 4. Toegankelijkheid en interactie
 
 - **[NL Design System](https://nldesignsystem.nl/)**  
   Herbruikbare, toegankelijke en huisstijlonafhankelijke componenten voor publieke portalen en mijnomgevingen.
