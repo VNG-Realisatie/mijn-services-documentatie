@@ -3,3 +3,6 @@ allowBuilds:
   "@swc/core": true
   core-js: true
   postman-code-generators: false
+
+overrides:
+  mermaid: ^12.2.0
