@@ -68,6 +68,13 @@ direction TB
     class PLAN
     class STATUS
 
+    link GESPREK "mijn-gesprekken/" "Ga naar MijnGesprekken"
+    link ZAAK "mijn-zaken/" "Ga naar MijnZaken"
+    link PRODUCT "mijn-producten/" "Ga naar MijnProducten"
+    link BERICHT "mijn-berichten/" "Ga naar MijnBerichten"
+    link TAAK "mijn-taken/" "Ga naar MijnTaken"
+    link PLAN "mijn-plannen/" "Ga naar MijnPlannen"
+    
     RESULTAAT --> ZAAK : is bereikt bij afsluiting van
     BESLUIT --> ZAAK : is uitkomst van
     GESPREK --> ZAAK : betreft

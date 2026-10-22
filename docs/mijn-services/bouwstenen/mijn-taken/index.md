@@ -68,6 +68,11 @@ classDiagram
     class ACTOR
     class PARTIJ
 
+    link GESPREK "mijn-gesprekken/" "Ga naar MijnGesprekken"
+    link ZAAK "mijn-zaken/" "Ga naar MijnZaken"
+    link PRODUCT "mijn-producten/" "Ga naar MijnProducten"
+    link TAAK "mijn-taken/" "Ga naar MijnTaken"
+
     GESPREK --> TAAK : betreft
     KLANTCONTACT --> TAAK : betreft
 
