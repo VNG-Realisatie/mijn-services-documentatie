@@ -86,21 +86,23 @@ classDiagram
 
 &nbsp;
 
-| Begrip | Definitie |
-| --- | --- |
-| **ACTOR** | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert. |
-| **GESPREK** | Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s). |
-| **INFORMATIEOBJECT** | Een INFORMATIEOBJECT waarvan aard, omvang en/of vorm aanleiding geven het als één geheel te behandelen en te beheren. |
-| **KLANTCONTACT** | Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden. |
-| **PARTIJ** | Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft. |
-| **PRODUCT** | Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie. |
-| **TAAK** | Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT. |
-| **TAAKSTATUS** | Een aanduiding van de stand van zaken van een TAAK op basis van betekenisvol behaald resultaat voor de initiator van de TAAK. |
-| **ZAAK** | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
+| Begrip               | Definitie                                                                                                                                                             |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ACTOR**            | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert.                                                                                           |
+| **GESPREK**          | Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s).                                                                       |
+| **INFORMATIEOBJECT** | Een INFORMATIEOBJECT waarvan aard, omvang en/of vorm aanleiding geven het als één geheel te behandelen en te beheren.                                                 |
+| **KLANTCONTACT**     | Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden.                                                |
+| **PARTIJ**           | Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft.                                                                                             |
+| **PRODUCT**          | Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie.                          |
+| **TAAK**             | Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT.                           |
+| **TAAKSTATUS**       | Een aanduiding van de stand van zaken van een TAAK op basis van betekenisvol behaald resultaat voor de initiator van de TAAK.                                         |
+| **ZAAK**             | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
 
 ## Use cases
 
-### UC-01: Taken raadplegen
+<span id="uc-tkn-01" />
+
+### UC-TKN-01: Taken raadplegen
 
 **Doel:** Weten welke acties openstaan en begrijpen wat er van de gebruiker wordt gevraagd.
 
@@ -114,7 +116,9 @@ MijnTaken ondersteunt dat de gebruiker:
 
 **Resultaat:** De gebruiker weet wat er gevraagd wordt en kan besluiten wanneer en hoe de actie te ondernemen. Alleen raadplegen verandert de status van de taak niet.
 
-### UC-02: Taak afhandelen
+<span id="uc-tkn-02" />
+
+### UC-TKN-02: Taak afhandelen
 
 **Doel:** De gevraagde handeling uitvoeren en met zekerheid afronden.
 

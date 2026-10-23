@@ -145,6 +145,38 @@ test("alle bronnen zijn geldig en de use case verbindt scenario en bouwsteen", (
   );
 });
 
+test("use-casecodes zijn uniek en modelankers wijzen naar de juiste bouwsteen", () => {
+  const codes = new Map();
+  for (const [bouwsteen, prefix] of Object.entries({
+    "mijn-zaken": "ZKN",
+    "mijn-taken": "TKN",
+    "mijn-berichten": "BRH",
+    "mijn-agenda": "AGD",
+  })) {
+    const source = readFileSync(
+      path.join(__dirname, "../bouwstenen", bouwsteen, "index.md"),
+      "utf8",
+    );
+    const headings = source.match(/^### UC-.*$/gm) ?? [];
+    assert.ok(headings.length > 0, bouwsteen);
+    assert.doesNotMatch(source, /\{\/_/);
+    for (const heading of headings) {
+      const match = heading.match(/^### (UC-([A-Z]{3})-\d{2,}): .+$/);
+      assert.ok(match, heading);
+      const [, code, bouwsteencode] = match;
+      const anker = code.toLowerCase();
+      assert.equal(bouwsteencode, prefix);
+      assert.ok(source.includes(`<span id="${anker}" />\n\n${heading}`), code);
+      assert.equal(source.split(`<span id="${anker}" />`).length - 1, 1, code);
+      assert.equal(codes.has(anker), false, code);
+      codes.set(anker, bouwsteen);
+    }
+  }
+  for (const usecase of Object.values(readModel().usecases)) {
+    assert.equal(codes.get(usecase.anker), usecase.bouwsteen, usecase.naam);
+  }
+});
+
 test("MijnZaken behoudt 14 begrippen, 14 relaties en links met deployment-prefix", () => {
   const diagram = loadApi().maakDiagram("mijn-zaken", (pad) => `/test${pad}`);
   assert.equal(

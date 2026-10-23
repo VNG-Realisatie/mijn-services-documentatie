@@ -24,12 +24,12 @@ usecases:
   zaakstatus-volgen:
     naam: Zaakstatus en voortgang volgen
     bouwsteen: mijn-zaken
-    anker: uc-02-zaakstatus-en-voortgang-volgen
+    anker: uc-zkn-02
   taken-raadplegen:
     naam: Taken raadplegen
     bouwsteen: mijn-taken
-    anker: uc-01-taken-raadplegen
+    anker: uc-tkn-01
   taak-afhandelen:
     naam: Taak afhandelen
     bouwsteen: mijn-taken
-    anker: uc-02-taak-afhandelen
+    anker: uc-tkn-02

@@ -53,6 +53,37 @@ geen nieuwe stap- of diagramvolgorde.
 Gebruik twee spaties inspringing. Met `>-` kun je een definitie of behoefte over
 meerdere regels schrijven; de weergave maakt daar een doorlopende zin van.
 
+## Use-casecodes
+
+Use cases krijgen de code `UC-<BOUWSTEENCODE>-<NUMMER>`, bijvoorbeeld `UC-TKN-01`.
+Het nummer telt per bouwsteen door. Codes veranderen niet bij hernoemen of
+anders ordenen; verwijderde nummers worden niet opnieuw gebruikt.
+
+| Bouwsteen      | Code |
+| -------------- | ---- |
+| MijnZaken      | ZKN  |
+| MijnTaken      | TKN  |
+| MijnBerichten  | BRH  |
+| MijnGesprekken | GSP  |
+| MijnProducten  | PRD  |
+| MijnProfiel    | PRF  |
+| MijnPlannen    | PLN  |
+| MijnAgenda     | AGD  |
+
+Gebruik een expliciet pagina-anker op basis van de code, voor de Markdown-kop:
+
+```mdx
+<span id="uc-tkn-01" />
+
+### UC-TKN-01: Taken raadplegen
+```
+
+Deze notatie behoudt de inhoudsopgave en voorkomt dat een Markdown-formatter
+MDX-commentaarankers verandert in JavaScript-expressies die de pagina laten crashen.
+De bestaande inhoudelijke modelsleutels, zoals `taak-afhandelen`, blijven behouden;
+`anker` verwijst naar het vaste code-anker op de bouwsteenpagina. Schermcodes
+veranderen niet met deze afspraak.
+
 ## Wat blijft buiten het model?
 
 Markdown blijft de bron voor verhalen, context, uitleg, voorbeelden en de

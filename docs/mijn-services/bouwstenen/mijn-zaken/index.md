@@ -122,7 +122,9 @@ direction TB
 
 ## Use cases
 
-### UC-01: Zaken overzien en terugvinden
+<span id="uc-zkn-01" />
+
+### UC-ZKN-01: Zaken overzien en terugvinden
 
 **Doel:** Overzicht krijgen van lopende en historische zaken en de juiste zaak kunnen selecteren.
 
@@ -135,7 +137,9 @@ MijnZaken ondersteunt dat de gebruiker:
 
 **Resultaat:** De gebruiker heeft overzicht en kan doorklikken naar de context van een specifieke zaak.
 
-### UC-02: Zaakstatus en voortgang volgen
+<span id="uc-zkn-02" />
+
+### UC-ZKN-02: Zaakstatus en voortgang volgen
 
 **Doel:** Begrijpen wat de actuele stand van een specifieke zaak is en wat er nu gebeurt.
 
@@ -149,7 +153,9 @@ MijnZaken ondersteunt dat de gebruiker:
 
 **Resultaat:** De gebruiker heeft duidelijkheid over waar de aanvraag staat en hoeft geen onnodig contact op te nemen voor een statusupdate.
 
-### UC-03: Zaakdocumenten en besluit inzien
+<span id="uc-zkn-03" />
+
+### UC-ZKN-03: Zaakdocumenten en besluit inzien
 
 **Doel:** Formele stukken, ingediende bijlagen en het definitieve besluit raadplegen.
 

@@ -70,7 +70,9 @@ afspraken willen inzien.
 
 ## Use cases
 
-### UC-01: Raadplegen agenda-afspraken door inwoner
+<span id="uc-agd-01" />
+
+### UC-AGD-01: Raadplegen agenda-afspraken door inwoner
 
 #### Doel
 
