@@ -22,7 +22,7 @@ Statusinformatie vermindert onzekerheid, voorkomt onnodig herhaald contact en ge
 
 | Vraag van de gebruiker                                            | Wat MijnZaken ondersteunt                                                          |
 | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------- |
-| **Welke aanvragen of meldingen lopen er bij de overheid?**        | Overzicht van lopende en afgeronde dossiers.        |
+| **Welke aanvragen of meldingen lopen er bij de overheid?**        | Overzicht van lopende en afgeronde dossiers.                                       |
 | **Waar staat mijn aanvraag en wat betekent dat nu voor mij?**     | De actuele fase vertaald naar begrijpelijke taal en herkenbare mijlpalen.          |
 | **Wat is de verwachte volgende stap en wanneer hoor ik iets?**    | Inzicht in de verwachte behandeltermijn of wat de overheid nu doet.                |
 | **Wat is er definitief besloten en welke stukken horen daarbij?** | Inzage in formele besluiten, documenten, eerdere contactmomenten en het resultaat. |
