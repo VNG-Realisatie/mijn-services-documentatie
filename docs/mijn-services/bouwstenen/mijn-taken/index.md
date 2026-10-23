@@ -14,7 +14,7 @@ MijnTaken brengt handelingsperspectief in overheidsdienstverlening. De bouwsteen
 
 ## Doel en gebruikersbehoeften
 
-Een inwoner of ondernemer wil een maatschappelijk doel bereiken (een vergunning krijgen, een melding doen, een subsidie ontvangen). Een verzoek van de overheid is daarin slechts een noodzakelijke tussenstap. MijnTaken ondersteunt het interactiemoment waarin de overheid actie van de gebruiker vraagt.
+Een inwoner of ondernemer wil iets voor elkaar krijgen in het dagelijks leven of bedrijf (een vergunning, voorziening, subsidie of melding). Een verzoek van de overheid is daarin slechts een noodzakelijke tussenstap. MijnTaken ondersteunt het interactiemoment waarin de overheid actie van de gebruiker vraagt.
 
 Duidelijkheid over wat er moet gebeuren en een tijdige bevestiging na afloop nemen onzekerheid weg en voorkomen vertraging in de behandeling.
 

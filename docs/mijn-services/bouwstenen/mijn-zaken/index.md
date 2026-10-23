@@ -20,7 +20,7 @@ Statusinformatie vermindert onzekerheid, voorkomt onnodig herhaald contact en ge
 
 | Vraag van de gebruiker                                            | Wat MijnZaken ondersteunt                                                          |
 | :---------------------------------------------------------------- | :--------------------------------------------------------------------------------- |
-| **Welke aanvragen of meldingen lopen er bij de overheid?**        | Overzicht van lopende, afgeronde en conceptdossiers over organisaties heen.        |
+| **Welke aanvragen of meldingen lopen er bij de overheid?**        | Overzicht van lopende en afgeronde dossiers.        |
 | **Waar staat mijn aanvraag en wat betekent dat nu voor mij?**     | De actuele fase vertaald naar begrijpelijke taal en herkenbare mijlpalen.          |
 | **Wat is de verwachte volgende stap en wanneer hoor ik iets?**    | Inzicht in de verwachte behandeltermijn of wat de overheid nu doet.                |
 | **Wat is er definitief besloten en welke stukken horen daarbij?** | Inzage in formele besluiten, documenten, eerdere contactmomenten en het resultaat. |
@@ -105,7 +105,7 @@ direction TB
 | **PLAN** | Een gestructureerde en vastgelegde beschrijving van doelen, keuzes, activiteiten en middelen, waarin wordt uitgewerkt wat de burger wil bereiken, hoe dat gebeurt, wanneer en met welke inzet. |
 | **PRODUCT** | Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie. |
 | **RESULTAAT** | Een gedefinieerde, concrete uitkomst van een ZAAK zoals het verlenen of weigeren van een vergunning, een toekenning of een afwijzing, en is het het 'antwoord' op de aanleiding van die ZAAK. |
-| **STATUS** | STATUS: Een aanduiding van de stand van zaken van een ZAAK op basis van betekenisvol behaald resultaat voor de initiator van de ZAAK. |
+| **STATUS** | Een aanduiding van de stand van zaken van een ZAAK op basis van betekenisvol behaald resultaat voor de initiator van de ZAAK. |
 | **TAAK** | Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT. |
 | **VERZOEK** | Een tot een overheidsorganisatie gerichte vraag of aanspraak om een bepaalde beslissing, handeling of reactie te verkrijgen. |
 | **ZAAK** | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
