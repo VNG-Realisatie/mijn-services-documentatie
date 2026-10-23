@@ -1,0 +1,32 @@
+---
+id: taak
+title: "Taak"
+description: ""
+sidebar_label: "Taak"
+hide_title: true
+hide_table_of_contents: true
+schema: true
+sample: {"uuid":"550e8400-e29b-41d4-a716-446655440000","titel":{"nl":"Kentekenbewijs uploaden","en":"Upload vehicle registration document"},"toelichting":{"nl":"Upload een kopie van uw kentekenbewijs voor uw parkeervergunningsaanvraag.","en":"Upload a copy of your vehicle registration document for your parking permit application."},"status":"open","deadline":"2026-12-12T23:59:59+01:00","context":{"urn":"urn:nl:gemeenten:zaak:2026-00042","canonicalUrl":"https://portaal.gemeente.nl/zaken/2026-00042"},"uitvoering":{"type":"upload","fallbackUrl":"https://portaal.gemeente.nl/taken/550e8400/uitvoeren?returnUrl=https%3A%2F%2Fmijnoverheid.nl%2Ftaken%2Fcontext%2Fzaak-2026-00042","submitUrl":"https://api.gemeente.nl/documenten/upload","maxBestanden":5,"toegestaneFormaten":["pdf","jpg","png"],"maxBestandsgrootte":10485760}}
+custom_edit_url: null
+---
+
+import Schema from "@theme/Schema";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Taak"}
+>
+</Heading>
+
+
+
+
+
+<Schema
+  {...require("./taak.Schema.json")}
+>
+  
+</Schema>
+            

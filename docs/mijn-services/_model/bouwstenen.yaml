@@ -1,0 +1,35 @@
+bouwstenen:
+  mijn-zaken:
+    naam: MijnZaken
+    kernbegrip: zaak
+    pagina: /initiatieven/mijn-services/bouwstenen/mijn-zaken/
+    icoon: /img/mijn-services/icons/mijn-zaken.svg
+  mijn-gesprekken:
+    naam: MijnGesprekken
+    kernbegrip: gesprek
+    pagina: /initiatieven/mijn-services/bouwstenen/mijn-gesprekken/
+    icoon: /img/mijn-services/icons/mijn-gesprekken.svg
+  mijn-producten:
+    naam: MijnProducten
+    kernbegrip: product
+    pagina: /initiatieven/mijn-services/bouwstenen/mijn-producten/
+    icoon: /img/mijn-services/icons/mijn-producten.svg
+  mijn-taken:
+    naam: MijnTaken
+    kernbegrip: taak
+    pagina: /initiatieven/mijn-services/bouwstenen/mijn-taken/
+    icoon: /img/mijn-services/icons/mijn-taken.svg
+
+usecases:
+  zaakstatus-volgen:
+    naam: Zaakstatus en voortgang volgen
+    bouwsteen: mijn-zaken
+    anker: uc-zkn-02
+  taken-raadplegen:
+    naam: Taken raadplegen
+    bouwsteen: mijn-taken
+    anker: uc-tkn-01
+  taak-afhandelen:
+    naam: Taak afhandelen
+    bouwsteen: mijn-taken
+    anker: uc-tkn-02
