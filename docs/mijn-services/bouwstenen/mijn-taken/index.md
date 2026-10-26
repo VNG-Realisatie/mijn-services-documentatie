@@ -8,6 +8,8 @@ sidebar_custom_props:
 draft: true
 ---
 
+import ModelWeergave from '../../\_model/ModelWeergave';
+
 # MijnTaken
 
 MijnTaken brengt handelingsperspectief in overheidsdienstverlening. De bouwsteen helpt inwoners en ondernemers begrijpen wat er nog moet gebeuren om verder te kunnen, waarom een handeling nodig is en hoe ze die met zekerheid afronden — zoals een ontbrekend document aanleveren, een formulier invullen of leges betalen.
@@ -97,6 +99,13 @@ classDiagram
 | **TAAK**             | Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT.                           |
 | **TAAKSTATUS**       | Een aanduiding van de stand van zaken van een TAAK op basis van betekenisvol behaald resultaat voor de initiator van de TAAK.                                         |
 | **ZAAK**             | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
+
+<details>
+<summary>Modelweergave MijnTaken</summary>
+
+<ModelWeergave weergave="mijn-taken" />
+
+</details>
 
 ## Use cases
 

@@ -19,6 +19,11 @@ bouwstenen:
     kernbegrip: taak
     pagina: /initiatieven/mijn-services/bouwstenen/mijn-taken/
     icoon: /img/mijn-services/icons/mijn-taken.svg
+  mijn-berichten:
+    naam: MijnBerichten
+    kernbegrip: bericht
+    pagina: /initiatieven/mijn-services/bouwstenen/mijn-berichten/
+    icoon: /img/mijn-services/icons/mijn-berichten.svg
 
 usecases:
   zaakstatus-volgen:

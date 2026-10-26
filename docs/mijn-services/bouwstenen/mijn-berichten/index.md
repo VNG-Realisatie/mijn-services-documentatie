@@ -6,6 +6,8 @@ sidebar_custom_props:
 draft: true
 ---
 
+import ModelWeergave from '../../\_model/ModelWeergave';
+
 # MijnBerichten
 
 MijnBerichten biedt de mogelijkheid om informatieve berichten of meldingen te
@@ -89,6 +91,13 @@ classDiagram
 | **INFORMATIEOBJECT** | Een INFORMATIEOBJECT waarvan aard, omvang en/of vorm aanleiding geven het als één geheel te behandelen en te beheren. |
 | **KLANTCONTACT** | Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden. |
 | **PARTIJ** | Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft. |
+
+<details>
+<summary>Modelweergave MijnBerichten</summary>
+
+<ModelWeergave weergave="mijn-berichten" />
+
+</details>
 
 ## Use cases
 

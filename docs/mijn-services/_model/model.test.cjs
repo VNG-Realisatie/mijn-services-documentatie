@@ -194,6 +194,46 @@ test("MijnZaken behoudt 14 begrippen, 14 relaties en links met deployment-prefix
   );
 });
 
+test("MijnTaken en MijnBerichten behouden hun begrippenkader in de modelweergave", () => {
+  const api = loadApi();
+  for (const [bouwsteen, begrippen, relaties] of [
+    ["mijn-taken", 9, 8],
+    ["mijn-berichten", 8, 7],
+  ]) {
+    const source = readFileSync(
+      path.join(__dirname, "../bouwstenen", bouwsteen, "index.md"),
+      "utf8",
+    );
+    assert.ok(source.includes(`<ModelWeergave weergave="${bouwsteen}" />`));
+    const selectie = api.getWeergave(bouwsteen);
+    const diagram = api.maakDiagram(bouwsteen, (pad) => `/test${pad}`);
+    assert.equal(selectie.diagram.length, begrippen);
+    assert.equal(selectie.tabel.length, begrippen);
+    assert.equal(selectie.relaties.length, relaties);
+    const handmatigDiagram = source.match(/classDiagram[\s\S]*?```/)[0];
+    const handmatigeRelaties = handmatigDiagram.match(/.+ --> .+/g);
+    assert.equal(handmatigeRelaties.length, relaties);
+    for (const relatie of handmatigeRelaties) {
+      const [, van, naar, label] = relatie.match(/(\w+) --> (\w+) : (.+)/);
+      assert.ok(
+        diagram.includes(
+          `${van.toLowerCase()} --> ${naar.toLowerCase()} : ${label}`,
+        ),
+      );
+    }
+    for (const begrip of selectie.tabel) {
+      const { naam, definitie } = api.default.begrippen.definities[begrip];
+      assert.ok(source.includes(`**${naam}**`), naam);
+      assert.ok(source.includes(definitie), naam);
+    }
+    assert.ok(
+      diagram.includes(
+        `"/test/initiatieven/mijn-services/bouwstenen/${bouwsteen}/"`,
+      ),
+    );
+  }
+});
+
 test("de lokale loader exporteert YAML als module en weigert dubbele sleutels", () => {
   const context = { module: { exports: {} } };
   vm.runInNewContext(loader("taak:\n  naam: Taak\n"), context);
