@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 1
 ---
 
@@ -16,7 +17,7 @@ Waar de overige interactielagen zich vaak afspelen binnen het overkoepelende por
 
 ## Beschikbare schermprofielen
 
-| ID | Schermprofiel | Scope | Doel |
-| :--- | :--- | :--- | :--- |
-| `SCR-TAAK-UITVOEREN` | [Taak uitvoeren](./taak-uitvoeren.md) | Transactie / Portaalwissel | De inwoner naar de juiste uitvoeringsomgeving leiden en de status bijhouden. |
-| `SCR-DIGID-EH` | [DigiD eenvoudige herauthenticatie](./digid-eenvoudige-herauthenticatie.md) | Beveiliging / Sessie | Naadloze authenticatiestap bij de overgang naar de lokale uitvoeringsomgeving. |
+| ID                   | Schermprofiel                                                               | Scope                      | Doel                                                                           |
+| :------------------- | :-------------------------------------------------------------------------- | :------------------------- | :----------------------------------------------------------------------------- |
+| `SCR-TAAK-UITVOEREN` | [Taak uitvoeren](./taak-uitvoeren.md)                                       | Transactie / Portaalwissel | De inwoner naar de juiste uitvoeringsomgeving leiden en de status bijhouden.   |
+| `SCR-DIGID-EH`       | [DigiD eenvoudige herauthenticatie](./digid-eenvoudige-herauthenticatie.md) | Beveiliging / Sessie       | Naadloze authenticatiestap bij de overgang naar de lokale uitvoeringsomgeving. |

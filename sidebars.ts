@@ -107,40 +107,40 @@ const sidebars: SidebarsConfig = {
           }]
         : []),
       buildstoneSidebar,
-      {
-        type: 'category',
+      ...(isDevelopment ? [{
+        type: 'category' as const,
         label: 'Schermprofielen',
-        link: {type: 'doc', id: 'mijn-services/schermprofielen/index'},
+        link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/index'},
         items: [
           {
-            type: 'category',
+            type: 'category' as const,
             label: 'Overzicht',
-            link: {type: 'doc', id: 'mijn-services/schermprofielen/overzicht/index'},
+            link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/overzicht/index'},
             items: [
-              {type: 'doc', id: 'mijn-services/schermprofielen/overzicht/recent'},
-              {type: 'doc', id: 'mijn-services/schermprofielen/overzicht/takenoverzicht'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/overzicht/recent'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/overzicht/takenoverzicht'},
             ],
           },
           {
-            type: 'category',
+            type: 'category' as const,
             label: 'Context',
-            link: {type: 'doc', id: 'mijn-services/schermprofielen/context/index'},
+            link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/context/index'},
             items: [
-              {type: 'doc', id: 'mijn-services/schermprofielen/context/taken-in-context'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/context/taken-in-context'},
             ],
           },
           {
-            type: 'category',
+            type: 'category' as const,
             label: 'Uitvoering',
-            link: {type: 'doc', id: 'mijn-services/schermprofielen/uitvoering/index'},
+            link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/uitvoering/index'},
             items: [
-              {type: 'doc', id: 'mijn-services/schermprofielen/uitvoering/digid-eenvoudige-herauthenticatie'},
-              {type: 'doc', id: 'mijn-services/schermprofielen/uitvoering/taak-uitvoeren'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/uitvoering/digid-eenvoudige-herauthenticatie'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/uitvoering/taak-uitvoeren'},
             ],
           },
         ],
       },
-      ...(isDevelopment ? [{
+      {
         type: 'category' as const,
         label: 'Interactie API',
         link: {type: 'doc' as const, id: 'mijn-services/interactie-api/index'},
