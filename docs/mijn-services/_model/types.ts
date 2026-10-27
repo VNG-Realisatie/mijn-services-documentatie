@@ -28,7 +28,7 @@ export type Model = {
   bouwstenen: Record<string, {
     naam: string;
     kernbegrip: string;
-    pagina: string;
+    pagina?: string;
     icoon: string;
   }>;
   usecases: Record<string, {naam: string; bouwsteen: string; anker: string}>;

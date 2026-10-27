@@ -90,6 +90,10 @@ Markdown blijft de bron voor verhalen, context, uitleg, voorbeelden en de
 inhoudelijke uitwerking van use cases. Frontmatter bevat alleen pagina- en
 publicatiegegevens, zoals `draft`, de beschrijving en de sidebarpositie.
 
+Het veld `bouwstenen.<id>.pagina` is optioneel. Laat het weg zolang de pagina
+op draft staat: het begrip blijft zichtbaar, maar krijgt geen link in het diagram,
+de definitietabel of use-caseverwijzingen. Voeg de URL pas bij publicatie toe.
+
 OpenAPI-specificaties blijven zelfstandige technische contracten, met eigen
 operaties, schema's en constraints. Het documentatiemodel vervangt ze niet.
 Eventueel kan later documentatietekst automatisch als kopie naar een specificatie
@@ -99,8 +103,9 @@ niet gemodelleerd.
 
 ## Eerste aangesloten pagina's
 
-- MijnZaken heeft een gegenereerd diagram en tabel naast het handgeschreven
-  origineel. Diagram- en tabelselecties blijven voorlopig afzonderlijk vastgelegd.
+- MijnZaken, MijnTaken en MijnBerichten gebruiken het model als enige bron voor
+  het diagram en de definitietabel onder Begrippenkader. Diagram- en tabelselecties
+  blijven afzonderlijk vastgelegd in de doorsnedes van het begrippenkader.
 - Ontbrekende informatie aanleveren gebruikt het model voor behoefte, doel,
   stapnamen, verwachtingen en verwijzingen naar MijnTaken, MijnZaken en schermen.
   De eerdere `scenario`-frontmatter en het bijbehorende JSON Schema zijn vervallen.

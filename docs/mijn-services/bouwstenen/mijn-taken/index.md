@@ -49,62 +49,7 @@ Een openstaande taak staat zelden op zichzelf. In een portaal of app wordt MijnT
 
 Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder zijn in de tabel de definities van de begrippen opgenomen.
 
-```mermaid
----
-config:
-  layout: elk
-  class:
-    hideEmptyMembersBox: true
----
-classDiagram
-    direction TB
-
-    class TAAK
-    class GESPREK
-    class KLANTCONTACT
-    class TAAKSTATUS
-    class PRODUCT
-    class ZAAK
-    class INFORMATIEOBJECT
-    class ACTOR
-    class PARTIJ
-
-    link GESPREK "mijn-gesprekken/" "Ga naar MijnGesprekken"
-    link ZAAK "mijn-zaken/" "Ga naar MijnZaken"
-    link PRODUCT "mijn-producten/" "Ga naar MijnProducten"
-    link TAAK "mijn-taken/" "Ga naar MijnTaken"
-
-    GESPREK --> TAAK : betreft
-    KLANTCONTACT --> TAAK : betreft
-
-    TAAK --> TAAKSTATUS : heeft
-    TAAK --> PRODUCT : hoort bij
-    TAAK --> ZAAK : hoort bij
-    TAAK --> INFORMATIEOBJECT : heeft
-    TAAK --> ACTOR : wordt behandeld door
-    TAAK --> PARTIJ : wordt uitgevoerd door
-```
-
-&nbsp;
-
-| Begrip               | Definitie                                                                                                                                                             |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **ACTOR**            | Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert.                                                                                           |
-| **GESPREK**          | Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s).                                                                       |
-| **INFORMATIEOBJECT** | Een INFORMATIEOBJECT waarvan aard, omvang en/of vorm aanleiding geven het als één geheel te behandelen en te beheren.                                                 |
-| **KLANTCONTACT**     | Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden.                                                |
-| **PARTIJ**           | Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft.                                                                                             |
-| **PRODUCT**          | Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie.                          |
-| **TAAK**             | Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT.                           |
-| **TAAKSTATUS**       | Een aanduiding van de stand van zaken van een TAAK op basis van betekenisvol behaald resultaat voor de initiator van de TAAK.                                         |
-| **ZAAK**             | Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden. |
-
-<details>
-<summary>Modelweergave MijnTaken</summary>
-
 <ModelWeergave weergave="mijn-taken" />
-
-</details>
 
 ## Use cases
 

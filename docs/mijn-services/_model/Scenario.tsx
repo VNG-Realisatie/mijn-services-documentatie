@@ -23,7 +23,9 @@ function DocumentLink({document, anker, children}: {
 export function UsecaseLink({id}: {id: string}) {
   const usecase = getUsecase(id);
   const bouwsteen = getBouwsteenById(usecase.bouwsteen);
-  return <Link to={`${bouwsteen.pagina}#${usecase.anker}`}>{usecase.naam}</Link>;
+  return bouwsteen.pagina
+    ? <Link to={`${bouwsteen.pagina}#${usecase.anker}`}>{usecase.naam}</Link>
+    : <>{usecase.naam}</>;
 }
 
 export function SchermLink({document, children}: {document: string; children?: ReactNode}) {

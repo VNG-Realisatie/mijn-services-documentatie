@@ -75,7 +75,7 @@ export function maakDiagram(id: string, url: (pad: string) => string) {
   }
   for (const begrip of weergave.diagram) {
     const bouwsteen = getBouwsteen(begrip);
-    if (bouwsteen) {
+    if (bouwsteen?.pagina) {
       regels.push(`link ${nodeId(begrip)} ${JSON.stringify(url(bouwsteen.pagina))} ${JSON.stringify(`Ga naar ${bouwsteen.naam}`)}`);
     }
   }

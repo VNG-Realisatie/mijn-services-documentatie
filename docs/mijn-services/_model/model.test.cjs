@@ -5,6 +5,7 @@ const { test } = require("node:test");
 const vm = require("node:vm");
 const ts = require("typescript");
 const { parse } = require("yaml");
+const matter = require("gray-matter");
 const loader = require("./loader.cjs");
 
 function compile(file, dependencies = {}, sources = {}) {
@@ -15,6 +16,7 @@ function compile(file, dependencies = {}, sources = {}) {
         module: ts.ModuleKind.CommonJS,
         target: ts.ScriptTarget.ES2022,
         esModuleInterop: true,
+        jsx: ts.JsxEmit.React,
       },
     },
   ).outputText;
@@ -194,9 +196,10 @@ test("MijnZaken behoudt 14 begrippen, 14 relaties en links met deployment-prefix
   );
 });
 
-test("MijnTaken en MijnBerichten behouden hun begrippenkader in de modelweergave", () => {
+test("de drie bouwstenen gebruiken het model als enige bron voor hun begrippenkader", () => {
   const api = loadApi();
   for (const [bouwsteen, begrippen, relaties] of [
+    ["mijn-zaken", 14, 14],
     ["mijn-taken", 9, 8],
     ["mijn-berichten", 8, 7],
   ]) {
@@ -204,33 +207,81 @@ test("MijnTaken en MijnBerichten behouden hun begrippenkader in de modelweergave
       path.join(__dirname, "../bouwstenen", bouwsteen, "index.md"),
       "utf8",
     );
-    assert.ok(source.includes(`<ModelWeergave weergave="${bouwsteen}" />`));
+    const begrippenkader = source
+      .split("## Begrippenkader\n")[1]
+      ?.split("\n## ")[0];
+    assert.ok(begrippenkader, bouwsteen);
+    assert.equal(
+      source.split(`<ModelWeergave weergave="${bouwsteen}" />`).length - 1,
+      1,
+    );
+    assert.ok(
+      begrippenkader.includes(`<ModelWeergave weergave="${bouwsteen}" />`),
+    );
+    assert.doesNotMatch(begrippenkader, /```mermaid|<details>|\|/);
     const selectie = api.getWeergave(bouwsteen);
     const diagram = api.maakDiagram(bouwsteen, (pad) => `/test${pad}`);
     assert.equal(selectie.diagram.length, begrippen);
     assert.equal(selectie.tabel.length, begrippen);
     assert.equal(selectie.relaties.length, relaties);
-    const handmatigDiagram = source.match(/classDiagram[\s\S]*?```/)[0];
-    const handmatigeRelaties = handmatigDiagram.match(/.+ --> .+/g);
-    assert.equal(handmatigeRelaties.length, relaties);
-    for (const relatie of handmatigeRelaties) {
-      const [, van, naar, label] = relatie.match(/(\w+) --> (\w+) : (.+)/);
-      assert.ok(
-        diagram.includes(
-          `${van.toLowerCase()} --> ${naar.toLowerCase()} : ${label}`,
-        ),
-      );
+    for (const relatieId of selectie.relaties) {
+      const { van, naar, label } = api.default.begrippen.relaties[relatieId];
+      assert.ok(diagram.includes(`${van} --> ${naar} : ${label}`));
     }
     for (const begrip of selectie.tabel) {
       const { naam, definitie } = api.default.begrippen.definities[begrip];
-      assert.ok(source.includes(`**${naam}**`), naam);
-      assert.ok(source.includes(definitie), naam);
+      assert.ok(naam.trim(), begrip);
+      assert.ok(definitie.trim(), begrip);
     }
     assert.ok(
       diagram.includes(
         `"/test/initiatieven/mijn-services/bouwstenen/${bouwsteen}/"`,
       ),
     );
+  }
+});
+
+test("draftbouwstenen blijven zichtbaar zonder links in diagram en tabel", () => {
+  const api = loadApi();
+  const React = require("react");
+  const { renderToStaticMarkup } = require("react-dom/server");
+  const ModelWeergave = compile("ModelWeergave.tsx", {
+    react: React,
+    "@docusaurus/Link": ({ to, children }) =>
+      React.createElement("a", { href: to }, children),
+    "@docusaurus/useBaseUrl": () => "/test/",
+    "@theme/Mermaid": ({ value }) => React.createElement("pre", null, value),
+    "./model": { ...api, __esModule: true },
+  }).default;
+
+  for (const [id, bouwsteen] of Object.entries(api.default.bouwstenen)) {
+    const source = readFileSync(
+      path.join(__dirname, "../bouwstenen", id, "index.md"),
+      "utf8",
+    );
+    if (matter(source).data.draft === true) {
+      assert.equal(bouwsteen.pagina, undefined, id);
+    }
+  }
+
+  for (const id of ["mijn-zaken", "mijn-taken", "mijn-berichten"]) {
+    const diagram = api.maakDiagram(id, (pad) => `/test${pad}`);
+    const html = renderToStaticMarkup(
+      React.createElement(ModelWeergave, { weergave: id }),
+    );
+    for (const begrip of api.getWeergave(id).tabel) {
+      const bouwsteen = api.getBouwsteen(begrip);
+      if (!bouwsteen) continue;
+      const { naam } = api.default.begrippen.definities[begrip];
+      if (bouwsteen.pagina) {
+        assert.ok(diagram.includes(`link ${begrip} `), begrip);
+        assert.ok(html.includes(`href="${bouwsteen.pagina}"`), begrip);
+      } else {
+        assert.ok(diagram.includes(`class ${begrip}[`), begrip);
+        assert.ok(!diagram.includes(`link ${begrip} `), begrip);
+        assert.ok(html.includes(`<strong>${naam}</strong>`), begrip);
+      }
+    }
   }
 });
 

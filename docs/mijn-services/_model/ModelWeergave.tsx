@@ -27,7 +27,7 @@ export default function ModelWeergave({weergave}: {weergave: string}) {
               <tr key={id}>
                 <td>
                   <strong>
-                    {bouwsteen ? <Link to={bouwsteen.pagina}>{begrip.naam}</Link> : begrip.naam}
+                    {bouwsteen?.pagina ? <Link to={bouwsteen.pagina}>{begrip.naam}</Link> : begrip.naam}
                   </strong>
                 </td>
                 <td>{begrip.definitie}</td>
