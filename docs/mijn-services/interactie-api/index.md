@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Interactie API
 
 De Interactie API is het publieke contract tussen kanalen en de interactielaag

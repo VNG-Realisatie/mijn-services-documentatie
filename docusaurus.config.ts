@@ -77,7 +77,10 @@ const config: Config = {
             outputDir: 'docs/mijn-services/interactie-api/referentie',
             showSchemas: false,
             showInfoPage: false,
+            template: 'plugins/openapi-api-template.mdx',
+            infoTemplate: 'plugins/openapi-info-template.mdx',
             tagTemplate: 'plugins/openapi-tag-template.mdx',
+            schemaTemplate: 'plugins/openapi-schema-template.mdx',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'auto',
@@ -128,14 +131,14 @@ const config: Config = {
               label: 'Bouwstenen',
               to: '/initiatieven/mijn-services/bouwstenen',
             },
-            {
+            ...(process.env.NODE_ENV !== 'production' ? [{
               label: 'Interactie API',
               to: '/initiatieven/mijn-services/interactie-api',
             },
             {
               label: 'Aansluitprofielen',
               to: '/initiatieven/mijn-services/aansluitprofielen',
-            },
+            }] : []),
           ],
         },
         {
