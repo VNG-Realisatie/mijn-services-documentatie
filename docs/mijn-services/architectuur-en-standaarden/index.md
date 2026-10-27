@@ -12,10 +12,10 @@ MijnServices sluit aan bij de bestaande Nederlandse en Europese standaarden voor
 
 ### 1. Informatiemodellen en semantiek
 
-- **[NL-SBB - Standaard voor het beschrijven van begrippen](https://www.forumstandaardisatie.nl/open-standaarden/nl-sbb)**  
-  Standaard voor eenduidige, herbruikbare begripsbeschrijvingen, met begrijpelijke definities en verwijzingen naar hun (juridische) grondslag.
 - **[MIM - Metamodel Informatie Modellering](https://docs.geostandaarden.nl/mim/mim/)**  
   Gemeenschappelijk kader voor conceptuele en logische informatiemodellen, met afspraken over objecttypen, kenmerken, relaties en definities.
+- **[NL-SBB - Standaard voor het beschrijven van begrippen](https://www.forumstandaardisatie.nl/open-standaarden/nl-sbb)**  
+  Standaard voor eenduidige, herbruikbare begripsbeschrijvingen, met begrijpelijke definities en verwijzingen naar hun (juridische) grondslag.
 
 ### 2. API-ontwerp en specificaties
 
