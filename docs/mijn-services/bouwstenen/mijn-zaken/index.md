@@ -5,7 +5,6 @@ title: MijnZaken
 description: Kanaalonafhankelijk overzicht, duiding en voortgang bij lopende en afgeronde dienstverlening.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-zaken.svg
-draft: true
 ---
 
 import ModelWeergave from '../../\_model/ModelWeergave';

@@ -5,7 +5,6 @@ title: MijnTaken
 description: Weten wat er nog moet gebeuren en een gevraagde handeling met zekerheid afronden.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-taken.svg
-draft: true
 ---
 
 import ModelWeergave from '../../\_model/ModelWeergave';

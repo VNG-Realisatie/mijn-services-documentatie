@@ -65,7 +65,16 @@ const buildstoneSidebar = isDevelopment
         {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-gesprekken/index'},
       ],
     }
-  : {type: 'doc' as const, id: 'mijn-services/bouwstenen/index', label: 'Bouwstenen'};
+  : {
+      type: 'category' as const,
+      label: 'Bouwstenen',
+      link: {type: 'doc' as const, id: 'mijn-services/bouwstenen/index'},
+      items: [
+        {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-zaken/index'},
+        {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-taken/index'},
+        {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-berichten/index'},
+      ],
+    };
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 

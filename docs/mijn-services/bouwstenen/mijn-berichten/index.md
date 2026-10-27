@@ -3,7 +3,6 @@ sidebar_position: 4
 description: Informatieve berichten en meldingen voor inwoners en ondernemers.
 sidebar_custom_props:
   icon: /img/mijn-services/icons/mijn-berichten.svg
-draft: true
 ---
 
 import ModelWeergave from '../../\_model/ModelWeergave';
