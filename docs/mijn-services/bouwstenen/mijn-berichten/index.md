@@ -98,6 +98,7 @@ MijnBerichten ondersteunt dat de gebruiker:
 - een overzicht heeft van ontvangen berichten, met informatie over de inhoud en afzender van het bericht;
 - kan herkennen welke berichten nieuw of nog niet gelezen zijn;
 - een specifiek bericht kan openen, om de inhoud, het berichttype, de bijlagen en de gerelateerde zaken of producten te tonen.
+- vanuit de eventuele context de gekoppelde berichten kan raadplegen.
 
 **Resultaat:** De gebruiker heeft overzicht over de communicatie vanuit de overheid en weet welke berichten beschikbaar zijn.
 

@@ -100,30 +100,33 @@ classDiagram
 
 ## Use cases
 
-### UC-01: Taken raadplegen
+### UC-TKN-01: Taken raadplegen
 
 **Doel:** Weten welke acties openstaan en begrijpen wat er van de gebruiker wordt gevraagd.
 
 MijnTaken ondersteunt dat de gebruiker:
 
 - openstaande taken kan vinden in een algemeen overzicht én in de context van een specifieke zaak of dienst;
-- direct herkent waar het verzoek over gaat en van welke overheidsorganisatie het afkomstig is;
-- begrijpt wat er nodig is, waarom, en binnen welke termijn;
+- direct herkent waar het verzoek over gaat, bij welke zaak de taak hoort en van welke overheidsorganisatie het afkomstig is;
+- begrijpt wat er nodig is, waarom de handeling nodig is en binnen welke termijn deze moet worden uitgevoerd;
+- per taak de deadline en een eventuele urgentie-indicator ziet, bijvoorbeeld 'Nog 2 dagen';
+- openstaande en afgeronde taken die bij een specifieke zaak horen kan raadplegen;
 - ziet welke uitvoeringsmogelijkheden beschikbaar zijn;
-- duidelijke uitleg krijgt wanneer er op dit moment géén openstaande acties zijn.
+- duidelijke uitleg krijgt wanneer er op dit moment geen openstaande acties zijn.
 
-**Resultaat:** De gebruiker weet wat er gevraagd wordt en kan besluiten wanneer en hoe de actie te ondernemen. Alleen raadplegen verandert de status van de taak niet.
+**Resultaat:** De gebruiker weet welke acties openstaan, wat er wordt gevraagd en wanneer actie nodig is. De gebruiker kan besluiten wanneer en hoe de actie uit te voeren. Alleen raadplegen verandert de status van de taak niet.
 
-### UC-02: Taak afhandelen
+### UC-TKN-02: Taak afhandelen
 
 **Doel:** De gevraagde handeling uitvoeren en met zekerheid afronden.
 
 MijnTaken ondersteunt dat de gebruiker:
 
-- de handeling kan uitvoeren via de geboden mogelijkheid (bijvoorbeeld document uploaden, formulier invullen of betalen);
-- bij een overstap naar een andere omgeving (zoals een betaalprovider of specialistisch loket) naadloos kan doorgaan;
+- de handeling kan uitvoeren via de geboden mogelijkheid, bijvoorbeeld een document uploaden, een formulier invullen of betalen;
+- de actie direct kan starten vanuit de taak, bijvoorbeeld via een actieknop;
+- bij een overstap naar een andere omgeving, zoals een betaalprovider of specialistisch loket, naadloos kan doorgaan;
 - direct een duidelijke bevestiging krijgt van wat is ingediend of uitgevoerd;
-- ziet of de taak nu definitief is afgerond of dat er nog een beoordeling volgt door de organisatie;
+- ziet of de taak definitief is afgerond of dat er nog een beoordeling volgt door de organisatie;
 - bij een onderbreking of fout duidelijke handelingsopties krijgt om het opnieuw te proberen;
 - niet opnieuw wordt gevraagd een reeds voltooide handeling uit te voeren.
 
