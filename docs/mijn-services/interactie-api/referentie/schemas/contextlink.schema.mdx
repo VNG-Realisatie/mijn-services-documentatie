@@ -1,4 +1,5 @@
 ---
+draft: true
 id: contextlink
 title: "ContextLink"
 description: "De context waaraan de taak is gekoppeld (bijv. een zaak of product),"
@@ -6,7 +7,11 @@ sidebar_label: "ContextLink"
 hide_title: true
 hide_table_of_contents: true
 schema: true
-sample: {"urn":"urn:nl:gemeenten:zaak:2026-00042","canonicalUrl":"https://portaal.gemeente.nl/zaken/2026-00042"}
+sample:
+  {
+    "urn": "urn:nl:gemeenten:zaak:2026-00042",
+    "canonicalUrl": "https://portaal.gemeente.nl/zaken/2026-00042",
+  }
 custom_edit_url: null
 ---
 
@@ -17,10 +22,7 @@ import Heading from "@theme/Heading";
   as={"h1"}
   className={"openapi__heading"}
   children={"ContextLink"}
->
-</Heading>
-
-
+></Heading>
 
 De context waaraan de taak is gekoppeld (bijv. een zaak of product),
 aangeduid met een **URN** en optioneel een **canonicalUrl**.
@@ -40,10 +42,4 @@ flowchart TD
     C -->|Nee| E[Nader te bepalen]
 ```
 
-
-<Schema
-  {...require("./contextlink.Schema.json")}
->
-  
-</Schema>
-            
+<Schema {...require("./contextlink.Schema.json")}></Schema>

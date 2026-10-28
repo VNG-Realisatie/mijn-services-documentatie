@@ -1,4 +1,5 @@
 ---
+draft: true
 id: probleem
 title: "Probleem"
 description: "Probleemdetails conform [RFC 9457 Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc9457)."
@@ -6,7 +7,14 @@ sidebar_label: "Probleem"
 hide_title: true
 hide_table_of_contents: true
 schema: true
-sample: {"type":"/problemen/ongeldige-invoer","title":"Ongeldige invoer","status":400,"detail":"Het veld 'klantId' is verplicht.","instance":"string"}
+sample:
+  {
+    "type": "/problemen/ongeldige-invoer",
+    "title": "Ongeldige invoer",
+    "status": 400,
+    "detail": "Het veld 'klantId' is verplicht.",
+    "instance": "string",
+  }
 custom_edit_url: null
 ---
 
@@ -17,16 +25,8 @@ import Heading from "@theme/Heading";
   as={"h1"}
   className={"openapi__heading"}
   children={"Probleem"}
->
-</Heading>
-
-
+></Heading>
 
 Probleemdetails conform [RFC 9457 Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc9457).
 
-<Schema
-  {...require("./probleem.Schema.json")}
->
-  
-</Schema>
-            
+<Schema {...require("./probleem.Schema.json")}></Schema>

@@ -65,7 +65,16 @@ const buildstoneSidebar = isDevelopment
         {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-gesprekken/index'},
       ],
     }
-  : {type: 'doc' as const, id: 'mijn-services/bouwstenen/index', label: 'Bouwstenen'};
+  : {
+      type: 'category' as const,
+      label: 'Bouwstenen',
+      link: {type: 'doc' as const, id: 'mijn-services/bouwstenen/index'},
+      items: [
+        {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-zaken/index'},
+        {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-taken/index'},
+        {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-berichten/index'},
+      ],
+    };
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -98,61 +107,61 @@ const sidebars: SidebarsConfig = {
           }]
         : []),
       buildstoneSidebar,
-      {
-        type: 'category',
+      ...(isDevelopment ? [{
+        type: 'category' as const,
         label: 'Schermprofielen',
-        link: {type: 'doc', id: 'mijn-services/schermprofielen/index'},
+        link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/index'},
         items: [
           {
-            type: 'category',
+            type: 'category' as const,
             label: 'Overzicht',
-            link: {type: 'doc', id: 'mijn-services/schermprofielen/overzicht/index'},
+            link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/overzicht/index'},
             items: [
-              {type: 'doc', id: 'mijn-services/schermprofielen/overzicht/recent'},
-              {type: 'doc', id: 'mijn-services/schermprofielen/overzicht/takenoverzicht'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/overzicht/recent'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/overzicht/takenoverzicht'},
             ],
           },
           {
-            type: 'category',
+            type: 'category' as const,
             label: 'Context',
-            link: {type: 'doc', id: 'mijn-services/schermprofielen/context/index'},
+            link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/context/index'},
             items: [
-              {type: 'doc', id: 'mijn-services/schermprofielen/context/taken-in-context'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/context/taken-in-context'},
             ],
           },
           {
-            type: 'category',
+            type: 'category' as const,
             label: 'Uitvoering',
-            link: {type: 'doc', id: 'mijn-services/schermprofielen/uitvoering/index'},
+            link: {type: 'doc' as const, id: 'mijn-services/schermprofielen/uitvoering/index'},
             items: [
-              {type: 'doc', id: 'mijn-services/schermprofielen/uitvoering/digid-eenvoudige-herauthenticatie'},
-              {type: 'doc', id: 'mijn-services/schermprofielen/uitvoering/taak-uitvoeren'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/uitvoering/digid-eenvoudige-herauthenticatie'},
+              {type: 'doc' as const, id: 'mijn-services/schermprofielen/uitvoering/taak-uitvoeren'},
             ],
           },
         ],
       },
       {
-        type: 'category',
+        type: 'category' as const,
         label: 'Interactie API',
-        link: {type: 'doc', id: 'mijn-services/interactie-api/index'},
+        link: {type: 'doc' as const, id: 'mijn-services/interactie-api/index'},
         items: [
-          {type: 'doc', id: 'mijn-services/interactie-api/implementatieniveaus'},
-          {type: 'doc', id: 'mijn-services/interactie-api/portaalwissels'},
-          {type: 'doc', id: 'mijn-services/interactie-api/positionering'},
+          {type: 'doc' as const, id: 'mijn-services/interactie-api/implementatieniveaus'},
+          {type: 'doc' as const, id: 'mijn-services/interactie-api/portaalwissels'},
+          {type: 'doc' as const, id: 'mijn-services/interactie-api/positionering'},
           ...moduleSidebar,
         ],
       },
       {
-        type: 'category',
+        type: 'category' as const,
         label: 'Aansluitprofielen',
-        link: {type: 'doc', id: 'mijn-services/aansluitprofielen/index'},
+        link: {type: 'doc' as const, id: 'mijn-services/aansluitprofielen/index'},
         items: [
-          {type: 'doc', id: 'mijn-services/aansluitprofielen/zgw'},
-          {type: 'doc', id: 'mijn-services/aansluitprofielen/openvtb-taken-api/index'},
-          {type: 'doc', id: 'mijn-services/aansluitprofielen/combinaties'},
-          {type: 'doc', id: 'mijn-services/aansluitprofielen/notifynl-api'},
+          {type: 'doc' as const, id: 'mijn-services/aansluitprofielen/zgw'},
+          {type: 'doc' as const, id: 'mijn-services/aansluitprofielen/openvtb-taken-api/index'},
+          {type: 'doc' as const, id: 'mijn-services/aansluitprofielen/combinaties'},
+          {type: 'doc' as const, id: 'mijn-services/aansluitprofielen/notifynl-api'},
         ],
-      },
+      }] : []),
       {type: 'doc', id: 'mijn-services/architectuur-en-standaarden/index'},
     ],
   }],

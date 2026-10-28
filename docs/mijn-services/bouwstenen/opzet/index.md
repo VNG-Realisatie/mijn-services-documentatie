@@ -103,10 +103,10 @@ Elke bouwsteen volgt bij voorkeur deze vaste hoofdstukindeling:
 :::tip[Onderscheid: Klantscenario vs. Use case van een bouwsteen]
 
 - Een **[Klantscenario](../../scenarios/index.md)** beschrijft de menselijke situatie en context van de inwoner of ondernemer binnen een bredere reis (bijvoorbeeld: _"Ontbrekende informatie aanleveren bij een aanvraag"_). Een scenario kan meerdere bouwstenen tegelijk raken.
-- Een **Use case van een bouwsteen** beschrijft de **functionele capability** die _deze specifieke bouwsteen_ levert (bijvoorbeeld bij MijnTaken: `UC-01: Taken raadplegen` en `UC-02: Taak afhandelen`). Dit is het afgebakende functionele aanbod van de bouwsteen zelf, onafhankelijk van een specifieke casus of kanaalflow.
+- Een **Use case van een bouwsteen** beschrijft de **functionele capability** die _deze specifieke bouwsteen_ levert (bijvoorbeeld bij MijnTaken: `UC-TKN-01: Taken raadplegen` en `UC-TKN-02: Taak afhandelen`). Dit is het afgebakende functionele aanbod van de bouwsteen zelf, onafhankelijk van een specifieke casus of kanaalflow.
   :::
 
-- De primaire functionele interacties die de bouwsteen mogelijk maakt (genummerd: `UC-01`, `UC-02`, etc.).
+- De primaire functionele interacties die de bouwsteen mogelijk maakt (genummerd: `UC-<BOUWSTEENCODE>-<NUMMER>`, bijvoorbeeld `UC-TKN-01`). De vaste bouwsteencodes staan in de README van het documentatiemodel.
 - Per use case:
   - **Doel:** Wat stelt deze interactie de gebruiker in staat te bereiken?
   - **Wat de bouwsteen ondersteunt:** Puntenlijst van functionele behoeften en interactiemogelijkheden.
@@ -149,7 +149,7 @@ Een bouwsteen geldt als **conceptueel gereed** wanneer aan de volgende criteria 
 - [ ] **Bronsysteemonafhankelijk:** Geen aannames over specifieke leverancierssoftware of interne brondatastructuren.
 - [ ] **Scherp afgebakend:** De interactie heeft een duidelijke eigen scope en overlapt niet met andere bouwstenen.
 - [ ] **Combineerbaar in de UX:** De interacties kunnen in kanalen vrij worden gecombineerd met andere bouwstenen.
-- [ ] **Use cases scherp:** De functionele interacties (`UC-01`, `UC-02`) zijn uitgewerkt met doel, ondersteuning en resultaat.
+- [ ] **Use cases scherp:** De functionele interacties (bijvoorbeeld `UC-TKN-01`, `UC-TKN-02`) zijn uitgewerkt met doel, ondersteuning en resultaat.
 - [ ] **Attenderingsmomenten benoemd:** Er is beschreven wanneer en waarom een attendering nodig is.
 
 ### Publicatiestatus & Integratie

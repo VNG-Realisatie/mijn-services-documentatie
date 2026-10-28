@@ -4,12 +4,23 @@
         {
             "type": "node", 
             "request": "launch",
-            "name": "Launch Docusaurus",
+            "name": "Preview Development",
             "skipFiles": ["<node_internals>/**"],
             "runtimeExecutable": "pnpm",
             "runtimeArgs": [ "start", "--host", "0.0.0.0" ],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Preview Production",
+            "skipFiles": ["<node_internals>/**"],
+            "runtimeExecutable": "pnpm",
+            "runtimeArgs": [ "serve", "--host", "0.0.0.0", "--port", "3001" ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Build Docusaurus Production"
         }
     ]
 }

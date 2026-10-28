@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 5
 ---
 
@@ -32,7 +33,7 @@ Dit scherm verloopt via de DigiD-koppeling van het LO-portaal. De MijnTaken API 
 
 ## Gebruikt in use cases
 
-- [UC-02 Taak afhandelen](../../bouwstenen/mijn-taken/index.md#uc-02-taak-afhandelen)
+- [UC-TKN-02 Taak afhandelen](../../bouwstenen/mijn-taken/index.md#uc-tkn-02)
 
 ## Verschillen per portaal
 

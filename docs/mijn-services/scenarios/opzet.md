@@ -58,89 +58,79 @@ Niet iedere stap is een klik. Beschrijf portaalafhankelijke routes als varianten
 wanneer ondersteuning verschilt; suggereer niet dat elk portaal dezelfde
 schermen of uitvoeringsmogelijkheden heeft.
 
-## Machineleesbaar contract
+## Gedeeld documentatiemodel
 
-Het [JSON Schema](./scenario.schema.json) valideert het object `scenario` in de
-YAML-frontmatter, niet de volledige Docusaurus-frontmatter of de Markdowntekst.
-De tekst blijft leesbaar; tooling haalt relaties uitsluitend uit de metadata.
+De machineleesbare bron staat onder `docs/mijn-services/_model/`, niet in de
+frontmatter van scenariopagina's. Het eerdere `scenario`-frontmattercontract en
+het bijbehorende JSON Schema zijn vervallen.
 
-```yaml
-scenario:
-  version: 1
-  id: SCN-ONTBREKENDE-INFORMATIE-AANLEVEREN
-  doel: De gevraagde informatie aanleveren zodat de behandeling van mijn aanvraag of melding verder kan.
-  steps:
-    id: informatie-aanleveren
-    title: De gevraagde informatie aanleveren
-    bouwstenen:
-      - doc: mijn-services/bouwstenen/mijn-taken/index
-        anchor: uc-02-taak-afhandelen
-    schermen:
-      - doc: mijn-services/schermprofielen/uitvoering/taak-uitvoeren
-    verwachtingen:
-      - id: aanlevering-bevestigd
-        beschrijving: De inwoner krijgt bevestiging dat de informatie is ingediend.
-```
+- `klantscenarios.behoeften` bevat de klantbehoeften met stabiele ID's.
+- `klantscenarios.scenarios` verbindt een scenario met een behoefte, doel, document en stappen.
+- `usecases` registreert de functionele interacties bij hun bouwsteen.
 
-| Veld            | Afspraak                                                                                                                        |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `version`       | Versie van het metadataformaat, momenteel `1`; niet de inhoudsversie van het scenario.                                          |
-| `id`            | Uniek scenario-ID met prefix `SCN-`; blijft gelijk bij verplaatsen of herschrijven.                                             |
-| `steps`         | Niet-lege lijst in de volgorde van het beschreven hoofdverloop.                                                                 |
-| `steps[].id`    | Uniek binnen het scenario, stabiel en bruikbaar als pagina-anker. Een externe stapverwijzing gebruikt scenario-ID plus stap-ID. |
-| `steps[].title` | Titel van de stap; moet overeenkomen met de kop in de tekst.                                                                    |
-| `bouwstenen`    | Verplichte lijst met documentverwijzingen; `[]` voor een contextstap zonder bouwsteen.                                          |
-| `schermen`      | Verplichte lijst met mogelijke schermuitwerkingen; `[]` als geen scherm van toepassing is.                                      |
-| `doc`           | Docusaurus-document-ID relatief aan `docs/`, zonder extensie of begin-/eindslash. Gebruik geen URL of relatieve bestandspaden.  |
-| `anchor`        | Optioneel bestaand anker in het doeldocument, zonder `#`; bij voorkeur de functionele interactie of schermannotatie.            |
+Dit zijn onderdelen van het samengevoegde model, geen bestandsnamen. Behoeften
+en scenario's worden nu samen beheerd in `scenarios.yaml`; bouwstenen en use cases
+in `bouwstenen.yaml`. Alle YAML-bijdragen worden samengevoegd, zodat deze indeling
+later kan veranderen zonder verwijzingen aan te passen.
 
-De lijsten zijn meervoudig: een stap kan bouwstenen combineren en verschillende
-schermuitwerkingen hebben. De hele-scenario-overzichten en terugverwijzingen
-worden uit de stappen afgeleid; leg ze niet nogmaals in metadata vast.
+Een stap verwijst naar use-case-ID's, eventueel aanvullende bouwsteen-ID's en
+mogelijke schermuitwerkingen. Gebruik geen kopie van een use-casebeschrijving.
+Een contextstap kan lege verwijzingslijsten hebben. De hele-scenario-overzichten
+en terugverwijzingen worden uit de stappen afgeleid, niet apart onderhouden.
 
-`doel` legt het gebruikersdoel vast. `steps[].verwachtingen` bevat benoemde,
-waarneembare resultaten met een `id` en `beschrijving`. Deze velden zijn optioneel
-in het schema voor bestaande versie-1-documenten, maar worden gebruikt bij
-nieuwe uitwerkingen. Verwachtings-ID's zijn uniek binnen het scenario en delen
-de ankerruimte met stap-ID's; gebruik dus geen stap-ID als verwachtings-ID.
+Scenario-ID's behouden de prefix `SCN-` en blijven gelijk bij verplaatsen of
+herschrijven. Stap-ID's zijn uniek binnen een scenario en vormen de pagina-ankers.
+Verwachtingen hebben een `id` en `beschrijving` en delen de ankerruimte met stappen.
 Een externe testverwijzing gebruikt scenario-ID, stap-ID en verwachtings-ID.
 
-Onbekende metadatavelden zijn niet toegestaan. Een incompatibele wijziging
-vereist een nieuwe formaatversie en een bewuste migratie van scenario's en tooling.
-Gherkin is optioneel en alleen nuttig voor gedragsregels die precisie vragen.
-Als het wordt gebruikt, staat het in codeblokken met taal `gherkin` en `# language: nl`.
-Een Gherkin-stap is niet automatisch een scenariostap: gedragsvoorbeelden mogen
-meerdere stappen of een alternatieve situatie beschrijven.
+Schermverwijzingen gebruiken `document`: een Docusaurus-document-ID relatief aan
+`docs/`, zonder extensie of begin-/eindslash. `anker` is optioneel en bevat geen `#`.
+De volledige beheerafspraken en voorbeelden staan in de README van de modelmap.
 
-## Tekst en metadata synchroniseren
+## Tekst en model verbinden
 
-Gebruik voorlopig expliciete stapkoppen, zoals in het eerste scenario:
+De YAML-bronnen beheren behoefte, doel, stapnamen, verwachtingen en relaties.
+Markdown beheert het verhaal, de context en de toelichting. Alleen pagina- en
+publicatiegegevens blijven in frontmatter staan.
 
-```html
-<h3 id="taak-openen">Een taak openen</h3>
+```mdx
+import { ScenarioDoel, ScenarioStap } from "../_model/Scenario";
+
+<ScenarioDoel scenario="SCN-ONTBREKENDE-INFORMATIE-AANLEVEREN" />
+
+<ScenarioStap scenario="SCN-ONTBREKENDE-INFORMATIE-AANLEVEREN" stap="informatie-aanleveren">
+
+De inwoner levert de gevraagde informatie aan.
+
+</ScenarioStap>
 ```
 
-Metadata is de bron voor doel, volgorde, titels, relaties en verwachtingen.
-Markdown is de bron voor het verhaal. Zolang er geen renderer is,
-moeten doel, stapkoppen, verwachtingen en zichtbare verwijzingen handmatig
-dezelfde informatie volgen. Geef zichtbare verwachtingen hun eigen anker.
-Een toekomstige renderer kan koppen en relatieblokken uit de metadata tonen,
-zonder de beschrijving te genereren of Markdownbestanden te herschrijven.
+De componenten tonen de doeltekst, stapkop, verwachtingen en verwijzingen vanuit
+het model. Schrijf die informatie niet nogmaals in Markdown. De pagina plaatst de
+stappen expliciet; de modeltest controleert selectie en volgorde.
+
+Gherkin blijft optioneel voor gedragsregels die precisie vragen. Gebruik daarbij
+taal `gherkin` en `# language: nl`. Een gedragsvoorbeeld kan meerdere stappen of
+een alternatieve situatie beschrijven en is niet automatisch een scenariostap.
 
 ## Validatie
 
-Formalisering bestaat uit drie verschillende controles:
+Voer vanuit de repository-root de gerichte controles uit:
 
-1. **Structuur:** JSON Schema controleert types, verplichte velden en ID-formaten.
-2. **Referenties:** een validator controleert unieke scenario-/stap-ID's,
-   bestaande doeldocumenten en ankers, en overeenkomende stapkoppen en volgorde.
-3. **Betekenis:** review controleert of verhaal, functionele eisen en
-   gedragsvoorbeelden inhoudelijk overeenkomen. Een parser kan dat niet bewijzen.
+```sh
+node --test docs/mijn-services/_model/model.test.cjs
+```
 
-Het schema staat al in deze repository. Automatische referentievalidatie,
-rendering en terugverwijzingen zijn nog niet geimplementeerd.
-Machineleesbaarheid maakt de voorbeelden niet automatisch uitvoerbare tests:
-daarvoor zijn concrete assertions en een testomgeving nodig.
+De YAML-parser weigert dubbele sleutels. De leeslaag controleert interne
+verwijzingen en unieke stap-/verwachtingsankers; de tests controleren ook
+stapselectie, volgorde en bestaande schermdocumenten. De weergave gebruikt de
+Docusaurus-documentroutes.
+
+Een volledig structuurschema en automatische controle van alle doelankers zijn
+nog niet beschikbaar. Inhoudelijke review blijft nodig om te controleren of
+verhaal, functionele eisen en gedragsvoorbeelden overeenkomen. Machineleesbaarheid
+maakt de scenario's niet automatisch uitvoerbare portaaltests: daarvoor zijn
+concrete assertions en een testomgeving nodig.
 
 ## Koppeling met tests
 
@@ -164,7 +154,7 @@ zijn daarom bewust niet hetzelfde; begrijpelijkheid vraagt ook gebruikersonderzo
 - [ ] Schermverwijzingen zijn concreet en verwijzen waar mogelijk naar annotaties.
 - [ ] Contextstappen en relevante portaalvarianten zijn expliciet herkenbaar.
 - [ ] Relevante stappen hebben benoemde, toetsbare verwachtingen met stabiele ID's; relevante uitzonderingen zijn leesbaar uitgewerkt. Gherkin is niet verplicht.
-- [ ] Metadata voldoet aan het schema; ID's, verwijzingen, stapkoppen en volgorde zijn gecontroleerd.
+- [ ] Het gedeelde model is de bron voor gestructureerde gegevens; ID's, verwijzingen, stapkoppen en volgorde zijn gecontroleerd.
 - [ ] API-contracten en functionele eisen zijn niet opnieuw gedefinieerd in het scenario.
 - [ ] Verhaal en gedragsvoorbeelden zijn inhoudelijk gereviewd.
 - [ ] Publicatiestatus is bewust gekozen: `draft: true` blijft lokaal zichtbaar, maar wordt niet gepubliceerd in een productiebuild.
