@@ -118,18 +118,7 @@ MijnZaken ondersteunt dat de gebruiker:
 
 **Resultaat:** De gebruiker kan de overige informatie en interacties die bij een zaak horen vanuit de zaakcontext terugvinden.
 
-### UC-ZKN-05: Zaken op het dashboard overzien
-
-**Doel:** Snel inzicht krijgen in recente en lopende zaken vanuit het dashboard.
-
-MijnZaken ondersteunt dat de gebruiker:
-
-- recente en lopende zaken op het dashboard ziet als kaartjes, met een maximum van ongeveer vier zaken;
-- vanuit een kaartje de betreffende zaak kan openen.
-
-**Resultaat:** De gebruiker kan vanaf het dashboard snel naar een relevante zaak navigeren.
-
-### UC-ZKN-06: Grensoverschrijdende dienstverlening raadplegen
+### UC-ZKN-05: Grensoverschrijdende dienstverlening raadplegen
 
 **Doel:** Als grensoverschrijdende gebruiker procedure-informatie en relevante bewijsstukken digitaal kunnen raadplegen, in overeenstemming met de toepasselijke Europese vereisten.
 
