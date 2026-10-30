@@ -59,14 +59,6 @@ Maak attenderingen concreet en verwijs naar een veilige plek om verder te gaan.
 Stem inhoud, timing en kanaal af op de situatie en gebruik geen
 privacygevoelige informatie in ongeschikte kanalen.
 
-## Van interactie naar implementatie
-
-[Bouwstenen](../bouwstenen/) werken de interactiebehoeften uit in
-herbruikbare capabilities met een bijbehorend functioneel informatiemodel. Kanalen
-vertalen dit naar een gebruikersomgeving. De [Interactie API](../interactie-api/)
-biedt de gestandaardiseerde contracten voor kanalen, en [aansluitprofielen](../aansluitprofielen/)
-verbinden die met bronsystemen.
-
 ## Onderbouwing
 
 De interactietypen zijn een MijnServices-uitwerking. Ze sluiten aan bij

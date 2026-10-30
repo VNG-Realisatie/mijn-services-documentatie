@@ -145,4 +145,4 @@ Een attendering vermeldt waar het over gaat en verwijst veilig direct naar de be
 | Onderdeel           | Verwijzingen                                                                                                                                   |
 | :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Klantscenario's** | [Mijn aanvraag volgen](../../scenarios/index.md#mijn-aanvraag-volgen), [Een reactie begrijpen](../../scenarios/index.md#een-reactie-begrijpen) |
-| **Schermprofielen** | [Schermprofielen](../../schermprofielen/index.md)                                                                                              |
+| **Informatiemodellen** | [Gemeentelijke modellen](../../informatiemodellen.md#gemeentelijke-modellen) |

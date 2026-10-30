@@ -162,6 +162,7 @@ const sidebars: SidebarsConfig = {
           {type: 'doc' as const, id: 'mijn-services/aansluitprofielen/notifynl-api'},
         ],
       }] : []),
+      {type: 'doc', id: 'mijn-services/informatiemodellen'},
       {type: 'doc', id: 'mijn-services/architectuur-en-standaarden/index'},
     ],
   }],

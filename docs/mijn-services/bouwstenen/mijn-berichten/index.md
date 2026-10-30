@@ -91,3 +91,9 @@ Attenderingen rond MijnBerichten zorgen ervoor dat gebruikers weten wanneer rele
 - **Herinnering aan ongelezen bericht:** wanneer het relevant is dat de gebruiker kennisneemt van beschikbare informatie.
 
 Een attendering bevat voldoende informatie om de gebruiker te laten begrijpen waar het bericht over gaat en verwijst veilig naar de betreffende berichtomgeving.
+
+## Gerelateerd
+
+| Onderdeel | Verwijzingen |
+| --- | --- |
+| **Informatiemodellen** | [Gemeentelijke modellen](../../informatiemodellen.md#gemeentelijke-modellen) |
