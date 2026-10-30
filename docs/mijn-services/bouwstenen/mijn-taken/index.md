@@ -49,6 +49,8 @@ Een openstaande taak staat zelden op zichzelf. In een portaal of app wordt MijnT
 
 Onderstaand model toont de onderlinge relaties tussen de verschillende begrippen. Daaronder zijn in de tabel de definities van de begrippen opgenomen.
 
+De begrippen sluiten aan bij het woordgebruik en de informatiemodellen binnen overheidsorganisaties. Ze beschrijven de betekenis aan de organisatiekant; in communicatie met inwoners en ondernemers kan een begrijpelijker benaming passender zijn.
+
 <ModelWeergave weergave="mijn-taken" />
 
 ## Use cases
