@@ -91,6 +91,67 @@ MijnTaken ondersteunt dat de gebruiker:
 
 **Resultaat:** De handeling is verricht, de gebruiker heeft een bevestiging en weet wat het vervolg is.
 
+## Sequentiediagrammen
+
+### Statussen van een taak
+Een taak kan verschillende statussen hebben. Als de taak wordt aangemaakt, krijgt de taak initieel de status ‘Open’. Als de taak door de externe partij is uitgevoerd, wordt de status op ‘Uitgevoerd’ gezet. Daarna kan het resultaat van de uitvoering door een medewerker worden beoordeeld. Zodra dit resultaat is beoordeeld en verwerkt, krijgt de taak de status ‘Verwerkt’. Daarmee is de taak afgehandeld.
+
+Als de taak niet is uitgevoerd (bijvoorbeeld na het verstrijken van de handelingsdatum) wordt de status automatisch (via een timer) of handmatig door een medewerker gewijzigd naar ‘Niet uitgevoerd’.
+
+Als de externe partij de taak analoog heeft uitgevoerd (bijvoorbeeld als een document bij de balie is afgegeven) dan kan de medewerker de status direct van ‘Open’ naar ‘Verwerkt’ zetten.
+
+Als de taak niet door de externe partij uitgevoerd hoeft te worden of als de taak foutief is ingeboekt, dan kan de medewerker de taak op ‘Afgebroken’ zetten. Er vindt daarna geen verwerking van de taak meer plaats.
+
+```mermaid
+stateDiagram-v2
+    OPEN: Open
+    UITGEVOERD: Uitgevoerd
+    NIET_UITGEVOERD: Niet uitgevoerd
+    AFGEBROKEN: Afgebroken
+    VERWERKT: Verwerkt
+
+    direction LR
+    [*] --> OPEN
+    OPEN --> UITGEVOERD
+    OPEN --> NIET_UITGEVOERD
+    OPEN --> AFGEBROKEN
+	  UITGEVOERD --> VERWERKT
+	  NIET_UITGEVOERD --> VERWERKT
+	  AFGEBROKEN --> [*]
+	  VERWERKT --> [*]
+```
+
+### Ophalen overzicht taken
+
+Onderstaand patroon schetst de volgorde van interactie tussen de verschillende systemen voor het ophalen van een overzicht van taken door een inwoner of ondernemer via een MijnOmgeving.
+
+```mermaid
+sequenceDiagram
+    actor INW as Inwoner/Ondernemer
+  	participant MO  as MijnOmgeving
+   	participant TRC as Taak<br/>registratie<br/>component
+    
+    autonumber
+
+    INW ->> MO: Inloggen
+    MO ->> TRC: Ophalen taken
+    TRC -->> MO: Taken
+    MO ->> INW: Taken tonen
+```
+
+| Component | Toelichting |
+| --- | --- |
+| MijnOmgeving | Component dia via webtechnologie veilig toegang boedt tot persoonlijke informatie en gepersonaliseerde digitale dienstverlening. In deze context bevat de component zowel een frontend component als een backend for frontend component. |
+| Taakregistratiecomponent | Dit component ondersteunt het opslaan en naar andere applicaties ontsluiten van taakgegevens (zowel externe taken t.b.v. de klant als interne taken t.b.v. de medewerker). De component slaat deze gestructureerd en voorzien van de benodigde metadata op en stelt applicaties in staat deze te wijzigen, te verwijderen en aan de hand van een aantal zoekcriteria op te vragen. |
+
+| # | Toelichting |
+| --- | --- |
+| 1 | Dit is een toelichting |
+| 2 | Dit is een toelichting |
+| 3 | Dit is een toelichting |
+| 4 | Dit is een toelichting |
+
+
 ## Attenderen
 
 Attenderingen rond MijnTaken activeren de inwoner op het juiste moment om vertraging of termijnoverschrijding te voorkomen:
