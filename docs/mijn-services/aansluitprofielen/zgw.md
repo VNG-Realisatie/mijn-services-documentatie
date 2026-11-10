@@ -69,7 +69,7 @@ welke interpretatie nodig is.
 
 # Volgorde van API-aanroepen voor zaken: MijnZaken en backoffice applicatie
 
-Generieke sequence diagrams voor aanmaken, ophalen, bijwerken en verwijderen van een zaak. MijnZaken vraagt zaken alleen op; de backoffice applicatie maakt ze aan, wijzigt en verwijdert ze. Leesacties gebruiken waar mogelijk `expand`, zodat gerelateerde gegevens in één aanroep meekomen.
+Generieke sequence diagrams voor aanmaken, ophalen, bijwerken en verwijderen van een zaak. MijnZaken vraagt zaken alleen op; de backoffice applicatie maakt ze aan, vraagt ze op, wijzigt en verwijdert ze. Leesacties gebruiken waar mogelijk `expand`, zodat gerelateerde gegevens in één aanroep meekomen.
 
 ## Zaak aanmaken
 
