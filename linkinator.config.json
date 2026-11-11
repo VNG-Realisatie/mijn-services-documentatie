@@ -1,0 +1,34 @@
+{
+  "recurse": true,
+  "cleanUrls": true,
+  "directoryListing": true,
+  "checkFragments": true,
+  "verbosity": "error",
+  "concurrency": 25,
+  "timeout": 20000,
+  "retry": true,
+  "retryErrors": true,
+  "retryErrorsCount": 3,
+  "statusCodes": {
+    "401": "warn",
+    "403": "warn",
+    "429": "warn"
+  },
+  "urlRewriteExpressions": [
+    {
+      "pattern": "^(http://(?:127\\.0\\.0\\.1|localhost):\\d+)/mijn-services-documentatie(/|$)",
+      "replacement": "$1/"
+    }
+  ],
+  "skip": [
+    "^https://vng-realisatie\\.github\\.io/mijn-services-documentatie(/|$)",
+    "^https://github\\.com/vng-realisatie/mijn-services-documentatie/(tree|edit)/",
+    "^http://127\\.0\\.0\\.1:8000/",
+    "^https://claude\\.ai/",
+    "^https://chatgpt\\.com/",
+    "^https://[a-z]+\\.slack\\.com/",
+    "tweakers.net",
+    "www.linkedin.com",
+    "player.vimeo.com"
+  ]
+}

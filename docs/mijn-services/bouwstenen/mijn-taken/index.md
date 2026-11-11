@@ -37,7 +37,7 @@ MijnTaken richt zich zuiver op de actie van de gebruiker. Andere bouwstenen vull
 
 - **MijnTaken** faciliteert de actie (begrijpen wat nodig is, uitvoeren en bevestiging krijgen).
 - De context waarbinnen de taak ontstaat (zoals een aanvraag, dossier of besluit) wordt beheerd door [MijnZaken](../mijn-zaken/index.md).
-- Vragen over een verzoek lopen via [MijnGesprekken](../mijn-gesprekken/index.md).
+- Vragen over een verzoek lopen via MijnGesprekken.
 - Attenderingen en formele notificaties lopen via [MijnBerichten](../mijn-berichten/index.md).
 - Interne werkinstructies en taken voor ambtenaren vallen buiten deze bouwsteen; MijnTaken gaat uitsluitend over handelingen van de burger of ondernemer.
 
@@ -166,5 +166,4 @@ De attendering bevat een duidelijke handelingsinstructie en deeplinkt direct naa
 
 | Onderdeel           | Verwijzingen                                                                                                                                                                                                   |
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Klantscenario's** | [Ontbrekende informatie aanleveren](../../scenarios/ontbrekende-informatie-aanleveren.md)                                                                                                                      |
 | **Informatiemodellen** | [Gemeentelijke modellen](../../informatiemodellen.md#gemeentelijke-modellen)                                                                                                                             |

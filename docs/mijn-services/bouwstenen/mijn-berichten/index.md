@@ -39,7 +39,7 @@ MijnBerichten vult andere bouwstenen aan:
 - **MijnBerichten** toont ontvangen communicatie, de inhoud daarvan en eventuele bijlagen.
 - De context achter een bericht (zoals een aanvraag, behandeling, besluit of dossier) wordt weergegeven via [MijnZaken](../mijn-zaken/index.md).
 - Wanneer een bericht vraagt om een handeling (bijvoorbeeld informatie aanleveren of betalen), wordt deze actie uitgevoerd via [MijnTaken](../mijn-taken/index.md)
-- Vragen stellen of reageren op een bericht loopt via [MijnGesprekken](../mijn-gesprekken/index.md).
+- Vragen stellen of reageren op een bericht loopt via MijnGesprekken.
 - Interne communicatie, werkverdeling en het opstellen van berichten binnen de overheid vallen buiten deze bouwsteen.
 
 ### Combineren in de weergave (composability)

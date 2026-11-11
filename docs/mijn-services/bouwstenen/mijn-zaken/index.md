@@ -33,7 +33,7 @@ MijnZaken richt zich op de context, status en historie van de behandeling. Ander
 
 - **MijnZaken** toont de voortgang, het actuele beeld en formele documenten van een zaak.
 - Actiegerichte handelingen (zoals een document aanleveren of leges betalen) worden afgehandeld via [MijnTaken](../mijn-taken/index.md).
-- Vragen stellen of digitaal overleg voeren loopt via [MijnGesprekken](../mijn-gesprekken/index.md).
+- Vragen stellen of digitaal overleg voeren loopt via MijnGesprekken.
 - Formele notificaties en berichten lopen via [MijnBerichten](../mijn-berichten/index.md).
 - Interne behandelprocessen, werkverdeling en dossieropbouw blijven binnen de vak- en zaaksystemen van de behandelende organisatie.
 
@@ -146,5 +146,4 @@ Een attendering vermeldt waar het over gaat en verwijst veilig direct naar de be
 
 | Onderdeel           | Verwijzingen                                                                                                                                   |
 | :------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Klantscenario's** | [Mijn aanvraag volgen](../../scenarios/index.md#mijn-aanvraag-volgen), [Een reactie begrijpen](../../scenarios/index.md#een-reactie-begrijpen) |
 | **Informatiemodellen** | [Gemeentelijke modellen](../../informatiemodellen.md#gemeentelijke-modellen) |

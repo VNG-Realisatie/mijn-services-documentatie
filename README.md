@@ -41,8 +41,11 @@ pnpm typecheck
 # Controleer OpenAPI-specificatie met Spectral
 pnpm lint:api
 
-# Bouw de documentatiesite
+# Bouw de productiesite (controleert interne links, anchors en afbeeldingen)
 pnpm build
+
+# Controleer interne én externe links in de gegenereerde build/
+pnpm check:links
 ```
 
 ## Publicatie naar developer.overheid.nl (DON)
@@ -50,12 +53,13 @@ pnpm build
 Een belangrijk publicatiekanaal voor MijnServices is de kennisbank van [developer.overheid.nl](https://developer.overheid.nl). Om de documentatie daar naadloos te integreren, beschikt de repository over een geautomatiseerde exportflow:
 
 - **Draft-ondersteuning**: Pagina's met `draft: true` in de YAML frontmatter worden lokaal wel getoond, maar bij de export automatisch uitgesloten.
+- **Linkcontrole**: Bij de productiebuild (`pnpm build`) controleert Docusaurus op kapotte interne links, anchors en afbeeldingen (`throw`). Vervolgens controleert `pnpm check:links` (`linkinator`) zowel interne als externe URL's en fragmenten in `build/`.
 - **Export genereren**:
   ```bash
   pnpm export:don
   ```
-  Dit script (`scripts/export-don.mjs`) exporteert de niet-draft documentatie (`docs/mijn-services/`) en bijbehorende afbeeldingen (`static/img/mijn-services/`) naar `dist/don/`.
-- **Geautomatiseerde levering**: Bij elke push naar `main` publiceert GitHub Actions (`.github/workflows/sync-don.yml`) de kant-en-klare export naar de distributiebranch `dist-don`.
+  Dit commando draait eerst de productiebuild en linkchecker, en exporteert daarna via `scripts/export-don.mjs` (`pnpm export:don:bundle`) de niet-draft documentatie (`docs/mijn-services/`) en bijbehorende afbeeldingen (`static/img/mijn-services/`) naar `dist/don/`.
+- **Geautomatiseerde levering**: Bij elke push naar `main` bouwt en controleert GitHub Actions (`.github/workflows/sync-don.yml`) eerst alle links en publiceert bij slagen de kant-en-klare export naar de distributiebranch `dist-don`.
 
 ## Tooling
 

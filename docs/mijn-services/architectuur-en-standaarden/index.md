@@ -21,12 +21,12 @@ MijnServices sluit aan bij de bestaande Nederlandse en Europese standaarden voor
 
 - **[Nederlandse API Strategie (NLGov)](https://docs.geostandaarden.nl/api/API-Strategie/)**  
   Het overkoepelende normatieve stelsel voor API's van de Nederlandse overheid, inclusief richtlijnen voor architectuur en levenscyclusbeheer.
-- **[REST API Design Rules (ADR 2.1.0)](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/)**  
+- **[REST API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/)**  
   De verplichte ('pas-toe-of-leg-uit') standaard van Forum Standaardisatie voor uniforme, voorspelbare REST API's.
 - **[OpenAPI Specification (OAS 3.0 / 3.1)](https://www.forumstandaardisatie.nl/open-standaarden/openapi-specification)**  
   De standaard voor machinaal leesbare en interactieve contractbeschrijvingen van API-endpoints, parameters en DTO's.
-- **[CloudEvents (NL GOV profile)](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/event-cloudevents)**  
-  ADR-ontwerprichtlijn en standaard envelopformaat voor het beschrijven van gebeurtenissen (events) en attenderingen bij asynchrone gegevensuitwisseling.
+- **[CloudEvents (NL GOV profile)](https://logius-standaarden.github.io/NL-GOV-profile-for-CloudEvents/)**  
+  Standaard envelopformaat voor het beschrijven van gebeurtenissen (events) en attenderingen bij asynchrone gegevensuitwisseling.
 
 ### 3. Beveiliging en toegangscontrole
 

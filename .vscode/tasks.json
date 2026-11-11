@@ -10,6 +10,25 @@
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Check Links (Production)",
+            "type": "process",
+            "command": "pnpm",
+            "args": ["check:links"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build & Check Docusaurus Production",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build Docusaurus Production",
+                "Check Links (Production)"
+            ],
+            "problemMatcher": []
         }
     ]
 }

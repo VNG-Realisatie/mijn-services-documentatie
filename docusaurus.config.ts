@@ -6,9 +6,15 @@ import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const config: Config = {
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: isProduction ? 'throw' : 'warn',
+      onBrokenMarkdownImages: isProduction ? 'throw' : 'warn',
+    },
   },
   themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
   title: 'MijnServices Documentatie',
@@ -36,7 +42,8 @@ const config: Config = {
   organizationName: 'vng-realisatie', // Usually your GitHub org/user name.
   projectName: 'mijn-services-documentatie', // Usually your repo name.
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: isProduction ? 'throw' : 'warn',
+  onBrokenAnchors: isProduction ? 'throw' : 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

@@ -26,8 +26,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build production site (check internal links)
+        run: pnpm build
+
+      - name: Check links (internal & external)
+        run: pnpm check:links
+
       - name: Build DON export bundle
-        run: pnpm export:don
+        run: pnpm export:don:bundle
 
       - name: Deploy to dist-don branch
         uses: peaceiris/actions-gh-pages@v4
