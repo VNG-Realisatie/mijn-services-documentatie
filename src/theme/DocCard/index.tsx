@@ -9,6 +9,7 @@ import {
 import { usePluralForm } from "@docusaurus/theme-common";
 import isInternalUrl from "@docusaurus/isInternalUrl";
 import { translate } from "@docusaurus/Translate";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import type { Props } from "@theme/DocCard";
 import Heading from "@theme/Heading";
@@ -104,9 +105,31 @@ function truncate(str: string, maxLength: number): string {
   return sliced.trimEnd() + "…";
 }
 
+/**
+ * Een eigen icoon voor de kaart, uit `sidebar_custom_props.icon` in de
+ * frontmatter of `customProps.icon` in `_category_.json`. Geeft null als er
+ * geen eigen icoon is; de kaart valt dan terug op het standaardicoon.
+ *
+ * developer.overheid.nl ondersteunt dezelfde eigenschap, zodat een overzicht
+ * met `<DocCardList />` op beide sites dezelfde iconen toont.
+ */
+function useCustomIcon(
+  item: PropSidebarItemLink | PropSidebarItemCategory,
+): ReactNode | null {
+  const customIcon = item.customProps?.icon;
+  const src = useBaseUrl(typeof customIcon === "string" ? customIcon : "");
+  if (typeof customIcon !== "string") {
+    return null;
+  }
+  return (
+    <img src={src} className={styles.cardIcon} alt="" aria-hidden="true" />
+  );
+}
+
 function CardCategory({ item }: { item: PropSidebarItemCategory }): ReactNode {
   const href = findFirstSidebarItemLink(item);
   const categoryItemsPlural = useCategoryItemsPlural();
+  const customIcon = useCustomIcon(item);
 
   // Unexpected: categories that don't have a link have been filtered upfront
   if (!href) {
@@ -117,7 +140,7 @@ function CardCategory({ item }: { item: PropSidebarItemCategory }): ReactNode {
     <CardLayout
       className={item.className}
       href={href}
-      icon={<IconLadeArchiefkast className={styles.cardIcon} />}
+      icon={customIcon ?? <IconLadeArchiefkast className={styles.cardIcon} />}
       title={item.label}
       description={item.description ?? categoryItemsPlural(item.items.length)}
     />
@@ -125,11 +148,12 @@ function CardCategory({ item }: { item: PropSidebarItemCategory }): ReactNode {
 }
 
 function CardLink({ item }: { item: PropSidebarItemLink }): ReactNode {
-  const icon = isInternalUrl(item.href) ? (
+  const customIcon = useCustomIcon(item);
+  const icon = customIcon ?? (isInternalUrl(item.href) ? (
     <IconDocumentMetVlakkenEnLijnenErop className={styles.cardIcon} />
   ) : (
     <IconKetting2Schakels className={styles.cardIcon} />
-  );
+  ));
   const doc = useDocById(item.docId ?? undefined);
   return (
     <CardLayout
