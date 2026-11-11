@@ -1,0 +1,41 @@
+klantscenarios:
+  behoeften:
+    ontbrekende-informatie-aanleveren:
+      beschrijving: >-
+        De overheid heeft meer informatie nodig om mijn aanvraag of melding verder te
+        behandelen. Ik wil begrijpen wat ontbreekt en hoe ik dit kan aanleveren.
+
+  scenarios:
+    SCN-ONTBREKENDE-INFORMATIE-AANLEVEREN:
+      behoefte: ontbrekende-informatie-aanleveren
+      document: mijn-services/scenarios/ontbrekende-informatie-aanleveren
+      doel: >-
+        De gevraagde informatie aanleveren zodat de behandeling van mijn aanvraag of melding verder kan.
+      stappen:
+        - id: informatiebehoefte-begrijpen
+          naam: Begrijpen welke informatie nodig is
+          usecases:
+            - zaakstatus-volgen
+            - taken-raadplegen
+          bouwstenen: []
+          schermen:
+            - document: mijn-services/schermprofielen/overzicht/takenoverzicht
+            - document: mijn-services/schermprofielen/context/taken-in-context
+              anker: annotatie-c2
+          verwachtingen:
+            - id: aanvraag-of-melding-herkenbaar
+              beschrijving: De inwoner kan herkennen bij welke aanvraag of melding de vraag om aanvullende informatie hoort.
+            - id: gevraagde-informatie-duidelijk
+              beschrijving: Het is duidelijk welke informatie of documenten nodig zijn en voor wanneer.
+        - id: informatie-aanleveren
+          naam: De gevraagde informatie aanleveren
+          usecases:
+            - taak-afhandelen
+          bouwstenen: []
+          schermen:
+            - document: mijn-services/schermprofielen/uitvoering/taak-uitvoeren
+          verwachtingen:
+            - id: aanlevering-bevestigd
+              beschrijving: De inwoner krijgt bevestiging dat de informatie is ingediend.
+            - id: vervolgstatus-duidelijk
+              beschrijving: Het is duidelijk of er nog actie nodig is of dat de informatie wordt beoordeeld.
