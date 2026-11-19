@@ -35,6 +35,7 @@ De Docusaurus-schil in deze repo (`docusaurus.config.ts`, `sidebars.ts`, `src/`)
   - Gebruik binnen `docs/mijn-services/` relatieve links tussen documenten zodat ze zowel onder de lokale `baseUrl` (`/mijn-services-documentatie/initiatieven/mijn-services/`) als op DON (`/initiatieven/mijn-services/`) werken.
   - Plaats afbeeldingen die in MijnServices-docs worden gebruikt altijd onder `static/img/mijn-services/` (verwijs ernaar met `/img/mijn-services/...`), anders ontbreken ze na export op DON.
   - Importeer in geëxporteerde `.mdx`-pagina's geen repo-specifieke componenten uit `@site/src/...` tenzij die ook op DON bestaan; gedeelde MDX-componenten voor MijnServices horen onder `docs/mijn-services/` (zoals `_model/`).
+  - Gebruik `@theme/DocCardList` voor het bouwstenenoverzicht en `sidebar_custom_props.icon` voor SVG-paden in de frontmatter. De lokale preview gebruikt een overname van [developer-overheid-nl/don-site#983](https://github.com/developer-overheid-nl/don-site/pull/983) in [`src/theme/DocCard/`](src/theme/DocCard/), met `useBaseUrl` voor de GitHub Pages-prefix. Werk bij een DON-update alleen deze theme-override gericht bij en behoud de `baseUrl`-ondersteuning. De override zelf gaat niet mee in de export; DON gebruikt zijn eigen thema.
 - **Use-case-ankers**:
   - Gebruik vaste codes `UC-<CODE>-<NR>` met een expliciete `<span id="uc-..." />` direct boven de `###`-kop (zie `docs/mijn-services/_model/README.md`).
 
