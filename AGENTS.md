@@ -1,5 +1,15 @@
 # AGENTS.md
 
+## Positionering van MijnServices
+
+MijnServices standaardiseert de **toegang tot overheidsorganisaties op het gebied van interactie**, redenerend van **buiten naar binnen**:
+
+- **Wel (tweerichtingsinteractie & handelingsperspectief):** zowel inzicht en regie (*weten* en *volgen*) als daadwerkelijk kunnen *handelen* richting de organisatie (*doen*). Het is dus geen eenzijdige inzage-laag, maar **duplex interactie** — inclusief concrete handelingen zoals een bouwtekening uploaden, ontbrekende gegevens aanleveren, betalen, een afspraak plannen of een vraag stellen, over kanalen (mijnomgeving, app, balie, KCC, notificaties) en organisaties heen.
+- **Niet:** interne bedrijfsprocessen, ambtelijke werkverdeling, zaaksysteemlogica of beheerregisters van een organisatie.
+- **Waar de grens ligt:** interne registraties en standaarden (zoals ZGW, RGBZ of OpenVTB) raken MijnServices pas aan de binnenkant, als vertaling in `docs/mijn-services/informatiemodellen.md` en `docs/mijn-services/aansluitprofielen/`. Laat interne systeemstructuren of leveranciersjargon nooit doorlekken naar klantreizen, scenario's, bouwstenen, schermprofielen of de Interactie API.
+
+Zie `docs/mijn-services/klantreis-en-principes/index.md`, `docs/mijn-services/bouwstenen/opzet/index.md` en `docs/mijn-services/scenarios/opzet.md` voor de inhoudelijke kaders en Definitions of Done.
+
 ## Rol van deze repository
 
 Dit is de **bronrepository voor MijnServices-documentatie** en fungeert als **aanleverende site voor [developer.overheid.nl](https://developer.overheid.nl) (DON)**.
