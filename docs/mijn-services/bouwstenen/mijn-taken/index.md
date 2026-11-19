@@ -144,14 +144,6 @@ sequenceDiagram
 | MijnOmgeving | Component dia via webtechnologie veilig toegang boedt tot persoonlijke informatie en gepersonaliseerde digitale dienstverlening. In deze context bevat de component zowel een frontend component als een backend for frontend component. |
 | Taakregistratiecomponent | Dit component ondersteunt het opslaan en naar andere applicaties ontsluiten van taakgegevens (zowel externe taken t.b.v. de klant als interne taken t.b.v. de medewerker). De component slaat deze gestructureerd en voorzien van de benodigde metadata op en stelt applicaties in staat deze te wijzigen, te verwijderen en aan de hand van een aantal zoekcriteria op te vragen. |
 
-| # | Toelichting |
-| --- | --- |
-| 1 | Dit is een toelichting |
-| 2 | Dit is een toelichting |
-| 3 | Dit is een toelichting |
-| 4 | Dit is een toelichting |
-
-
 ## Attenderen
 
 Attenderingen rond MijnTaken activeren de inwoner op het juiste moment om vertraging of termijnoverschrijding te voorkomen:
