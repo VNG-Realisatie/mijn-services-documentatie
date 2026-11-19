@@ -31,6 +31,9 @@ Lees eerst `docs/mijn-services/_model/README.md` voordat je begrippen, bouwstene
 
 ## Richtlijnen voor DON-compatibiliteit
 
+- **Nieuwe technische mogelijkheden eerst integreren**:
+  - Stem nieuwe plugins, componenten en andere renderingmogelijkheden eerst af met DON en integreer en valideer ze daar vóór gebruik in publiceerbare content. Een lokale build of preview bewijst geen DON-ondersteuning.
+  - `@theme/DocCardList` is geïntegreerd; de OpenAPI-plugin nog niet. Lokale generatie van bestanden maakt een plugin niet beschikbaar op DON.
 - **Scheiding tussen gepubliceerd en draft**:
   - Pagina's met `draft: true` (of `publish: false` / `status: draft`) worden bij de DON-export overgeslagen.
   - Gepubliceerde pagina's mogen **nooit linken naar draft-pagina's** — niet in Markdown, niet in Mermaid `link`-directives en niet via `bouwstenen.<id>.pagina` in `docs/mijn-services/_model/bouwstenen.yaml`.
