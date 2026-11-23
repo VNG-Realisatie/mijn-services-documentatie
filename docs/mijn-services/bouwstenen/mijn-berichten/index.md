@@ -44,7 +44,7 @@ MijnBerichten vult andere bouwstenen aan:
 
 ### Combineren in de weergave (composability)
 
-Een bericht staat vaak niet op zichzelf. In een digitale mijnomgeving kan MijnBerichten gecombineerd worden met andere bouwstenen. Bijvoorbeeld: een besluitbericht wordt getoond binnen de context van een zaak (MijnZaken), met een eventuele vervolgstap als taak (MijnTaken) en de mogelijkheid om vragen te stellen (MijnGesprekken).
+Een bericht staat vaak niet op zichzelf. In een digitale MijnOmgeving kan MijnBerichten gecombineerd worden met andere bouwstenen. Bijvoorbeeld: een besluitbericht wordt getoond binnen de context van een zaak (MijnZaken), met een eventuele vervolgstap als taak (MijnTaken) en de mogelijkheid om vragen te stellen (MijnGesprekken).
 
 ## Begrippenkader
 
@@ -58,22 +58,73 @@ De begrippen sluiten aan bij het woordgebruik en de informatiemodellen binnen ov
 
 <span id="uc-brh-01" />
 
-### UC-BRH-01: Berichten raadplegen en openen
+### UC-BRH-01: Berichten raadplegen
 
 **Doel:** Weten welke berichten vanuit de overheid gestuurd zijn naar de gebruiker.
 
 MijnBerichten ondersteunt dat de gebruiker:
 
 - een overzicht heeft van ontvangen berichten, met informatie over de inhoud en afzender van het bericht;
-- kan herkennen welke berichten nieuw of nog niet gelezen zijn;
-- een specifiek bericht kan openen, om de inhoud, het berichttype, de bijlagen en de gerelateerde zaken of producten te tonen.
-- vanuit de eventuele context de gekoppelde berichten kan raadplegen.
+- kan herkennen welke berichten nieuw of nog niet gelezen zijn.
 
 **Resultaat:** De gebruiker heeft overzicht over de communicatie vanuit de overheid en weet welke berichten beschikbaar zijn.
 
+#### Sequence diagram
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor IW as Inwoner / ondernemer
+    participant MO as MijnOmgeving
+    participant IAPI as Interactie API
+    participant BRC as Bericht<br/>registratie<br/>component
+
+    IW->>MO: Mijn berichten openen
+    MO->>IAPI: Ophalen berichtenlijst waarbij<br/>publicatiedatum < nu
+    IAPI->>BRC: Ophalen berichtenlijst waarbij<br/>publicatiedatum < nu
+    BRC-->>IAPI: Berichtenlijst
+    IAPI->>BRC: Ophalen aantal berichten waarbij<br/>publicatiedatum < nu<br/>en geopendOp leeg is
+    BRC-->>IAPI: Aantal
+    IAPI-->>MO: Berichtenlijst + aantallen ongeopend<br/>gesorteerd op publicatiedatum
+    MO-->>IW: Berichtenlijst met teller
+```
+
 <span id="uc-brh-02" />
 
-### UC-BRH-02: Bericht bewaren en terugvinden
+### UC-BRH-02: Bericht openen
+
+**Doel:** Kennisnemen van de inhoud van een bericht.
+
+MijnBerichten ondersteunt dat de gebruiker:
+
+- een specifiek bericht kan openen, om de inhoud, het berichttype, de bijlagen en de gerelateerde zaken of producten te tonen;
+- vanuit de eventuele context de gekoppelde berichten kan raadplegen.
+
+**Resultaat:** De gebruiker heeft inzicht over de communicatie vanuit de overheid en kent de inhoud van de berichten.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor IW as Inwoner / ondernemer
+    participant MO as MijnOmgeving
+    participant IAPI as Interactie API
+    participant BRC as Bericht<br/>registratie<br/>component
+    participant DRC as Document<br/>registratie<br/>component
+
+    IW->>MO: Open bericht
+    MO->>IAPI: Ophalen bericht
+    IAPI->>BRC: Ophalen bericht
+    BRC->>BRC: Update bericht geopend
+    BRC-->>IAPI: Bericht
+    IAPI->>DRC: Ophalen bijlage(n)
+    DRC-->>IAPI: Bijlage(n)
+    IAPI-->>MO: Bericht + bijlage(n)
+    MO-->>IW: Lezen bericht + bijalge(n)
+```
+
+<span id="uc-brh-03" />
+
+### UC-BRH-03: Bericht bewaren en terugvinden
 
 **Doel:** Belangrijke communicatie later opnieuw kunnen raadplegen.
 

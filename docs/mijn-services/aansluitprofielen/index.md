@@ -16,7 +16,7 @@ de bijbehorende specificaties naar een concrete koppeling expliciet.
 | Aansluitprofiel                           | Gebruik voor                                      |
 | ----------------------------------------- | ------------------------------------------------- |
 | [ZGW](./zgw)                              | Koppelen van zaakgerichte systemen.               |
-| [OpenVtb Taken API](./openvtb-taken-api/) | Aansluiten op de Taken API van OpenVtb.           |
+| [OpenVTB Taken API](./openvtb-taken-api/) | Aansluiten op de Taken API van OpenVTB.           |
 | [Combinaties](./combinaties)              | Combineren van meerdere bron-API's voor één flow. |
 | [NotifyNL API](./notifynl-api)            | Afleveren van attenderingen en notificaties.      |
 
