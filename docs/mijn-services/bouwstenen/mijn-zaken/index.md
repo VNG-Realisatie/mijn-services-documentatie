@@ -55,7 +55,7 @@ De begrippen sluiten aan bij het woordgebruik en de informatiemodellen binnen ov
 
 ### UC-ZKN-01: Zaken overzien en terugvinden
 
-**Doel:** Overzicht krijgen van lopende en historische zaken en de juiste zaak kunnen selecteren.
+**Doel:** Overzicht krijgen van lopende en gesloten zaken en de juiste zaak kunnen selecteren.
 
 MijnZaken ondersteunt dat de gebruiker:
 
@@ -71,6 +71,22 @@ MijnZaken ondersteunt dat de gebruiker:
 - duidelijke uitleg krijgt wanneer er geen zaken beschikbaar zijn.
 
 **Resultaat:** De gebruiker heeft overzicht over zijn zaken en kan de juiste zaak selecteren om de context ervan te raadplegen.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor IW as Inwoner / ondernemer
+    participant MO as MijnOmgeving
+    participant ZRC as Zaak<br/>registratie<br/>component
+    participant ZTC as Zaaktype<br/>registratie<br/>component
+
+    IW->>MO: Ophalen zaken
+    MO ->> ZRC : Ophalen zaken
+    ZRC->>ZTC: Ophalen statussen en resultaten
+    ZTC -->> ZRC : Statussen en resultaten
+    ZRC -->> MO : Zaken + statussen + resultaten
+    MO-->>IW: Zaken + statussen + resultaten
+```
 
 <span id="uc-zkn-02" />
 

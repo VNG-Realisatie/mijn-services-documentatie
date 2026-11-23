@@ -114,11 +114,12 @@ sequenceDiagram
     IW->>MO: Open bericht
     MO->>IAPI: Ophalen bericht
     IAPI->>BRC: Ophalen bericht
-    BRC->>BRC: Update bericht geopend
     BRC-->>IAPI: Bericht
     IAPI->>DRC: Ophalen bijlage(n)
     DRC-->>IAPI: Bijlage(n)
     IAPI-->>MO: Bericht + bijlage(n)
+    MO->>IAPI: Bijwerken bericht geopend
+    IAPI->>BRC: Bijwerken bericht geopend
     MO-->>IW: Lezen bericht + bijalge(n)
 ```
 
