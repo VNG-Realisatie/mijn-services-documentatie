@@ -4,7 +4,7 @@ sidebar_label: Notificatieservice
 title: Notificaties
 description: Service voor het sturen van notifcaties of attenderingen aan burger of bedrijven
 sidebar_custom_props:
-  icon: /img/mijn-services/icons/notificatie.svg
+  icon: /img/mijn-services/icons/mijn-notificaties.svg
 ---
 
 import ModelWeergave from '../../\_model/ModelWeergave';
