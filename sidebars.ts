@@ -63,7 +63,6 @@ const buildstoneSidebar = isDevelopment
         {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-profiel/index'},
         {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-agenda/index'},
         {type: 'doc' as const, id: 'mijn-services/bouwstenen/mijn-gesprekken/index'},
-        {type: 'doc' as const, id: 'mijn-services/bouwstenen/notificatie-service/index'},
       ],
     }
   : {
