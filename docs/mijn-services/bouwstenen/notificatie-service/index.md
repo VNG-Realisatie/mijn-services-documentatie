@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 13
 sidebar_label: Notificatieservice
 title: Notificaties
 description: Service voor het sturen van notifcaties of attenderingen aan burger of bedrijven
