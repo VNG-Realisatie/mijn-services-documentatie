@@ -1,11 +1,47 @@
+name: Deploy Preview to GitHub Pages
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     permissions:
+      contents: read
+      pages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          run_install: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22.x
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build (including drafts for preview)
+        run: pnpm build --dev
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    permissions:
+      actions: read
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
     environment:
@@ -13,26 +49,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Build (including drafts for preview)
-        run: pnpm build --dev
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: build
+      - name: Wait for Pages artifact to be indexed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for attempt in $(seq 1 10); do
+            count=$(gh api "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length' || echo 0)
+            if [ "${count:-0}" -ge 1 ]; then
+              echo "Artifact 'github-pages' indexed on attempt ${attempt}."
+              sleep 2
+              exit 0
+            fi
+            echo "Attempt ${attempt}: artifact not visible yet, waiting 3s..."
+            sleep 3
+          done
+          echo "::warning::Artifact 'github-pages' not yet visible via REST API after 30s; proceeding to deploy-pages."
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
