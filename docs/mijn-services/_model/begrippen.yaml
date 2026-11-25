@@ -1,0 +1,293 @@
+begrippen:
+  definities:
+    bericht:
+      naam: BERICHT
+      definitie: >-
+        Digitale post dat een overheidsorganisatie naar een burger, bedrijf of instelling stuurt, waarin informatie en/of documenten worden aangeboden die de burger, het bedrijf of de instelling in de persoonlijke digitale postbus ontvangt.
+    berichttype:
+      naam: BERICHTTYPE
+      definitie: >-
+        Specificatie van vast te leggen informatie over een BERICHT.
+    taakstatus:
+      naam: TAAKSTATUS
+      definitie: >-
+        Een aanduiding van de stand van zaken van een TAAK op basis van betekenisvol behaald resultaat voor de initiator van de TAAK.
+    actor:
+      naam: ACTOR
+      definitie: >-
+        Iets dat of iemand die voor de overheidsorganisatie werkzaamheden uitvoert.
+    besluit:
+      naam: BESLUIT
+      definitie: >-
+        Een schriftelijke beslissing van een bestuursorgaan, inhoudende een publiekrechtelijke rechtshandeling.
+    gesprek:
+      naam: GESPREK
+      definitie: >-
+        Een digitale dialoog tussen een burger, bedrijf of instelling en (een) overheidsorganisatie(s).
+    informatieobject:
+      naam: INFORMATIEOBJECT
+      definitie: >-
+        Geheel van gegevens met een eigen identiteit ongeacht zijn vorm, met de bijbehorende metadata ontvangen
+        of opgemaakt door een natuurlijke en/of rechtspersoon bij de uitvoering van taken.
+    klantcontact:
+      naam: KLANTCONTACT
+      definitie: >-
+        Contactmoment tussen een burger, bedrijf of instelling en een overheidsorganisatie dat werkelijk heeft plaatsgevonden.
+    partij:
+      naam: PARTIJ
+      definitie: >-
+        Persoon of organisatie waarmee de overheidsorganisatie een relatie heeft.
+    plan:
+      naam: PLAN
+      definitie: >-
+        Een gestructureerde en vastgelegde beschrijving van doelen, keuzes, activiteiten en middelen, waarin wordt uitgewerkt wat de burger wil bereiken, hoe dat gebeurt, wanneer en met welke inzet.
+    product:
+      naam: PRODUCT
+      definitie: >-
+        Iets wat wordt voortgebracht en een concrete of herkenbare waarde heeft voor een burger, bedrijf, instelling of andere overheidsorganisatie.
+    resultaat:
+      naam: RESULTAAT
+      definitie: >-
+        Een gedefinieerde, concrete uitkomst van een ZAAK zoals het verlenen of weigeren van een vergunning, een toekenning of een afwijzing, en is het het 'antwoord' op de aanleiding van die ZAAK.
+    status:
+      naam: STATUS
+      definitie: >-
+        Een aanduiding van de stand van zaken van een ZAAK op basis van betekenisvol behaald resultaat voor de initiator van de ZAAK.
+    taak:
+      naam: TAAK
+      definitie: >-
+        Een welomschreven en afgebakende hoeveelheid werk dat iemand doet of moet doen, horende bij een ZAAK of betrekking hebbende op een PRODUCT.
+    verzoek:
+      naam: VERZOEK
+      definitie: >-
+        Een tot een overheidsorganisatie gerichte vraag of aanspraak om een bepaalde beslissing, handeling of reactie te verkrijgen.
+    zaak:
+      naam: ZAAK
+      definitie: >-
+        Een samenhangende hoeveelheid werk met een welgedefinieerde aanleiding en een welgedefinieerd eindresultaat, waarvan kwaliteit en doorlooptijd bewaakt moeten worden.
+    zaaktype:
+      naam: ZAAKTYPE
+      definitie: >-
+        Specificatie van de wijze van besturing van, en vast te leggen informatie over een bedrijfsproces dat als zaak uitgevoerd wordt.
+
+  relaties:
+    gesprek-taak:
+      van: gesprek
+      naar: taak
+      label: betreft
+    klantcontact-taak:
+      van: klantcontact
+      naar: taak
+      label: betreft
+    taak-taakstatus:
+      van: taak
+      naar: taakstatus
+      label: heeft
+    taak-product:
+      van: taak
+      naar: product
+      label: hoort bij
+    taak-informatieobject:
+      van: taak
+      naar: informatieobject
+      label: heeft
+    taak-actor:
+      van: taak
+      naar: actor
+      label: wordt behandeld door
+    taak-partij:
+      van: taak
+      naar: partij
+      label: wordt uitgevoerd door
+    klantcontact-bericht:
+      van: klantcontact
+      naar: bericht
+      label: betreft
+    gesprek-bericht:
+      van: gesprek
+      naar: bericht
+      label: betreft
+    bericht-berichttype:
+      van: bericht
+      naar: berichttype
+      label: is van
+    bericht-informatieobject:
+      van: bericht
+      naar: informatieobject
+      label: heeft
+    bericht-besluit:
+      van: bericht
+      naar: besluit
+      label: betreft
+    bericht-actor:
+      van: bericht
+      naar: actor
+      label: is verzonden door
+    bericht-partij:
+      van: bericht
+      naar: partij
+      label: is bestemd voor
+    resultaat-zaak:
+      van: resultaat
+      naar: zaak
+      label: is bereikt bij afsluiting van
+    besluit-zaak:
+      van: besluit
+      naar: zaak
+      label: is uitkomst van
+    gesprek-zaak:
+      van: gesprek
+      naar: zaak
+      label: betreft
+    klantcontact-zaak:
+      van: klantcontact
+      naar: zaak
+      label: betreft
+    product-zaak:
+      van: product
+      naar: zaak
+      label: is geleverd vanuit
+    zaak-status:
+      van: zaak
+      naar: status
+      label: heeft
+    taak-zaak:
+      van: taak
+      naar: zaak
+      label: hoort bij
+    zaak-zaaktype:
+      van: zaak
+      naar: zaaktype
+      label: is van
+    zaak-verzoek:
+      van: zaak
+      naar: verzoek
+      label: betreft behandeling van
+    zaak-informatieobject:
+      van: zaak
+      naar: informatieobject
+      label: heeft
+    zaak-actor:
+      van: zaak
+      naar: actor
+      label: wordt behandeld door
+    zaak-initiator:
+      van: zaak
+      naar: partij
+      label: heeft als initiator
+    zaak-belanghebbende:
+      van: zaak
+      naar: partij
+      label: heeft als belanghebbende
+    zaak-plan:
+      van: zaak
+      naar: plan
+      label: is onderdeel van
+
+  doorsnedes:
+    mijn-taken:
+      bouwsteen: mijn-taken
+      diagram:
+        - taak
+        - gesprek
+        - klantcontact
+        - taakstatus
+        - product
+        - zaak
+        - informatieobject
+        - actor
+        - partij
+      tabel:
+        - actor
+        - gesprek
+        - informatieobject
+        - klantcontact
+        - partij
+        - product
+        - taak
+        - taakstatus
+        - zaak
+      relaties:
+        - gesprek-taak
+        - klantcontact-taak
+        - taak-taakstatus
+        - taak-product
+        - taak-zaak
+        - taak-informatieobject
+        - taak-actor
+        - taak-partij
+    mijn-berichten:
+      bouwsteen: mijn-berichten
+      diagram:
+        - bericht
+        - klantcontact
+        - gesprek
+        - berichttype
+        - informatieobject
+        - besluit
+        - actor
+        - partij
+      tabel:
+        - actor
+        - bericht
+        - berichttype
+        - besluit
+        - gesprek
+        - informatieobject
+        - klantcontact
+        - partij
+      relaties:
+        - klantcontact-bericht
+        - gesprek-bericht
+        - bericht-berichttype
+        - bericht-informatieobject
+        - bericht-besluit
+        - bericht-actor
+        - bericht-partij
+    mijn-zaken:
+      bouwsteen: mijn-zaken
+      diagram:
+        - zaak
+        - resultaat
+        - besluit
+        - gesprek
+        - klantcontact
+        - zaaktype
+        - verzoek
+        - taak
+        - informatieobject
+        - product
+        - actor
+        - partij
+        - plan
+        - status
+      tabel:
+        - actor
+        - besluit
+        - gesprek
+        - informatieobject
+        - klantcontact
+        - partij
+        - plan
+        - product
+        - resultaat
+        - status
+        - taak
+        - verzoek
+        - zaak
+        - zaaktype
+      relaties:
+        - resultaat-zaak
+        - besluit-zaak
+        - gesprek-zaak
+        - klantcontact-zaak
+        - product-zaak
+        - zaak-status
+        - taak-zaak
+        - zaak-zaaktype
+        - zaak-verzoek
+        - zaak-informatieobject
+        - zaak-actor
+        - zaak-initiator
+        - zaak-belanghebbende
+        - zaak-plan
